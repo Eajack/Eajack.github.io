@@ -1,6 +1,6 @@
 ---
 title: Road 2 NLP- Text Classfication文本分类模型（TextCNN）
-date: 2019-07-03 19:44:38
+date: 2019-07-02 19:44:38
 tags:
   - TextCNN
   - NLP
