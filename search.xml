@@ -22,6 +22,8 @@
             
             <tag> ELMo </tag>
             
+            <tag> NLP </tag>
+            
         </tags>
       
     </entry>
@@ -45,9 +47,9 @@
       
         <tags>
             
-            <tag> FastText </tag>
-            
             <tag> NLP </tag>
+            
+            <tag> FastText </tag>
             
         </tags>
       
