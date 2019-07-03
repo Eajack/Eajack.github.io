@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> NLP </tag>
-            
             <tag> ELMo </tag>
+            
+            <tag> NLP </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> FastText </tag>
-            
             <tag> NLP </tag>
+            
+            <tag> FastText </tag>
             
         </tags>
       
