@@ -502,6 +502,7 @@
 <li>池化层：1阶最大池化。遍历卷积层输出的n*m个向量，取最大值然后先每组内部concat，之后全部concat，组成concat vector。</li>
 <li>softmax层：对concat vector进行softmax处理，可二分类/多分类，得到预测分类标签$Y_{predict}$。同时，实际标签为$Y_{real}$，构造loss function，SGD等算法训练Text-CNN模型参数。</li>
 </ul>
+<p><strong>特别地，当分词以字符形式分词，则为charCNN。即文本变成<code>这 个 店 排 队 真 的 要 很 久 啊</code>，直接按字分词，对应为字向量。</strong></p>
 
     
 
