@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            Eajack LeetCode Notes- Day3 | 
+        
+        Eajack&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Eajack Lau">
+    <meta name="description" itemprop="description" content="Someday I will be a giant...">
+    <meta name="keywords" content=",cpp,LeetCode">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" sizes="192x192" href="/img/favicon.jpg">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Eajack&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://eajack.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Eajack LeetCode Notes- Day3 | Eajack&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="Someday I will be a giant...">
+    <meta property="og:article:tag" content="cpp"> <meta property="og:article:tag" content="LeetCode"> 
+
+    
+        <meta property="article:published_time" content="6月 12, 2019">
+        <meta property="article:modified_time" content="7月 02, 2019">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Eajack LeetCode Notes- Day3 | Eajack&#39;s Blog">
+    <meta name="twitter:description" content="Someday I will be a giant...">
+    <meta name="twitter:image" content="/img/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://eajack.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Eajack&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eajack Lau",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "Someday I will be a giant..."
+    },
+    "headline": "Eajack LeetCode Notes- Day3",
+    "url": "https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html",
+    "datePublished": "6月 12, 2019",
+    "dateModified": "7月 02, 2019",
+    "description": "Someday I will be a giant...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://eajack.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    .footer-sns-zhihu {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzYuOCA3OC44Yy04LjYgMi44LTI0IDEyLjQtMzMuNiAyMS04LjYgNy44LTIxLjQgMjcuOC0yNC40IDM3LjgtNC4yIDE0LTQgNzIzLjQgMCA3MzMuNCA4LjYgMjAuNiAzNi44IDQ4LjYgNTYgNTUuNiA5IDMuNCA3NDcuNCAzLjQgNzU2LjQgMCAxOS44LTcuMiA0OS0zNi42IDU2LTU2LjIgMi4yLTYgMi42LTc1LjYgMi44LTM2Ni40IDAtMjMzLjgtLjYtMzYxLjQtMi0zNjYtMS4yLTMuOC02LjYtMTMuOC0xMi4yLTIyLjItOC4yLTEyLjItMTMuNC0xNy40LTI1LjgtMjUuNi04LjQtNS44LTE5LTExLjQtMjMuMi0xMi4yLTQuNi0xLjItMTYzLjItMS44LTM3NC44LTEuOC0yOTMgMC0zNjguNi42LTM3NS4yIDIuNnptMTkwIDE0NS42YzUuNCA3LjYgNCAxNy40LTQuOCAzMS42LTkuOCAxNi0xMC44IDI3LjQtMyAzNSAyLjYgMi44IDYuNCA1IDguNCA1czM3LjguNCA3OS42LjZjNjggLjQgNzYuNi44IDgyLjQgMy44IDkuMiA1IDEyLjYgMTEgMTIuNiAyMiAwIDctMS4yIDEwLjgtNC44IDE1bC00LjggNS40LTM4IC4yYy01My44IDAtNTMuOCAwLTU1LjQgNTEuMi0uNiAxOC0xLjYgNDIuOC0yLjIgNTUtMS4yIDIyLjguNiAzMS42IDcuNiAzNi4yIDEuNC44IDIyLjIgMiA0NiAyLjZsNDMuMiAxIDguOCA2YzE1LjQgMTAuOCAxNy44IDI5LjIgNSAzNy01LjggMy42LTEwLjIgNC01MS44IDQtMzEgMC00NyAuOC01MC42IDIuNC03IDMuMi0xNC4yIDE3LjYtMTcuMiAzNC40LTMuMiAxNi42LTEgMjEuOCA5LjYgMjUuMiAxMy40IDQuMiAyMS44IDExLjIgNDkgNDEuNCAzNSAzOC44IDM2LjYgNDEgNDEuOCA1OC44IDcgMjMuOCAyLjIgNDEuOC0xMS40IDQxLjgtNy42IDAtMTItMy0yMS0xNC42LTEzLjgtMTcuNC01NC40LTY1LjgtNjItNzMuOC0xNS4yLTE2LTI5LjQtNS44LTM4LjggMjcuNC0xLjggNi42LTguOCAyMy4yLTE1LjYgMzctMTAuOCAyMi0xNCAyNi44LTI3LjQgMzkuNi0xOS42IDE5LjItMjYuNCAyMy01My42IDI5LjYtMjcuMiA2LjQtMzcgNS42LTM4LTMuNi0xLTguNCA0LjQtMTYuNCAyMC0yOSAxNi0xMyAzNi44LTM2LjYgNDUuMi01MS40IDMtNS4yIDguMi0xMy44IDExLjYtMTkgMy40LTUgMTEuOC0yMC40IDE4LjYtMzQuMiAxMC0yMCAxMy42LTI5LjQgMTcuMi00NyAyLjYtMTIuMiA2LjItMjUuNCA3LjgtMjkuNCA0LTkuNCA0LTIxLjQuMi0yNy01LjItNy40LTE2LTguOC02Mi42LTguNC01MC40LjQtNTUuMi0uOC01Ny42LTEzLjItMS44LTEwLjQgNS44LTI0LjQgMTYuMi0yOS44IDcuNC0zLjggMTEuOC00LjIgNTYuMi00LjhsNDguNC0uOCA0LjYtNWM0LjgtNSA0LjgtNSA1LTYxLjYgMC0zNS4yLS44LTU5LjItMi02My4yLTMuOC0xMS4yLTExLTE0LjgtMzAuMi0xNC44cy0yMS40IDEuNC0zMS4yIDE4LjJjLTguMiAxNC40LTIwLjYgMjguOC0zMy4yIDM4LjgtMTMuMiAxMC40LTIxLjYgMTMtMjggOS04LjQtNS42LTUuMi0yMy4yIDguMi00My4yIDQtNi40IDkuMi0xOC42IDEyLjItMjkuNiAzLTEwLjIgNy40LTIzLjIgMTAtMjkgMi40LTUuNiA2LTE2LjggOC0yNC42IDUuNi0yMy42IDI0LTUwLjggMzkuNC01OC40IDExLjItNS40IDE4LjYtNS40IDIyLjQuMnptNDUyIDY4LjJjMTEuOCA3LjggMTEuNC0uOCAxMC44IDIxNi0uNiAxODEtLjggMTk4LjgtNCAyMDMtNy42IDEwLjgtOS44IDExLjQtNTMuNiAxMi40bC00MSAxLTE0IDcuOGMtNy42IDQuMi0yMS4yIDEzLTI5LjggMTkuNC0yNS44IDE5LjItMzUgMTkuOC00My40IDMuMi0xMS44LTIzLjItMjMuNi0zMy4yLTM5LjQtMzMuNC04LjggMC0xMy42LTIuOC0xNy4yLTkuOC0yLjYtNC44LTMtMzMuOC0yLjYtMjA4LjguNC0xOTkuOC40LTIwMyA0LjQtMjA3LjQgMi4yLTIuNCA1LjgtNS4yIDgtNi4yIDIuMi0uOCA1MS44LTEuNCAxMTAtMS4yIDk5IC40IDEwNi42LjYgMTExLjggNHoiLz48cGF0aCBkPSJNNjA2LjggMzM3LjRjLTIuNC40LTYuNCAzLTkgNS44bC00LjggNS4yLS42IDE1Ni40LS40IDE1Ni40IDYuNCA5LjRjMy42IDUuMiA5LjggMTUuMiAxMy42IDIxLjggOCAxNC4yIDE2LjggMjAuNiAyNS42IDE4LjYgMy4yLS42IDEzLjgtNyAyMy42LTE0LjIgMjMtMTcgMjcuOC0xOSA1MC4yLTIwLjIgMTYuNC0xIDE5LjItMS44IDIzLjYtNi4yIDIuOC0yLjggNS02LjQgNS4yLTguMlY1MDUuNmMwLTExNi0uNi0xNTQuNC0yLjYtMTU4LjYtNC44LTEwLjQtOC40LTExLTcwLTEwLjgtMzEuMi4yLTU4LjYuOC02MC44IDEuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-题目解答"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 题目解答</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q15"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Q15</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-best-solution"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">(3) best solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q16"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Q16</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q17"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Q17</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-3"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q18"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Q18</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-3"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-4"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q19"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Q19</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-4"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-5"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q20"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Q20</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-5"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-6"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-best-solution-1"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">(3) best solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q21"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Q21</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-6"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-7"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Eajack LeetCode Notes- Day3
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eajack Lau</strong>
+        <span>6月 12, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/LeetCode/">LeetCode</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/cpp/">cpp</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Eajack LeetCode Notes- Day3&url=https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Eajack LeetCode Notes- Day3&url=https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html&via=Eajack Lau" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Eajack&#39;s Blog&title=Eajack LeetCode Notes- Day3&summary=Someday I will be a giant...&pics=https://eajack.github.io/img/favicon.jpg&url=https://eajack.github.io/2019/06/12/Eajack LeetCode Notes- Day3/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>PS：由于最近leetcode官网访问问题，暂改成leetcode-zh刷题。</strong></p>
+<h2 id="1-题目解答"><a href="#1-题目解答" class="headerlink" title="1. 题目解答"></a>1. 题目解答</h2><h3 id="Q15"><a href="#Q15" class="headerlink" title="Q15"></a>Q15</h3><h4 id="1-题目信息"><a href="#1-题目信息" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：x 的平方根</li>
+<li>编号&amp;难度：[69]，easy</li>
+<li>Tags：binary-search | math</li>
+<li>描述：实现 int sqrt(int x) 函数。计算并返回 x 的平方根，其中 x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>输入: 4
+输出: 2
+
+输入: 8
+输出: 2
+说明: 8 的平方根是 2.82842..., 
+     由于返回类型是整数，小数部分将被舍去。</code></pre><h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode id=69 lang=cpp
+ *
+ * [69] Sqrt(x)
+ */
+class Solution {
+public:
+    int mySqrt(int x) {
+        long low = 0, high = x, mid = x/2;
+        if(x == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            //binary-search
+            while(low &lt; high)
+            {
+                if( (mid*mid == x) || ((mid*mid &lt; x) &amp;&amp; ((mid+1)*(mid+1) &gt; x)) )
+                {
+                    return mid;
+                }
+                else if(mid*mid &lt; x)
+                {
+                    low = mid;
+                    mid = (low+high)/2;
+                }
+                else
+                {
+                    high = mid;
+                    mid = (low+high)/2;
+                }
+            }
+            return mid;
+        }
+        return mid;
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：二分法求开方，重点在于第一个if判断<code>if( (mid*mid == x) || ((mid*mid &lt; x) &amp;&amp; ((mid+1)*(mid+1) &gt; x)) )</code>。前半段<code>(mid*mid == x)</code>表明，mid刚好为sqrt数；后半段<code>((mid*mid &lt; x) &amp;&amp; ((mid+1)*(mid+1) &gt; x))</code>表明以下情况：</li>
+</ul>
+</blockquote>
+<pre><code>mid = 2;
+x = 5;
+mid*mid = 4 &lt; 5;
+(mid+1)*(mid+1) = 9 &gt;5;
+5^0.5 =&gt; 2;</code></pre><h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">//Newton method
+// holy shit, so short!
+
+/*任说1个整数x，我任猜它的平方根为y，
+如果不对或精度不够准确，
+那我令y = (y+x/y)/2。如此循环反复下去，y就会无限逼近x的平方根*/
+
+long r = x;
+while (r*r &gt; x)
+    r = (r + x/r) / 2;
+return r;</code></pre>
+<blockquote>
+<ul>
+<li>思路：牛顿法求开方数。。算法很简单</li>
+</ul>
+</blockquote>
+<h3 id="Q16"><a href="#Q16" class="headerlink" title="Q16"></a>Q16</h3><h4 id="1-题目信息-1"><a href="#1-题目信息-1" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：爬楼梯</li>
+<li>编号&amp;难度：[70]，easy</li>
+<li>Tags：dynamic-programming</li>
+<li>描述：假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？注意：给定 n 是一个正整数。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>输入： 2
+输出： 2
+解释： 有两种方法可以爬到楼顶。
+1.  1 阶 + 1 阶
+2.  2 阶
+
+输入： 3
+输出： 3
+解释： 有三种方法可以爬到楼顶。
+1.  1 阶 + 1 阶 + 1 阶
+2.  1 阶 + 2 阶
+3.  2 阶 + 1 阶</code></pre><h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode id=70 lang=cpp
+ *
+ * [70] Climbing Stairs
+ */
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n==1)
+        {
+            return 1;
+        }
+        else if(n==2)
+        {
+            return 2;
+        }
+
+        //Fibonacci
+        int* fibonacci_array = new int[n];
+        fibonacci_array[0] = 1; fibonacci_array[1] = 2;
+
+        for(int i=2; i&lt;n; i++)
+        {
+            fibonacci_array[i] = fibonacci_array[i-2] + fibonacci_array[i-1];
+        }
+
+        return fibonacci_array[n-1];
+    }
+};
+
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：爬楼梯问题，高中数学竞赛课碰到过的题目。。明显是<strong>斐波那契数列</strong>：令F(n)为爬第n级楼梯方法数，则F(n) = F(n-1) + F(n-2)，<strong>因为爬到第n级的前一step，只有两个可能，脚在倒数第一个台阶&amp;倒数第二个台阶。</strong>斐波那契求解，明显不能用递归，要用顺序迭代。该题最佳思路一样，只不过不保存，没有O(n)的空间复杂度<code>fibonacci_array[n]</code></li>
+</ul>
+</blockquote>
+<h3 id="Q17"><a href="#Q17" class="headerlink" title="Q17"></a>Q17</h3><h4 id="1-题目信息-2"><a href="#1-题目信息-2" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：删除排序链表中的重复元素</li>
+<li>编号&amp;难度：[83]，easy</li>
+<li>Tags：linked-list</li>
+<li>描述：给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>输入: 1-&gt;1-&gt;2
+输出: 1-&gt;2
+
+输入: 1-&gt;1-&gt;2-&gt;3-&gt;3
+输出: 1-&gt;2-&gt;3</code></pre><h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode id=83 lang=cpp
+ *
+ * [83] Remove Duplicates from Sorted List
+ */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        //len == 0 or 1
+        if(head == nullptr || head-&gt;next==nullptr)
+        {
+            return head;
+        }
+
+        //len &gt; 1
+        ListNode *p=head, *k=head-&gt;next; 
+        while(1)
+        {
+            int val_current = p-&gt;val;
+            ListNode* temp = nullptr;
+            while(k != nullptr &amp;&amp; k-&gt;val == val_current)
+            {
+                temp = k;
+                k = k-&gt;next;
+                p-&gt;next = k;
+                delete temp;
+            }
+
+            if(k == nullptr)
+            {
+                break;
+            }
+            else
+            {
+                p = k;
+                k = p-&gt;next;
+            }
+
+        }
+
+        return head;
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：two-pointers思想，双指针。第二指针遍历和第一指针值对比，相等则delete掉。<strong>双指针方法重点在于边界检查。</strong></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        return head &amp;&amp; (head-&gt;next = deleteDuplicates(head-&gt;next)) &amp;&amp; \
+            head-&gt;next-&gt;val == head-&gt;val ? head-&gt;next : head;
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：无fa可说。。简洁代码要多练才能想到。。</li>
+</ul>
+</blockquote>
+<h3 id="Q18"><a href="#Q18" class="headerlink" title="Q18"></a>Q18</h3><h4 id="1-题目信息-3"><a href="#1-题目信息-3" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：合并两个有序数组</li>
+<li>编号&amp;难度：[88]，easy</li>
+<li>Tags：array | two-pointers</li>
+<li>描述：给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。<br>说明:<br>(1) 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>(2) 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>输入:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+
+输出: [1,2,2,3,5,6]</code></pre><h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode.cn id=88 lang=cpp
+ *
+ * [88] 合并两个有序数组
+ */
+class Solution {
+public:
+    void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) {
+        int i=m-1, j=n-1, k=m+n-1;
+        while(j &gt;= 0)
+        {
+            nums1[k--] = (i&gt;=0 &amp;&amp; nums1[i]&gt;nums2[j])?(nums1[i--]):(nums2[j--]);
+        }
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：这里看了solution了。。这逆序思路很好。。</li>
+</ul>
+</blockquote>
+<h3 id="Q19"><a href="#Q19" class="headerlink" title="Q19"></a>Q19</h3><h4 id="1-题目信息-4"><a href="#1-题目信息-4" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：相同的树</li>
+<li>编号&amp;难度：[100]，easy</li>
+<li>Tags：depth-first-search | tree</li>
+<li>描述：给定两个二叉树，编写一个函数来检验它们是否相同。<br>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>输入:       1         1
+          / \       / \
+         2   3     2   3
+
+        [1,2,3],   [1,2,3]
+
+输出: true
+
+输入:      1          1
+          /           \
+         2             2
+
+        [1,2],     [1,null,2]
+
+输出: false
+
+输入:       1         1
+          / \       / \
+         2   1     1   2
+
+        [1,2,1],   [1,1,2]
+
+输出: false</code></pre><h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode.cn id=100 lang=cpp
+ *
+ * [100] 相同的树
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if( (!p&amp;&amp;!q) ) return true;
+        if( (!p&amp;&amp;q) || (p&amp;&amp;!q) ) return false;
+
+        return (p-&gt;val == q-&gt;val) &amp;&amp; (isSameTree(p-&gt;left,q-&gt;left)) &amp;&amp; \
+            (isSameTree(p-&gt;right, q-&gt;right));
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：巨坑在于要求中树的表示，右子树为NULL时，不表示出来。。不懂怎么弄的，看了solution，这思路很好理解。</li>
+</ul>
+</blockquote>
+<h3 id="Q20"><a href="#Q20" class="headerlink" title="Q20"></a>Q20</h3><h4 id="1-题目信息-5"><a href="#1-题目信息-5" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：对称二叉树</li>
+<li>编号&amp;难度：[101]，easy</li>
+<li>Tags：breadth-first-search | depth-first-search | tree</li>
+<li>描述：给定一个二叉树，检查它是否是镜像对称的。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>对称：
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+
+不对称：
+    1
+   / \
+  2   2
+   \   \
+   3    3</code></pre><h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode.cn id=101 lang=cpp
+ *
+ * [101] 对称二叉树
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        if(!root) return true;
+
+        queue&lt;TreeNode*&gt; nodes_buffer;
+        vector&lt;TreeNode*&gt; nodes_currentLevel;
+        TreeNode* node;
+        nodes_buffer.push(root);
+
+        while(!nodes_buffer.empty())
+        {
+            int buffer_size = nodes_buffer.size();
+            for(int i=0; i&lt;buffer_size; i++)
+            {
+                node = nodes_buffer.front();
+                nodes_buffer.pop();
+                nodes_currentLevel.push_back(node);
+
+                if( node )
+                {
+                    nodes_buffer.push(node-&gt;left);
+                    nodes_buffer.push(node-&gt;right);
+                }
+            }
+
+            if(nodes_currentLevel.size() != 1)
+            {
+                int nodesNum = nodes_currentLevel.size();
+                for(int i=0; i&lt;nodesNum/2; i++)
+                {
+                    if(!nodes_currentLevel[i] &amp;&amp; !nodes_currentLevel[nodesNum-1-i])
+                        continue;
+                    if( (!nodes_currentLevel[i]&amp;&amp;nodes_currentLevel[nodesNum-1-i]) || \
+                        (nodes_currentLevel[i]&amp;&amp;!nodes_currentLevel[nodesNum-1-i]) )
+                        return false;
+
+                    if(nodes_currentLevel[i]-&gt;val != nodes_currentLevel[nodesNum-1-i]-&gt;val)
+                        return false;
+                }
+            }
+
+            nodes_currentLevel.clear();
+        }
+
+        return true;
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：缓存nodes_currentLevel为树的每层节点，检查每层节点是否对称，树对称当且仅当所有层都对称，否则返回不对称。</li>
+</ul>
+</blockquote>
+<h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        if (root == NULL)
+            return true;
+
+        return checkSymmetric(root-&gt;left, root-&gt;right);
+    }
+    //check the two nodes in symmetric position
+    bool checkSymmetric(TreeNode *leftSymmetricNode, TreeNode *rightSymmetricNode)
+    {
+        if (leftSymmetricNode == NULL &amp;&amp; rightSymmetricNode == NULL)
+            return true;
+        if (leftSymmetricNode == NULL || rightSymmetricNode == NULL)
+            return false;
+        if (leftSymmetricNode-&gt;val == rightSymmetricNode-&gt;val)
+            return checkSymmetric(leftSymmetricNode-&gt;left, rightSymmetricNode-&gt;right) &amp;&amp; checkSymmetric(leftSymmetricNode-&gt;right, rightSymmetricNode-&gt;left);
+        return false;
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：<strong>递归调用，好思路！内置函数checkSymmetric，递归调用。</strong>重点在于<code>return checkSymmetric(leftSymmetricNode-&gt;left, rightSymmetricNode-&gt;right) &amp;&amp; checkSymmetric(leftSymmetricNode-&gt;right, rightSymmetricNode-&gt;left)</code>。自己体会。。。</li>
+</ul>
+</blockquote>
+<h3 id="Q21"><a href="#Q21" class="headerlink" title="Q21"></a>Q21</h3><h4 id="1-题目信息-6"><a href="#1-题目信息-6" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：二叉树的最大深度</li>
+<li>编号&amp;难度：[104]，easy</li>
+<li>Tags：depth-first-search | tree</li>
+<li>描述：给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。<br>说明: 叶子节点是指没有子节点的节点。</li>
+<li>例子：</li>
+</ul>
+</blockquote>
+<pre><code>最大深度：3
+   3
+   / \
+  9  20
+    /  \
+   15   7
+</code></pre><h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+ * @lc app=leetcode.cn id=104 lang=cpp
+ *
+ * [104] 二叉树的最大深度
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+         if(root == NULL)
+            return 0;
+        else
+        {
+            int left_height = maxDepth(root-&gt;left);
+            int right_height = maxDepth(root-&gt;right);
+            return 1 + ((left_height&gt;right_height)?left_height:right_height);
+        }
+    }
+};</code></pre>
+<blockquote>
+<ul>
+<li>思路：《数据结构与算法分析-C语言描述》有，思路简单易懂。。</li>
+</ul>
+</blockquote>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/06/21/Road 2 NLP- Word Embedding词向量（Word2vec）/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/06/06/Eajack LeetCode Notes- Day2/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Eajack Lau's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        EajackLR@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:EajackLR@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/GitHub/">GitHub<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode/">LeetCode<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Markdown/">Markdown<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/OpenCV/">OpenCV<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Songs/">Songs<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/blog/">blog<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/心情/">心情<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学建模/">数学建模<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构-算法/">数据结构&算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂乱/">杂乱<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/树莓派/">树莓派<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/爬虫/">爬虫<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/鸡汤/">鸡汤<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签云
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/aboutMe" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person_pin</i>
+                
+                About Me
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">33</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Eajack" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/Eajack_Lau-CGH-LEO/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Eajack's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
