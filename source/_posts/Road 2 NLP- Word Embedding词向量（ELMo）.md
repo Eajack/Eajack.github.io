@@ -91,55 +91,45 @@ $$
 
 * ELMo词向量获取方法有多种：
 
+  **注意： $T_{2}$ 为前向 & 后向LM concat向量，其余$T_{i}$ 同理，维度为2m**
+
   * (1) 只取顶层LSTM的输出隐状态h向量（该例子即为层2）
 
     以该例子（2层LSTM）中单词$E_{2}$为例，其对应ELMo词向量为
-
+  
   $$
-  ELMo\_E2\_method1 = concat(x_{2},h_{m×1}^{(2,2)}) = concat(x_{2},T_{2})
+ELMo\_E2\_method1 = concat(x_{2},T_{2})
   $$
 
-  **即将该单词原输入词向量$x_{2}$和对应LSTM cell输出隐状态$T_{2}$，直接拼接。由于m = n，则ELMo词向量维度为2m。**e.g.，取Word2vec维度为300输入，则ELMo输出为600维度词向量。
+  **即将该单词原输入词向量$x_{2}$和对应LSTM cell输出隐状态$T_{2}$，直接拼接。由于m = n，则ELMo词向量维度为3m。**e.g.，取Word2vec维度为300输入，则ELMo输出为900维度词向量。
+
+  即下图的右侧图，左侧不用管。来源：《Semi-supervised sequence tagging with bidirectional language models》
+
+  ![图5- ELMo1](https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE5.PNG)
 
   * (2) 取所有层的LSTM的输出隐状态h向量（**层数设为L**）
-
+  
     在这方法中，又有2种思路：**1- 直接concat；2- 带系数求和后concat**
-
+  
     1- 直接concat
-
-    同上，以该例子（2层LSTM）中单词$E_{2}$为例，此思路的对应ELMo词向量为：
-    $$
-    ELMo\_E2\_method2 = concat(x_{2},h_{m×1}^{(1,2)},h_{m×1}^{(2,2)})\\
-    = concat(x_{2},h_{m×1}^{(1,2)},T_{2})
-    $$
-    **和方法1相比，方法2也就只是concat多1层h向量。然而，在这例子是多1层，当层数很大时，例如100，则是concat多99层。**
-
-    **该方法下ELMo词向量维度和LSTM层数有关，为m(L+1)维度**
-
-    即下图的右侧图，左侧不用管。来源：《Semi-supervised sequence tagging with bidirectional language models》
-
-    ![图5- ELMo1](https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE5.PNG)
-
-    
-
-    2- 带系数求和后concat
-
-    同上，有该思路下,单词$E_{2}$ELMo词向量：
-    $$
-    ELMo_{E2}=γ\sum_{j=0}^{L}{s^{(j,2)} \cdot h_{m×1}^{(j,2)}} \\
-    ELMo\_E2\_method3 = concat(x_{2},ELMo_{E2})
-    $$
-    
-
-    该思路关键如下：给每一层LSTM一个系数向量$s_{2A×1}$，按位置和该层的2A个$h$向量相乘后，所有层求和。最后再乘上系数γ，作为向量$ELMO_{E}$。**注意：$ELMO_{E}$维度为m**。然后，将原输入静态词向量$x$和$ELMO_{E}$concat。
   
-    **该方法下ELMo词向量维度，为2m维度**
+  同上，以该例子（2层LSTM）中单词$E_{2}$为例，此思路的对应ELMo词向量为：
+    $$
+  ELMo\_E2\_method2 = concat(x_{2},T_{2}^{(层1)},T_{2})
+    $$
+  **和方法1相比，方法2也就只是concat多1层h向量。然而，在这例子是多1层，当层数很大时，例如100，则是concat多99层。**
+    
+**该方法下ELMo词向量维度和LSTM层数有关，为（m+2mL）维度**
+    
+2- 带系数求和后concat
+    
+同上，有该思路下,单词$E_{2}$ELMo词向量：
+    $$
+  ELMo_{E2}=γ\sum_{j=0}^{L}{s^{(j,2)} \cdot h_{m×1}^{(j,2)}} \\  T_{2}^{'} = concat(ELMo_{E2}^{前向LM}, ELMo_{E2}^{后向LM})\\ ELMo\_E2\_method3 = concat(x_{2},T_{2}^{'})
+    $$
   
-  **论文采取方式：方法3，带系数求和后concat。**即
-
-$$
-ELMo_{E2}=γ\sum_{j=0}^{L}{s^{(j,2)} \cdot h_{m×1}^{(j,2)}} \\
-ELMo\_E2\_method3 = concat(x_{2},ELMo_{E2})
-$$
-
-其实方法2也可以，直接concat所有层h，但可能维度过高了。
+    
+  该思路关键如下：给每一层LSTM一个系数向量$s_{2A×1}$，按位置和该层的2A个$h$向量相乘后，所有层求和。最后再乘上系数γ，作为向量$ELMO_{E}$。**注意：$ELMO_{E}$维度为m，还需一步是对应位置的前后向LM concat为$T_{2}^{'}$，维度为2m**。然后，将原输入静态词向量$x$和$T_{2}^{'}$concat。**该方法下ELMo词向量维度，为3m维度**
+  
+  
+  **论文采取方式：方法3，带系数求和后concat。**其实方法2也可以，直接concat所有层h，但可能维度过高了。
