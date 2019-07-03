@@ -493,11 +493,10 @@
 </ul>
 <blockquote>
 <p>S = 符号整型  U = 无符号整型  F = 浮点型</p>
-</blockquote>
-<blockquote>
 <p>E.g.:<br>CV_8UC1 是指一个8位无符号整型单通道矩阵<br>CV_32FC2是指一个32位浮点型双通道矩阵</p>
 </blockquote>
 <p>列出如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -507,7 +506,8 @@
 <th>型</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>CV_8UC1</td>
 <td>CV_8SC1</td>
 <td>CV_16U C1</td>
@@ -555,7 +555,9 @@
 <td>CV_64FC4</td>
 <td>NULL</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="2-OpenCV平台配置汇总"><a href="#2-OpenCV平台配置汇总" class="headerlink" title="2.OpenCV平台配置汇总"></a>2.OpenCV平台配置汇总</h3><ul>
 <li><a href="http://blog.csdn.net/wx7788250/article/details/54970903" target="_blank" rel="noopener">【OpenCV】CodeBlocks+OpenCV3.2环境搭建</a></li>
 <li><a href="https://robocoderhan.github.io/2016/12/13/Raspberry%20Pi%203%20+%20Raspbian%20Jessie%20+%20OpenCV%203/" target="_blank" rel="noopener">Raspberry Pi 3 + Raspbian Jessie + OpenCV 3</a></li>
@@ -988,6 +990,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

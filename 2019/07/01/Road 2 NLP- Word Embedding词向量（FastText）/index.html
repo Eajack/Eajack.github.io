@@ -506,7 +506,8 @@
 <p>虽说本系列文章主题是：<strong>Word Embedding词向量</strong>，但是由于FastText特殊性，这里一起讲<strong>FastText文本分类模型</strong>。</p>
 <p>FastText的最大优点：快速。</p>
 <pre><code>《Efficient estimation of word representations in vector space》摘要部分：
-We can train fastText on more than one billion words in less than ten minutes using a standard multicore CPU, and classify half a million sentences among 312K classes in less than a minute.</code></pre><h1 id="2-FastText原理1：词向量训练"><a href="#2-FastText原理1：词向量训练" class="headerlink" title="2. FastText原理1：词向量训练"></a>2. FastText原理1：词向量训练</h1><p>关于FastText词向量资料，原论文<a href="https://github.com/Eajack/NLP-Papers/blob/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/FastText/Enriching%20Word%20Vectors%20with%20Subword%20Information.pdf" target="_blank" rel="noopener">《Enriching Word Vectors with Subword Information》</a>的原理部分提及得相当简略。</p>
+We can train fastText on more than one billion words in less than ten minutes using a standard multicore CPU, and classify half a million sentences among 312K classes in less than a minute.
+</code></pre><h1 id="2-FastText原理1：词向量训练"><a href="#2-FastText原理1：词向量训练" class="headerlink" title="2. FastText原理1：词向量训练"></a>2. FastText原理1：词向量训练</h1><p>关于FastText词向量资料，原论文<a href="https://github.com/Eajack/NLP-Papers/blob/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/FastText/Enriching%20Word%20Vectors%20with%20Subword%20Information.pdf" target="_blank" rel="noopener">《Enriching Word Vectors with Subword Information》</a>的原理部分提及得相当简略。</p>
 <p>FastText词向量框架是基于Word2vec框架的，区别主要如下：</p>
 <p>前者利用n-grams向量之和作为词向量（<strong>key point &amp; 疑惑点</strong>）</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/FastText/%E5%9B%BE1.PNG" alt="图1- FastText词向量表示"></p>
@@ -979,6 +980,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

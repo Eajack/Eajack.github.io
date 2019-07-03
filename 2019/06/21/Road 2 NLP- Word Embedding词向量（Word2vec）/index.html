@@ -527,7 +527,8 @@
 刘知远、邱锡鹏、李韶华等知名学者从不同角度发表对 Word2vec 的看法，非常值得一看
 
 7. Sebastian 的博客：『On word embeddings - Part 2: Approximating the Softmax』
-详细讲解了 softmax 的近似方法，Word2vec 的 hierarchical softmax 只是其中一种</code></pre><p><strong>对比上述所有资料，重点看《word2vec Parameter Learning Explained》，并期望基于此文完全弄懂Word2vec原理。</strong></p>
+详细讲解了 softmax 的近似方法，Word2vec 的 hierarchical softmax 只是其中一种
+</code></pre><p><strong>对比上述所有资料，重点看《word2vec Parameter Learning Explained》，并期望基于此文完全弄懂Word2vec原理。</strong></p>
 <h1 id="2-Word2vec原理（《word2vec-Parameter-Learning-Explained》）"><a href="#2-Word2vec原理（《word2vec-Parameter-Learning-Explained》）" class="headerlink" title="2. Word2vec原理（《word2vec Parameter Learning Explained》）"></a>2. Word2vec原理（《word2vec Parameter Learning Explained》）</h1><p><strong>Word2vec = CBOW + Skip-Gram（Hierarchical Softmax &amp; Negative Sampling）</strong></p>
 <p>其中，</p>
 <ul>
@@ -541,7 +542,7 @@
 <p>为方便解说，这里不直接引用原论文图，自己重新Visio画。</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/Word2vec/%E5%9B%BE1.png" alt="图1- One-Word-Context"></p>
 <p>(1). Input layer：输入：$X_{V×1} = OneHot(wordNow)$（模型外部输入input1）, 初始化随机矩阵$W_{V×N}$（<strong>PS：$W_{V×N}$第w行的行向量 $V_w$,称作输入向量(input vector)，Size为：1×N，N为词向量维度，V&gt;&gt;N</strong>）。输出：$h_{N×1}=W_{V×N}^{T}X_{V×1}$。</p>
-<p>(2). Hidden layer：输入：Input层输出$h_{N×1}$，初始化随机矩阵 $W^{‘}<em>{V×N}$（**PS：$W^{‘}</em>{V×N}$的第w列的列向量 , $V^{‘}<em>w$称作输出向量(output vector)，Size为：N×1**）。输出：$u</em>{V×1}=W^{‘T}<em>{N×V}h</em>{N×1}$。</p>
+<p>(2). Hidden layer：输入：Input层输出$h_{N×1}$，初始化随机矩阵 $W^{‘}_{V×N}$（<strong>PS：$W^{‘}_{V×N}$的第w列的列向量 , $V^{‘}_w$称作输出向量(output vector)，Size为：N×1</strong>）。输出：$u_{V×1}=W^{‘T}_{N×V}h_{N×1}$。</p>
 <p>(3). Output layer：输入：Hidden层输出$u$。输出：$y_j = \frac{exp(u_j)}{\sum_{a=1}^{V}exp(u_a)}$（预测输出Y_predict）。实际输出（模型外部输入input2）$YReal=OneHot(wordNext)$。Y_predict &amp; Y_real构造loss function更新权值$W$、$W^{‘}$。</p>
 <p>输入向量矩阵$W$、输出向量矩阵$W^{‘}$，均可作为词语的词向量表示。<strong>但是Word2vec采用输入向量矩阵$W$</strong>。原因：输出向量矩阵$W^{‘}$更新代价大，以下为《word2vec Parameter Learning Explained》原文</p>
 <pre><code>1. 英文原文：
@@ -562,7 +563,8 @@ To solve this problem, an intuition is to limit the number of output vectors tha
 对每个训练实例的所有单词进行此类计算非常昂贵，
 使扩展到大型词汇表或大型培训语料库变得不切实际。
 
-为了解决这个问题，直觉是限制每个训练实例必须更新的输出向量的数量。 实现这一目标的一个优雅方法是分层softmax; 另一种方法是通过抽样，这将在下一节中讨论。</code></pre><p><strong>这段文字有2个结论：（1）训练输入向量更容易；（2）Hierarchical Softmax &amp; Negative Sampling 方法都是用于更新输出向量的。</strong></p>
+为了解决这个问题，直觉是限制每个训练实例必须更新的输出向量的数量。 实现这一目标的一个优雅方法是分层softmax; 另一种方法是通过抽样，这将在下一节中讨论。
+</code></pre><p><strong>这段文字有2个结论：（1）训练输入向量更容易；（2）Hierarchical Softmax &amp; Negative Sampling 方法都是用于更新输出向量的。</strong></p>
 <ul>
 <li>模型本质</li>
 </ul>
@@ -570,28 +572,36 @@ To solve this problem, an intuition is to limit the number of output vectors tha
 <ul>
 <li>模型例子</li>
 </ul>
-<p>词库为：“我”、“喜欢”、“苹果”，对应的One-Hot词向量分别为[1,0,0]、[0,1,0]、[0,0,1]。输入到One-Word-Context CBOW模型，取词向量维度N=2（一般V&gt;&gt;N，此处V=3，作为例子取N=2）经过训练得到W矩阵如下：<br>$$<br>W = \begin{bmatrix}0.2 &amp; 0.4\\0.6 &amp;0.7\\0.8 &amp;0.1\end{bmatrix}<br>$$<br>尺寸为V x N，即3 x 2。因此，“我”的Word2vec词向量为[0.2, 0.4]，“喜欢”的Word2vec词向量为[0.6, 0.7]，“苹果的”Word2vec词向量为[0.8, 0.1]。</p>
+<p>词库为：“我”、“喜欢”、“苹果”，对应的One-Hot词向量分别为[1,0,0]、[0,1,0]、[0,0,1]。输入到One-Word-Context CBOW模型，取词向量维度N=2（一般V&gt;&gt;N，此处V=3，作为例子取N=2）经过训练得到W矩阵如下：</p>
+<script type="math/tex; mode=display">
+W = \begin{bmatrix}0.2 & 0.4\\\\0.6 &0.7\\\\0.8 &0.1\end{bmatrix}</script><p>尺寸为V x N，即3 x 2。因此，“我”的Word2vec词向量为[0.2, 0.4]，“喜欢”的Word2vec词向量为[0.6, 0.7]，“苹果的”Word2vec词向量为[0.8, 0.1]。</p>
 <ul>
 <li>loss function</li>
 </ul>
 <p>Output层的预测输出：$y_j = \frac{exp(u_j)}{\sum_{a=1}^{V}exp(u_a)}$</p>
-<p>联合额外公式：$h_{N×1}=W_{V×N}^{T}X_{V×1}=v_{wI}^{T}$、 $$u_j=V_w^{‘T}h_{N×1}$$ PS：$u_j$为标量，$V_w^{‘T}$尺寸为1×N。</p>
-<p>推导出：<br>$$<br>y_j = \frac{exp(V_{w_j}^{‘T}v_{wI}^{T})}{\sum_{a=1}^{V}{exp(V_{w_a}^{‘T}v_{wI}^{T}})}<br>$$<br>令loss function为最大似然函数：<br>$$<br>E=log(y_j)=u_j - log(\sum_{a=1}^{V}exp(u_a))<br>$$</p>
-<ul>
+<p>联合额外公式：$h_{N×1}=W_{V×N}^{T}X_{V×1}=v_{wI}^{T}$、 <script type="math/tex">u_j=V_w^{'T}h_{N×1}</script> PS：$u_j$为标量，$V_w^{‘T}$尺寸为1×N。</p>
+<p>推导出：</p>
+<script type="math/tex; mode=display">
+y_j = \frac{exp(V_{w_j}^{'T}v_{wI}^{T})}{\sum_{a=1}^{V}{exp(V_{w_a}^{'T}v_{wI}^{T}})}</script><p>令loss function为最大似然函数：</p>
+<script type="math/tex; mode=display">
+E=log(y_j)=u_j - log(\sum_{a=1}^{V}exp(u_a))</script><ul>
 <li>模型训练：参数更新（BP/SGD算法）</li>
 </ul>
 <p>PS：此处涉及矩阵求导。。也不是很懂，尽可能去理解。部分公式可能编辑有问题，能理解原意即可。</p>
 <p>(1). $W^{‘}$更新：$u→W^{‘}$(output→hidden)</p>
 <p>$u$：$\frac{\partial E}{\partial u_j}=y_j - t_j := e_j$（y$_j$为实际输出；$t_j=1(j=j^{real})$，$j$为预测输出y位置，$j^{real}$后者则为实际输出；$e_j为$预测error）</p>
 <p>$W^{‘}$：$\frac{\partial E}{\partial w_{ij}}=\frac{\partial E}{\partial u_j} - \frac{\partial u_j}{\partial w_{ij}} := e_j * h_i$</p>
-<p><strong>更新公式</strong>：<br>$$<br>w_{ij}^{(new)} = w_{ij}^{(old)}  - η * e_j * h_i<br>$$</p>
-<p>$$<br>V_{wj}^{‘(new)} = V_{wj}^{‘(old)}  - η * e_j * h<br>$$</p>
-<p>$V_{wj}$为$W^{‘}$矩阵的第$j$列的列向量，即输出向量。</p>
+<p><strong>更新公式</strong>：</p>
+<script type="math/tex; mode=display">
+w_{ij}^{(new)} = w_{ij}^{(old)}  - η * e_j * h_i</script><script type="math/tex; mode=display">
+V_{wj}^{'(new)} = V_{wj}^{'(old)}  - η * e_j * h</script><p>$V_{wj}$为$W^{‘}$矩阵的第$j$列的列向量，即输出向量。</p>
 <p>(2). $W$更新：$h→W$(hidden→input)</p>
 <p>$h：\frac{\partial E}{\partial h_i}=\sum_{j=1}^{V}{\frac{\partial E}{\partial u_j}\frac{\partial u_j}{\partial h_i}} =\sum_{j=1}^{V}{e_j * w^{‘}_{ij}}:= Z_i$</p>
 <p>$W：\frac{\partial E}{\partial w_{ki}}=\frac{\partial E}{\partial h_i}\frac{\partial h_i}{\partial w_{ki}}=Z_i*X_k$</p>
 <p>PS：$\frac{\partial E}{\partial W}=X_{V×1}叉乘Z$，叉乘定义：$a 叉乘 b = |a||b|sin(a,b)$。由于$X$仅有唯一位置非0，则$\frac{\partial E}{\partial W}$仅有唯一的一行非零向量，其值为$Z^T$</p>
-<p><strong>更新公式</strong>：<br>$$<br>V^{(new)}<em>{wI}=V^{(old)}</em>{wI}-η*Z^{T}<br>$$<br>$V_{wI}$为$W$矩阵的第$i$行的行向量，即输入向量。</p>
+<p><strong>更新公式</strong>：</p>
+<script type="math/tex; mode=display">
+V^{(new)}_{wI}=V^{(old)}_{wI}-η*Z^{T}</script><p>$V_{wI}$为$W$矩阵的第$i$行的行向量，即输入向量。</p>
 <p>至此One-Word-Context所有原理结束，接下来的Multi-Word CBOW &amp; Skip-Gram模型原理和这个差别不大，仅在此基础上修改部分公式。</p>
 <h2 id="2-2-CBOW（Continuous-Bag-of-Word-Model）"><a href="#2-2-CBOW（Continuous-Bag-of-Word-Model）" class="headerlink" title="2.2 CBOW（Continuous Bag-of-Word Model）"></a>2.2 CBOW（Continuous Bag-of-Word Model）</h2><h3 id="2-2-1-Multi-Word-Context"><a href="#2-2-1-Multi-Word-Context" class="headerlink" title="2.2.1 Multi-Word Context"></a>2.2.1 Multi-Word Context</h3><p>Multi-Word的意思是说，多个上下文词语 =&gt; 中心词（当前词）。<strong>CBOW，即为One-Word-Context的Input layer扩展</strong>。此处直接借用文献图</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/Word2vec/%E5%9B%BE2.PNG" alt="图2- CBOW"></p>
@@ -601,7 +611,8 @@ To solve this problem, an intuition is to limit the number of output vectors tha
 <h2 id="2-3-Skip-Gram"><a href="#2-3-Skip-Gram" class="headerlink" title="2.3 Skip-Gram"></a>2.3 Skip-Gram</h2><p>同CBOW理，<strong>Skip-Gram，即为One-Word-Context的Output layer扩展</strong>。</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/Word2vec/%E5%9B%BE3.PNG" alt="图3- Skip-Gram"></p>
 <ul>
-<li>和One-Word-Context的唯一区别：loss function<br>$$<br>\begin{aligned} E &amp;=-\log p\left(w_{O, 1}, w_{O, 2}, \cdots, w_{O, C} | w_{I}\right) \ &amp;=-\log \prod_{c=1}^{C} \frac{\exp \left(u_{c, j_{c}}^{<em>}\right)}{\sum_{j^{\prime}=1}^{V} \exp \left(u_{j^{\prime}}\right)} \ &amp;=-\sum_{c=1}^{C} u_{j_{c}^{</em>}}+C \cdot \log \sum_{j^{\prime}=1}^{V} \exp \left(u_{j^{\prime}}\right) \end{aligned}<br>$$</li>
+<li>和One-Word-Context的唯一区别：loss function<script type="math/tex; mode=display">
+\begin{aligned} E &=-\log p\left(w_{O, 1}, w_{O, 2}, \cdots, w_{O, C} | w_{I}\right) \\ &=-\log \prod_{c=1}^{C} \frac{\exp \left(u_{c, j_{c}}^{*}\right)}{\sum_{j^{\prime}=1}^{V} \exp \left(u_{j^{\prime}}\right)} \\ &=-\sum_{c=1}^{C} u_{j_{c}^{*}}+C \cdot \log \sum_{j^{\prime}=1}^{V} \exp \left(u_{j^{\prime}}\right) \end{aligned}</script></li>
 </ul>
 <h2 id="2-4-Hierarchical-Softmax"><a href="#2-4-Hierarchical-Softmax" class="headerlink" title="2.4 Hierarchical Softmax"></a>2.4 Hierarchical Softmax</h2><p>分层softmax（Hierarchical Softmax）本质是优化版softmax，<strong>即引入Hierarchical Softmax仅是代替原来softmax结构，优化output vector计算复杂度</strong>。</p>
 <ul>
@@ -614,11 +625,18 @@ To solve this problem, an intuition is to limit the number of output vectors tha
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/Word2vec/%E5%9B%BE4.PNG" alt="图4- Hierarchical Softmax"></p>
 </li>
 </ul>
-<p>在Hierarchical Softmax中，举例如上图，计算词语$w_{2}$对应的softmax近似概率（H-softmax计算近似值）：<br>$$<br>y_{i}=P(w_{2}=w_{O})=P(n(w_2,1),left)<em>P(n(w_2,2),left)<em>P(n(w_2,3),right)=σ(v^{‘T}<em>{n(w</em>{2},1)}h)</em>σ(v^{‘T}<em>{n(w</em>{2},2)}h)</em>(1-σ(v^{‘T}<em>{n(w</em>{2},3)}h))<br>$$<br>其中$v^{‘T}<em>{n(w</em>{2},1)}、v^{‘T}<em>{n(w</em>{2},2)}、v^{‘T}<em>{n(w</em>{2},3)}$分别为3个节点参数，需要训练更新。</p>
-<p>且<br>$$<br>\sum_{a=1}^{V}{P(w_{i}=w_{O})}=1<br>$$<br>为表示方便，上图例子公式如下<br>$$<br>y_{i}=σ(θ^{‘T}<em>{n(w</em>{2},1)}h)<em>σ(θ^{‘T}<em>{n(w</em>{2},2)}h)</em>(1-σ(θ^{‘T}<em>{n(w</em>{2},3)}h))<br>$$<br>其中，$σ(x)$函数为二元逻辑回归函数$y=\frac{1}{1+exp(-X^{T}*θ)}$。</p>
+<p>在Hierarchical Softmax中，举例如上图，计算词语$w_{2}$对应的softmax近似概率（H-softmax计算近似值）：</p>
+<script type="math/tex; mode=display">
+y_{i}=P(w_{2}=w_{O})=P(n(w_2,1),left)*P(n(w_2,2),left)*P(n(w_2,3),right)=σ(v^{'T}_{n(w_{2},1)}h)*σ(v^{'T}_{n(w_{2},2)}h)*(1-σ(v^{'T}_{n(w_{2},3)}h))</script><p>其中$v^{‘T}_{n(w_{2},1)}、v^{‘T}_{n(w_{2},2)}、v^{‘T}_{n(w_{2},3)}$分别为3个节点参数，需要训练更新。</p>
+<p>且</p>
+<script type="math/tex; mode=display">
+\sum_{a=1}^{V}{P(w_{i}=w_{O})}=1</script><p>为表示方便，上图例子公式如下</p>
+<script type="math/tex; mode=display">
+y_{i}=σ(θ^{'T}_{n(w_{2},1)}h)*σ(θ^{'T}_{n(w_{2},2)}h)*(1-σ(θ^{'T}_{n(w_{2},3)}h))</script><p>其中，$σ(x)$函数为二元逻辑回归函数$y=\frac{1}{1+exp(-X^{T}*θ)}$。</p>
 <p>容易看出，上面计算$y_{i}$公式计算复杂度下降，不再需要计算V步，仅需要$log(V)$步（即$w_2$路径长）。所以Hierarchical Softmax的计算复杂度为$O(log(V))$</p>
-<p><strong>参数更新：</strong><br>$$<br>\theta^{(new)}_j = \theta^{(old)}_j – \eta(\sigma({\theta_j}^Th)-t_j)h<br>$$</p>
-<h2 id="2-5-Negative-Sampling"><a href="#2-5-Negative-Sampling" class="headerlink" title="2.5 Negative Sampling"></a>2.5 Negative Sampling</h2><p>参考博客文章<a href="https://www.cnblogs.com/pinard/p/7249903.html" target="_blank" rel="noopener">word2vec原理(三) 基于Negative Sampling的模型</a>，总结如下。</p>
+<p><strong>参数更新：</strong></p>
+<script type="math/tex; mode=display">
+\theta^{(new)}_j = \theta^{(old)}_j – \eta(\sigma({\theta_j}^Th)-t_j)h</script><h2 id="2-5-Negative-Sampling"><a href="#2-5-Negative-Sampling" class="headerlink" title="2.5 Negative Sampling"></a>2.5 Negative Sampling</h2><p>参考博客文章<a href="https://www.cnblogs.com/pinard/p/7249903.html" target="_blank" rel="noopener">word2vec原理(三) 基于Negative Sampling的模型</a>，总结如下。</p>
 <p><strong>Negative Sampling，是代替H-softmax方法的另一种优化计算output vector的方法。</strong>如其名，这方法涉及采样（Sampling）。</p>
 <ul>
 <li><p>大致原理：现有训练样本,包括当前中心词$w$和C个上下文词$Context(w)$（上下文分别$\frac{2}{C}$个词），命名为<strong>正例</strong>。对词库进行负采样（Negative Sampling），得到<strong>非$w$的N个中心词$w_i(i=1,2,···,N)$</strong>，将N个样本$w_i、Context(w)(i=1,2,···,N)$（注意：$Context(w)$没变，只是中心词w变了）一起作为训练样本，命名为<strong>负例</strong>。正例 &amp; 负例 =&gt; loss function。</p>
@@ -637,7 +655,17 @@ To solve this problem, an intuition is to limit the number of output vectors tha
 </li>
 <li><p>Q2：loss function</p>
 <p>定义当前词$w$为$w_{0}$，正例为$[w_{0},Context(w_{0})]$,负例为$[w_{i},Context(w_{i})]（i=1,2,···,N）$。</p>
-<p>根据逻辑函数有正例概率：<br>$$<br>P(context(w_0), w_i) = \sigma(x_{w_0}^T\theta^{w_i}) ,y_i=1, i=0<br>$$<br>负例概率：<br>$$<br>P(context(w_0), w_i) =1-  \sigma(x_{w_0}^T\theta^{w_i}), y_i = 0, i=1,2,..N<br>$$<br>最大化公式：<br>$$<br>\prod_{i=0}^{N}P(context(w_0), w_i) = \sigma(x_{w_0}^T\theta^{w_0})\prod_{i=1}^{N}(1-  \sigma(x_{w_0}^T\theta^{w_i}))<br>$$<br>似然函数：<br>$$<br>Q=\prod_{i=0}^{N} \sigma(x_{w_0}^T\theta^{w_i})^{y_i}(1-  \sigma(x_{w_0}^T\theta^{w_i}))^{1-y_i}<br>$$<br>log似然：<br>$$<br>L = \sum\limits_{i=0}^{N}y_i log(\sigma(x_{w_0}^T\theta^{w_i})) + (1-y_i) log(1-  \sigma(x_{w_0}^T\theta^{w_i}))<br>$$<br><strong>参数更新：（SGD算法）</strong></p>
+<p>根据逻辑函数有正例概率：</p>
+<script type="math/tex; mode=display">
+P(context(w_0), w_i) = \sigma(x_{w_0}^T\theta^{w_i}) ,y_i=1, i=0</script><p>负例概率：</p>
+<script type="math/tex; mode=display">
+P(context(w_0), w_i) =1-  \sigma(x_{w_0}^T\theta^{w_i}), y_i = 0, i=1,2,..N</script><p>最大化公式：</p>
+<script type="math/tex; mode=display">
+\prod_{i=0}^{N}P(context(w_0), w_i) = \sigma(x_{w_0}^T\theta^{w_0})\prod_{i=1}^{N}(1-  \sigma(x_{w_0}^T\theta^{w_i}))</script><p>似然函数：</p>
+<script type="math/tex; mode=display">
+Q=\prod_{i=0}^{N} \sigma(x_{w_0}^T\theta^{w_i})^{y_i}(1-  \sigma(x_{w_0}^T\theta^{w_i}))^{1-y_i}</script><p>log似然：</p>
+<script type="math/tex; mode=display">
+L = \sum\limits_{i=0}^{N}y_i log(\sigma(x_{w_0}^T\theta^{w_i})) + (1-y_i) log(1-  \sigma(x_{w_0}^T\theta^{w_i}))</script><p><strong>参数更新：（SGD算法）</strong></p>
 <p>类似前面操作，最终有参数$x_{w_0}, \theta^{w_i},  i=0,1,..N$更新公式。具体参考<a href="https://www.cnblogs.com/pinard/p/7249903.html" target="_blank" rel="noopener">word2vec原理(三) 基于Negative Sampling的模型</a>。</p>
 </li>
 </ul>
@@ -1093,6 +1121,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

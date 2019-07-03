@@ -488,14 +488,15 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="updating"><a href="#updating" class="headerlink" title="updating"></a><em>updating</em></h3><h3 id="1-windows批量重命名去括号"><a href="#1-windows批量重命名去括号" class="headerlink" title="1. windows批量重命名去括号"></a>1. windows批量重命名去括号</h3><p>2017/8/16，最近在忙着OpenCV物体识别的项目，需要收集训练图片，因此要重命名，谁知生成XML文件时，报错XML的key不可以有”()”符号，因此百度了以下技巧，做下笔记。</p>
-<pre><code class=".bat">@Echo Off&amp;SetLocal ENABLEDELAYEDEXPANSION
+<pre><code class="lang-.bat">@Echo Off&amp;SetLocal ENABLEDELAYEDEXPANSION
 FOR %%a in (*) do (
 set &quot;name=%%a&quot;
 set &quot;name=!name: (=!&quot;
 set &quot;name=!name:)=!&quot;
 ren &quot;%%a&quot; &quot;!name!&quot;
 )
-exit</code></pre>
+exit
+</code></pre>
 <p>服用方式：先用windows传统批量重命名方式得到一系列带括号文件名，然后把该脚本放在文件夹里，运行。</p>
 
     
@@ -922,6 +923,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

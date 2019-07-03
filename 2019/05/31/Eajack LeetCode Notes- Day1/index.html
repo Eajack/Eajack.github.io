@@ -496,7 +496,7 @@
 <li>例子：Given nums = [2, 7, 11, 15], target = 9,Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</li>
 </ul>
 </blockquote>
-<h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+<h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=1 lang=cpp
  *
  * [1] Two Sum
@@ -529,13 +529,14 @@ public:
 
         return indices;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：相当简单，O(N^2)，由于题目限定只考虑2个不是同1个元素的sum，因此i、j遍历</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">/* The basic idea is to maintain a hash table for each element num in nums, 
+<h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">/* The basic idea is to maintain a hash table for each element num in nums, 
 using num as key and its index (0-based) as value. 
 For each num, search for target - num in the hash table. 
 If it is found and is not the same element as num, then we are done.
@@ -556,7 +557,8 @@ public:
         }
         return {};
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：如注释所示，引入<code>unordered_map</code>（<strong>注意：LeetCode平台不能用map（也看情况，目前碰到的题目不能用），可以用标准库内置的unordered_map</strong>），即哈希表。如果map中没有另一半元素，则添加<code>key =nums[i] , value = i</code>，此处<code>value</code>没用。O(N)。</li>
@@ -573,7 +575,7 @@ public:
 </ul>
 </blockquote>
 <h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><p>这道题没AC，弄太久了…直接看solution了</p>
-<pre><code class="cpp">/*
+<pre><code class="lang-cpp">/*
  * @lc app=leetcode id=7 lang=cpp
  *
  * [7] Reverse Integer
@@ -593,19 +595,21 @@ public:
 
         return ((result &gt; INT_MAX || result &lt; INT_MIN)?(0):(result));
 };
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：可以说代码相当巧妙。。key code =&gt; <code>result = result*10 + x%10</code>，先记住吧。。还有另一种思路push &amp; pop，类似。</li>
 </ul>
 </blockquote>
-<pre><code class="cpp">//pop operation:
+<pre><code class="lang-cpp">//pop operation:
 pop = x % 10;
 x /= 10;
 
 //push operation:
 temp = rev * 10 + pop;
-rev = temp;</code></pre>
+rev = temp;
+</code></pre>
 <h3 id="Q3"><a href="#Q3" class="headerlink" title="Q3"></a>Q3</h3><h4 id="1-题目信息-2"><a href="#1-题目信息-2" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
 <ul>
 <li>标题：Palindrome Number</li>
@@ -615,7 +619,7 @@ rev = temp;</code></pre>
 <li>备注：Coud you solve it without converting the integer to a string?</li>
 </ul>
 </blockquote>
-<h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+<h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=9 lang=cpp
  *
  * [9] Palindrome Number
@@ -652,13 +656,14 @@ public:
 
         }
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：相当简单，直接沿用Q2代码，只用考虑 <code>x &gt;= 10</code>数字（Q2代码）</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">class Solution {
+<h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">class Solution {
 public:
     bool isPalindrome(int x) {
         if(x&lt;0|| (x!=0 &amp;&amp;x%10==0)) return false;
@@ -670,7 +675,8 @@ public:
         }
         return (x==sum)||(x==sum/10);
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：差别不大，也是先剔除明显的。最后对比，因为sum省去求后连续0的和，因此补上 <code>(x==sum/10)</code>。</li>
@@ -692,7 +698,8 @@ X             10
 L             50
 C             100
 D             500
-M             1000</code></pre><h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+M             1000
+</code></pre><h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=13 lang=cpp
  *
  * [13] Roman to Integer
@@ -751,13 +758,14 @@ public:
 
         return result;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：相当简单，先判断I、X、C，之后判断其他</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution-2"><a href="#3-best-solution-2" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">// Points:
+<h4 id="3-best-solution-2"><a href="#3-best-solution-2" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">// Points:
 //  1- unordered_map cpp标准库，可以直接用，乱序map，用法与map一致
 //  2- right =&gt; left, easy to judge when to add or substract
 
@@ -772,7 +780,8 @@ public:
         }
         return sum;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：差别不大，用了 <code>unordered_map</code>（记住！）</li>
@@ -792,12 +801,13 @@ Output: &quot;fl&quot;
 
 Input: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
 Output: &quot;&quot;
-Explanation: There is no common prefix among the input strings.</code></pre><blockquote>
+Explanation: There is no common prefix among the input strings.
+</code></pre><blockquote>
 <ul>
 <li>备注：All given inputs are in lowercase letters a-z.</li>
 </ul>
 </blockquote>
-<h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+<h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=14 lang=cpp
  *
  * [14] Longest Common Prefix
@@ -843,7 +853,6 @@ public:
         }
     }
 };
-
 </code></pre>
 <blockquote>
 <ul>
@@ -1276,6 +1285,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

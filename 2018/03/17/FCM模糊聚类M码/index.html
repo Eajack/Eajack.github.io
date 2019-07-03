@@ -488,7 +488,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>源代码，本来用于数模题目中的电网设计</p>
-<pre><code class="matlab">function [clusterResult,U,iter_n] = FCM(upPresureSite, windMachineSites, clusterNum, m)
+<pre><code class="lang-matlab">function [clusterResult,U,iter_n] = FCM(upPresureSite, windMachineSites, clusterNum, m)
     % 输入：
     % clusterNum：聚类个数，1 &lt; K &lt; N（点个数）
     % m：模糊指数，1 &lt; m &lt; +无穷
@@ -551,7 +551,8 @@
     end
     iter_n = iterCount; % 实际迭代次数
     [max_U,clusterAns]=max(U);
-    clusterResult = [ windMachineSites+upPresureSiteMatrix , clusterAns&#39; ] ;</code></pre>
+    clusterResult = [ windMachineSites+upPresureSiteMatrix , clusterAns&#39; ] ;
+</code></pre>
 
     
 
@@ -977,6 +978,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

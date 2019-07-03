@@ -489,25 +489,15 @@
     
         <h3 id="1、intro"><a href="#1、intro" class="headerlink" title="1、intro"></a>1、intro</h3><blockquote>
 <p>1)-<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/EasonLyrics.py" target="_blank" rel="noopener">EasonLyrics.py</a>：Eason网易云歌词爬虫</p>
-</blockquote>
-<blockquote>
 <p>2)-<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/wordsAnalysis.py" target="_blank" rel="noopener">wordsAnalysis.py</a>:</p>
-</blockquote>
-<blockquote>
 <ul>
 <li>歌词文本分析，包括jieba分词统计词汇（去单字）</li>
 <li>根据词频生成词云</li>
 <li>词频统计，做柱形图 &amp; 饼状图</li>
 <li>歌词情绪分析简易版demo (饼状图 &amp; 曲线图)</li>
 </ul>
-</blockquote>
-<blockquote>
 <p>3)-<a href="https://github.com/Eajack/py_spider/tree/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/Lyrics" target="_blank" rel="noopener">Lyrics</a>:下载的歌词txt文档</p>
-</blockquote>
-<blockquote>
 <p>4)-<a href="https://github.com/Eajack/py_spider/tree/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/resultsPNGs" target="_blank" rel="noopener">resultsPNGs</a>:所有分析结果图片汇总</p>
-</blockquote>
-<blockquote>
 <p>5)-<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/Eason.jpg" target="_blank" rel="noopener">Eason</a>:Eason图片词云背景图</p>
 </blockquote>
 <h3 id="2、思路"><a href="#2、思路" class="headerlink" title="2、思路"></a>2、思路</h3><h4 id="1）EasonLyrics思路"><a href="#1）EasonLyrics思路" class="headerlink" title="1）EasonLyrics思路"></a>1）EasonLyrics思路</h4><p>获取所有Eason专辑ID =&gt; 遍历专辑得到单曲ID并过滤同名歌曲 =&gt; 通过api<code>http://music.163.com/api/song/lyric?id=[IDNUM]</code>获得歌词，并储存为txt文件</p>
@@ -948,6 +938,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

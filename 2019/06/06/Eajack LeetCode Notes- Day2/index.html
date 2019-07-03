@@ -506,7 +506,8 @@ Input: &quot;(]&quot;
 Output: false
 
 Input: &quot;([)]&quot;
-Output: false</code></pre><h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+Output: false
+</code></pre><h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=20 lang=cpp
  *
  * [20] Valid Parentheses
@@ -546,13 +547,14 @@ public:
 
         return stack.empty();
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：这题目在《数据结构与算法分析-C语言描述》中的“栈的应用”章节有提及。<strong>思路：遍历所有字符，碰到左边符A（包括：(、{、[），push入栈；碰到右边符号B（包括：)、}、]），则pop出栈中元素E，若E不是B对应的右边符，return false，否则继续遍历。当便利完成，检查是否空栈，空栈则返回true，否则返回false。</strong></li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">/*Repetitive code but I guess this is clean, and easy to understand. 
+<h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">/*Repetitive code but I guess this is clean, and easy to understand. 
 This solution also accepts (and ignores) any characters other than parenthesis in the string. 
 Hence, it can be used to check if the parenthesis matches in an equation for example.*/
 
@@ -576,7 +578,8 @@ public:
         }
         return paren.empty() ;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：思路其实一致的，<strong>需要学习的点：case判断char字符；写得真优雅！排版太好看了！</strong></li>
@@ -592,7 +595,8 @@ public:
 </ul>
 </blockquote>
 <pre><code>Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4
-Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</code></pre><h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+</code></pre><h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=21 lang=cpp
  *
  * [21] Merge Two Sorted Lists
@@ -649,7 +653,8 @@ public:
 
         return l3;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：伪代码如下（并不规范）</li>
@@ -668,7 +673,8 @@ public:
             val_l3node_now = l3node-&gt;val;
             if(val_current &lt;= val_l3node_now &lt;= val_next):
                 insert l3node between l4node &amp; next_node
-END</code></pre><h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">/*C++
+END
+</code></pre><h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">/*C++
 
 The first line ensures that a is at least as good a list head as b, 
 by swapping them if that’s not already the case. 
@@ -688,7 +694,8 @@ struct ListNode* mergeTwoLists(struct ListNode* a, struct ListNode* b) {
     if (!a || b &amp;&amp; a-&gt;val &gt; b-&gt;val) a += b - (b = a);
     if (a) a-&gt;next = mergeTwoLists(a-&gt;next, b);
     return a;
-}</code></pre>
+}
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：这个思路类似归并排序（merge-sort），但真的巧妙了，慢慢学习吧。。先记住。</li>
@@ -709,7 +716,8 @@ It doesn&#39;t matter what you leave beyond the returned length.
 
 Given nums = [0,0,1,1,1,2,2,3,3,4],
 Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
-It doesn&#39;t matter what values are set beyond the returned length.</code></pre><h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+It doesn&#39;t matter what values are set beyond the returned length.
+</code></pre><h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=26 lang=cpp
  *
  * [26] Remove Duplicates from Sorted Array
@@ -747,7 +755,8 @@ public:
 
         return (cnt+1);
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：two-pointers思想，双指针</li>
@@ -770,7 +779,8 @@ public:
     nums[cnt] = nums[i];
 
     return(cnt+1)
-END</code></pre><h3 id="Q9"><a href="#Q9" class="headerlink" title="Q9"></a>Q9</h3><h4 id="1-题目信息-3"><a href="#1-题目信息-3" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+END
+</code></pre><h3 id="Q9"><a href="#Q9" class="headerlink" title="Q9"></a>Q9</h3><h4 id="1-题目信息-3"><a href="#1-题目信息-3" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
 <ul>
 <li>标题：Remove Element</li>
 <li>编号&amp;难度：[27]，easy</li>
@@ -786,7 +796,8 @@ It doesn&#39;t matter what you leave beyond the returned length.
 Given nums = [0,1,2,2,3,0,4,2], val = 2,
 Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
 Note that the order of those five elements can be arbitrary.
-It doesn&#39;t matter what values are set beyond the returned length.</code></pre><h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+It doesn&#39;t matter what values are set beyond the returned length.
+</code></pre><h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=27 lang=cpp
  *
  * [27] Remove Element
@@ -805,10 +816,11 @@ public:
         }
         return new_index;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
-<li>思路：two-pointers思想，双指针。思路其实很简单，然而最终还是要看答案。。** 即初始化new_index = 0，遍历输入数组，若当前值 != val，则nums[new_index] = nums[i]，new_index++ **</li>
+<li>思路：two-pointers思想，双指针。思路其实很简单，然而最终还是要看答案。。<strong> 即初始化new_index = 0，遍历输入数组，若当前值 != val，则nums[new_index] = nums[i]，new_index++ </strong></li>
 </ul>
 </blockquote>
 <h3 id="Q10"><a href="#Q10" class="headerlink" title="Q10"></a>Q10</h3><h4 id="1-题目信息-4"><a href="#1-题目信息-4" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
@@ -826,7 +838,8 @@ Output: 2
 Input: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;
 Output: -1
 
-For the purpose of this problem, we will return 0 when needle is an empty string</code></pre><h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+For the purpose of this problem, we will return 0 when needle is an empty string
+</code></pre><h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=28 lang=cpp
  *
  * [28] Implement strStr()
@@ -872,13 +885,14 @@ public:
 
         return -1;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：首先，遍历haystack字符串，寻找和needle字符串首个char相同的位置i， 记录find_index = i；然后，判断剩余的haystack字符串能否覆盖needle字符串，若不能，则return false，否则遍历同时遍历 haystack字符串 &amp; needle字符串，计算相同个数same_cnt；最后，判断same_cnt == needle.size()，return find_index，否则return -1。</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution-2"><a href="#3-best-solution-2" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">// brute
+<h4 id="3-best-solution-2"><a href="#3-best-solution-2" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">// brute
 class Solution {
 public:
     int strStr(string haystack, string needle) {
@@ -935,7 +949,8 @@ private:
         }
         return lps;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：brute暴力搜索类似我的解决方案，但更简略；KMP是有名的字符串搜索算法；</li>
@@ -960,7 +975,8 @@ Input: [1,3,5,6], 7
 Output: 4
 
 Input: [1,3,5,6], 0
-Output: 0</code></pre><h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+Output: 0
+</code></pre><h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=35 lang=cpp
  *
  * [35] Search Insert Position
@@ -989,7 +1005,8 @@ public:
         //not found
         return (low&gt;high)?(low):(high);
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：这题就是binary-search变种，找返回位置，否则返回low &amp; high较大者。</li>
@@ -1007,7 +1024,7 @@ public:
 <pre><code>Input: [-2,1,-3,4,-1,2,1,-5,4],
 Output: 6
 Explanation: [4,-1,2,1] has the largest sum = 6.
-</code></pre><h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+</code></pre><h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=53 lang=cpp
  *
  * [53] Maximum Subarray
@@ -1042,7 +1059,8 @@ public:
 
         return maxSum;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：最大子序列和，在《数据结构与算法分析-C语言描述》中有，此处也是用的书中代码改一下。思路很巧妙：<strong>除了全负数序列外，其他序列的最大子序列和一定大于等于0</strong>，因此设置maxSum = 0 ，遍历N次逐项累加thisSum，若thisSum &gt; maxSum，则更新maxSum，若thisSum &lt; 0，则令thisSum = 0继续遍历。遍历完后，判断maxSum == 0，若是则证明为全负数序列，取序列最大值return；否则return 原来的maxSum（&gt; 0）。<strong>best solution可以用分治，这里就不说了。。</strong></li>
@@ -1058,7 +1076,8 @@ public:
 </ul>
 </blockquote>
 <pre><code>Input: &quot;Hello World&quot;
-Output: 5</code></pre><h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+Output: 5
+</code></pre><h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=58 lang=cpp
  *
  * [58] Length of Last Word
@@ -1109,13 +1128,14 @@ public:
 
         return word_len;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：1- s.strip()（类似python函数）；2- 判断s.strip() == ‘’，是则返回0；3-开始遍历获得最后一个空格，对应的后面word，计算len。</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution-3"><a href="#3-best-solution-3" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">/* Well, the basic idea is very simple. 
+<h4 id="3-best-solution-3"><a href="#3-best-solution-3" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">/* Well, the basic idea is very simple. 
 Start from the tail of s and move backwards to find the first non-space character. 
 Then from this character, move backwards and count the number of non-space characters 
 until we pass over the head of s or meet a space character. 
@@ -1134,7 +1154,8 @@ public:
         }
         return len;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：如注释。。<strong>逆向思维，这才是好解答。</strong></li>
@@ -1153,7 +1174,8 @@ public:
 Output: &quot;100&quot;
 
 Input: a = &quot;1010&quot;, b = &quot;1011&quot;
-Output: &quot;10101&quot;</code></pre><h4 id="2-个人Code-8"><a href="#2-个人Code-8" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+Output: &quot;10101&quot;
+</code></pre><h4 id="2-个人Code-8"><a href="#2-个人Code-8" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=67 lang=cpp
  *
  * [67] Add Binary
@@ -1221,7 +1243,8 @@ public:
 
         return ab_sum_return;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：二进制加法，个人代码采用典型的<strong>数字电路的真值表解法</strong>，我觉得这做法比best solution好。代码不难懂，需要一些基本数电基础即可。</li>
@@ -1652,6 +1675,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

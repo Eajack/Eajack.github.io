@@ -489,7 +489,7 @@
     
         <p>昨天刷知乎想法，看到Milo Yip的<a href="https://www.zhihu.com/pin/954541989945905152" target="_blank" rel="noopener">深夜暴力編程</a>，感觉有点意思，所有尝试用py写了下…思路没什么，就是暴力遍历而已，纯粹一时兴起~先抛结果：BCACACDABA</p>
 <p>Python代码如下：</p>
-<pre><code class="python"># !/usr/bin/env python3
+<pre><code class="lang-python"># !/usr/bin/env python3
 # -*- coding : utf-8 -*-
 # ==================================================================================================================
 # Author: Eajack
@@ -624,7 +624,8 @@ if __name__ == &#39;__main__&#39;:
                                                                                 continue;
                                                                             else:
                                                                                 answersADs = [answers2ADs[answer] for answer in answers ]
-                                                                                print(answersADs)</code></pre>
+                                                                                print(answersADs)
+</code></pre>
 
     
 
@@ -1050,6 +1051,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

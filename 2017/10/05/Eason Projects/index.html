@@ -508,6 +508,7 @@
 <p><img src="https://raw.githubusercontent.com/Eajack/py_spider/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonLyrics/resultsPNGs/%E6%83%85%E7%BB%AA%E5%88%86%E6%9E%90%E6%AF%94%E4%BE%8B%E9%A5%BC%E7%8A%B6%E5%9B%BE.png" alt="情绪分析比例饼状图.png" title="情绪分析比例饼状图.png"></p>
 <p>上述二图为情绪分析指数结果图，由于运用的是snownlp库，但该库是主要针对商品评论做的情感分析库……未免与实际情况有所偏差。结果分析得知歌词情绪分析指数呈“两边低，中间高”分布，评分多集中在0.5~0.8，评分越高，说明歌曲的积极程度越高。同时，取情绪指数 &gt;= 0.6的作为正面情绪，统计出比例，并做出饼状图，发现Eason的歌<strong>正面情绪歌曲竟然占比67%</strong>……看来Eason唱的歌还是挺积极的啊……</p>
 <h4 id="2-3-music163-EasonComments"><a href="#2-3-music163-EasonComments" class="headerlink" title="2.3 music163_EasonComments"></a>2.3 music163_EasonComments</h4><h5 id="2-3-1-评论数据分析"><a href="#2-3-1-评论数据分析" class="headerlink" title="2.3.1 评论数据分析"></a>2.3.1 评论数据分析</h5><p><strong>截止2017.10.3凌晨</strong>（具体忘了时间），一共爬取到<strong>5451</strong>条热门评论，详见<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonComments/resultXLS/hotComments.xls" target="_blank" rel="noopener">hotComments.xls</a>；爬取最新10条评论，共<strong>8492</strong>条，详见<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonComments/resultXLS/Newcomments.xls" target="_blank" rel="noopener">Newcomments.xls</a>；爬取到<strong>858</strong>首单曲以及对应的网易云单曲ID，详见<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonComments/resultXLS/songName2ID.xls" target="_blank" rel="noopener">songName2ID.xls</a>；爬取到所有单曲评论数，详见<a href="https://github.com/Eajack/py_spider/blob/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonComments/resultXLS/songName2commentsNum.xls" target="_blank" rel="noopener">songName2commentsNum.xls</a>取前10排行如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -515,7 +516,8 @@
 <th>评论数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>陪你度过漫长岁月 - (电影《陪安东尼度过漫长岁月》主题曲)</td>
 <td>79350</td>
 </tr>
@@ -555,7 +557,9 @@
 <td>最佳损友</td>
 <td>34811</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>评论过1w的歌曲数量仅有38首</strong>，<strong>999+歌曲有241首</strong>，感觉比周董的百万《晴天》以及很多的过万歌差别很远啊……最低评论（去除最新专辑《C’mon in~》的需收费，未公开的《未知track》0评论）歌曲是《美丽有罪 (James Ting Remix)》，仅<strong>1</strong>条评论（应该是版权也没了）</p>
 <h5 id="2-3-2-评论文本分析"><a href="#2-3-2-评论文本分析" class="headerlink" title="2.3.2 评论文本分析"></a>2.3.2 评论文本分析</h5><p><img src="https://raw.githubusercontent.com/Eajack/py_spider/master/%E5%8A%A8%E6%80%81%E7%88%AC%E8%99%AB/music163_EasonComments/resultsPNGs/%E7%83%AD%E9%97%A8%E8%AF%84%E8%AE%BA%E8%AF%8D%E4%BA%91.png" alt="热门评论词云.png" title="热门评论词云.png"></p>
 <p>上图为热门评论词云图</p>
@@ -993,6 +997,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

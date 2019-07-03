@@ -503,7 +503,8 @@
 输入: 8
 输出: 2
 说明: 8 的平方根是 2.82842..., 
-     由于返回类型是整数，小数部分将被舍去。</code></pre><h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+     由于返回类型是整数，小数部分将被舍去。
+</code></pre><h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=69 lang=cpp
  *
  * [69] Sqrt(x)
@@ -540,7 +541,8 @@ public:
         }
         return mid;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：二分法求开方，重点在于第一个if判断<code>if( (mid*mid == x) || ((mid*mid &lt; x) &amp;&amp; ((mid+1)*(mid+1) &gt; x)) )</code>。前半段<code>(mid*mid == x)</code>表明，mid刚好为sqrt数；后半段<code>((mid*mid &lt; x) &amp;&amp; ((mid+1)*(mid+1) &gt; x))</code>表明以下情况：</li>
@@ -550,7 +552,8 @@ public:
 x = 5;
 mid*mid = 4 &lt; 5;
 (mid+1)*(mid+1) = 9 &gt;5;
-5^0.5 =&gt; 2;</code></pre><h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">//Newton method
+5^0.5 =&gt; 2;
+</code></pre><h4 id="3-best-solution"><a href="#3-best-solution" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">//Newton method
 // holy shit, so short!
 
 /*任说1个整数x，我任猜它的平方根为y，
@@ -560,7 +563,8 @@ mid*mid = 4 &lt; 5;
 long r = x;
 while (r*r &gt; x)
     r = (r + x/r) / 2;
-return r;</code></pre>
+return r;
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：牛顿法求开方数。。算法很简单</li>
@@ -586,7 +590,8 @@ return r;</code></pre>
 解释： 有三种方法可以爬到楼顶。
 1.  1 阶 + 1 阶 + 1 阶
 2.  1 阶 + 2 阶
-3.  2 阶 + 1 阶</code></pre><h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+3.  2 阶 + 1 阶
+</code></pre><h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=70 lang=cpp
  *
  * [70] Climbing Stairs
@@ -615,7 +620,6 @@ public:
         return fibonacci_array[n-1];
     }
 };
-
 </code></pre>
 <blockquote>
 <ul>
@@ -635,7 +639,8 @@ public:
 输出: 1-&gt;2
 
 输入: 1-&gt;1-&gt;2-&gt;3-&gt;3
-输出: 1-&gt;2-&gt;3</code></pre><h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+输出: 1-&gt;2-&gt;3
+</code></pre><h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode id=83 lang=cpp
  *
  * [83] Remove Duplicates from Sorted List
@@ -685,19 +690,21 @@ public:
 
         return head;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：two-pointers思想，双指针。第二指针遍历和第一指针值对比，相等则delete掉。<strong>双指针方法重点在于边界检查。</strong></li>
 </ul>
 </blockquote>
-<h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">class Solution {
+<h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
         return head &amp;&amp; (head-&gt;next = deleteDuplicates(head-&gt;next)) &amp;&amp; \
             head-&gt;next-&gt;val == head-&gt;val ? head-&gt;next : head;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：无fa可说。。简洁代码要多练才能想到。。</li>
@@ -708,19 +715,18 @@ public:
 <li>标题：合并两个有序数组</li>
 <li>编号&amp;难度：[88]，easy</li>
 <li>Tags：array | two-pointers</li>
-<li>描述：给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。<br>说明:<br>(1) 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>(2) 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>例子：</li>
+<li><p>描述：给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。<br>说明:<br>(1) 初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>(2) 你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。</p>
+</li>
+<li><p>例子：</p>
+</li>
 </ul>
 </blockquote>
 <pre><code>输入:
 nums1 = [1,2,3,0,0,0], m = 3
 nums2 = [2,5,6],       n = 3
 
-输出: [1,2,2,3,5,6]</code></pre><h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+输出: [1,2,2,3,5,6]
+</code></pre><h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode.cn id=88 lang=cpp
  *
  * [88] 合并两个有序数组
@@ -734,7 +740,8 @@ public:
             nums1[k--] = (i&gt;=0 &amp;&amp; nums1[i]&gt;nums2[j])?(nums1[i--]):(nums2[j--]);
         }
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：这里看了solution了。。这逆序思路很好。。</li>
@@ -771,7 +778,8 @@ public:
 
         [1,2,1],   [1,1,2]
 
-输出: false</code></pre><h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+输出: false
+</code></pre><h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode.cn id=100 lang=cpp
  *
  * [100] 相同的树
@@ -794,7 +802,8 @@ public:
         return (p-&gt;val == q-&gt;val) &amp;&amp; (isSameTree(p-&gt;left,q-&gt;left)) &amp;&amp; \
             (isSameTree(p-&gt;right, q-&gt;right));
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：巨坑在于要求中树的表示，右子树为NULL时，不表示出来。。不懂怎么弄的，看了solution，这思路很好理解。</li>
@@ -821,7 +830,8 @@ public:
    / \
   2   2
    \   \
-   3    3</code></pre><h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+   3    3
+</code></pre><h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode.cn id=101 lang=cpp
  *
  * [101] 对称二叉树
@@ -882,13 +892,14 @@ public:
 
         return true;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：缓存nodes_currentLevel为树的每层节点，检查每层节点是否对称，树对称当且仅当所有层都对称，否则返回不对称。</li>
 </ul>
 </blockquote>
-<h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="cpp">class Solution {
+<h4 id="3-best-solution-1"><a href="#3-best-solution-1" class="headerlink" title="(3) best solution"></a>(3) best solution</h4><pre><code class="lang-cpp">class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
         if (root == NULL)
@@ -907,7 +918,8 @@ public:
             return checkSymmetric(leftSymmetricNode-&gt;left, rightSymmetricNode-&gt;right) &amp;&amp; checkSymmetric(leftSymmetricNode-&gt;right, rightSymmetricNode-&gt;left);
         return false;
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：<strong>递归调用，好思路！内置函数checkSymmetric，递归调用。</strong>重点在于<code>return checkSymmetric(leftSymmetricNode-&gt;left, rightSymmetricNode-&gt;right) &amp;&amp; checkSymmetric(leftSymmetricNode-&gt;right, rightSymmetricNode-&gt;left)</code>。自己体会。。。</li>
@@ -928,7 +940,7 @@ public:
   9  20
     /  \
    15   7
-</code></pre><h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="cpp">/*
+</code></pre><h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
  * @lc app=leetcode.cn id=104 lang=cpp
  *
  * [104] 二叉树的最大深度
@@ -954,7 +966,8 @@ public:
             return 1 + ((left_height&gt;right_height)?left_height:right_height);
         }
     }
-};</code></pre>
+};
+</code></pre>
 <blockquote>
 <ul>
 <li>思路：《数据结构与算法分析-C语言描述》有，思路简单易懂。。</li>
@@ -1385,6 +1398,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>

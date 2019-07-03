@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eajack Lau">
     <meta name="description" itemprop="description" content="Someday I will be a giant...">
-    <meta name="keywords" content=",NLP,ELMo">
+    <meta name="keywords" content=",ELMo,NLP">
 
     <!-- Site Verification -->
     
@@ -70,7 +70,7 @@
     <meta property="og:title" content="Road 2 NLP- Word Embedding词向量（ELMo） | Eajack&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="Someday I will be a giant...">
-    <meta property="og:article:tag" content="NLP"> <meta property="og:article:tag" content="ELMo"> 
+    <meta property="og:article:tag" content="ELMo"> <meta property="og:article:tag" content="NLP"> 
 
     
         <meta property="article:published_time" content="7月 02, 2019">
@@ -498,27 +498,41 @@
 <p><strong>ELMo中的常用RNN结构：LSTM &amp; GRU（均为标准RNN的变体）。</strong></p>
 <h2 id="2-1-标准RNN（Recurrent-Neural-Networks）"><a href="#2-1-标准RNN（Recurrent-Neural-Networks）" class="headerlink" title="2.1 标准RNN（Recurrent Neural Networks）"></a>2.1 标准RNN（Recurrent Neural Networks）</h2><p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE1.png" alt="图1- 标准RNN"></p>
 <p>如上图，符号说明：$(t)、(t-1)$表示时序，即对应句子分词后词语的词向量；$h_{m×1}$为隐状态；$x_{n×1}$为词向量；$W_{m×n}、U_{m×m}$分别为系数矩阵，初值随机化；$h_{m×1}^{(0)}$初值随机化。<strong>注意，$W_{m×n}、U_{m×m}$矩阵共享，不因时序而不同。</strong></p>
-<p>因此，标准RNN隐状态更新公式为<br>$$<br>h_{m×1}^{(t)}=f(W_{m×n}x_{n×1}^{(t)}+U_{m×m}h_{m×1}^{(t-1)}+b_{m×1})<br>$$<br>其中，$f(X)=tanh(X)$。</p>
+<p>因此，标准RNN隐状态更新公式为</p>
+<script type="math/tex; mode=display">
+h_{m×1}^{(t)}=f(W_{m×n}x_{n×1}^{(t)}+U_{m×m}h_{m×1}^{(t-1)}+b_{m×1})</script><p>其中，$f(X)=tanh(X)$。</p>
 <p>标准RNN存在梯度消失问题。单个RNN cell的参数量：$mn+mm+m$，包括$W_{m×n}、U_{m×m}、b_{m×1}$；$h_{m×1}$是生成的，不算入参数。</p>
 <h2 id="2-2-LSTM（Long-Short-Term-Memory）"><a href="#2-2-LSTM（Long-Short-Term-Memory）" class="headerlink" title="2.2 LSTM（Long Short-Term Memory）"></a>2.2 LSTM（Long Short-Term Memory）</h2><p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE2.png" alt="图2- LSTM"></p>
-<p>LSTM（Long Short-Term Memory），属于标准RNN变体，当前时刻状态可受前面几个时刻的影响。公式如下：<br>$$<br>输入门input：i_{m×1}^{(t)}=\sigma(W_{m×n}^{i}x_{n×1}^{(t)}+U_{m×m}^{i}h_{m×1}^{(t-1)}+b_{m×1}^{i})\<br>遗忘门forget：f_{m×1}^{(t)}=\sigma(W_{m×n}^{f}x_{n×1}^{(t)}+U_{m×m}^{f}h_{m×1}^{(t-1)}+b_{m×1}^{f})\<br>输出门output：o_{m×1}^{(t)}=\sigma(W_{m×n}^{o}x_{n×1}^{(t)}+U_{m×m}^{o}h_{m×1}^{(t-1)}+b_{m×1}^{o})\<br>普通门gate：g_{m×1}^{(t)}=tanh(W_{m×n}^{g}x_{n×1}^{(t)}+U_{m×m}^{g}h_{m×1}^{(t-1)}+b_{m×1}^{g})\<br>cell状态c：c_{m×1}^{(t)}=f_{m×1}^{(t)} \cdot c_{m×1}^{(t-1)}+i_{m×1}^{(t)} \cdot g_{m×1}^{(t)}\<br>隐状态h：h_{m×1}^{t}=o_{m×1}^{(t)} \cdot tanh(c_{m×1}^{(t)})\<br>$$<br><strong>PS：注意上述式子中c、h的乘法均为，按对应位的元素相乘，即$a_{m×1} \cdot b_{m×1} = c_{m×1}$。</strong>其中，$\sigma(x)= \frac{1}{1+e^{-x}}$，是sigmoid函数，此处为按点求$\sigma(x)$。</p>
+<p>LSTM（Long Short-Term Memory），属于标准RNN变体，当前时刻状态可受前面几个时刻的影响。公式如下：</p>
+<script type="math/tex; mode=display">
+输入门input：i_{m×1}^{(t)}=\sigma(W_{m×n}^{i}x_{n×1}^{(t)}+U_{m×m}^{i}h_{m×1}^{(t-1)}+b_{m×1}^{i})\\
+遗忘门forget：f_{m×1}^{(t)}=\sigma(W_{m×n}^{f}x_{n×1}^{(t)}+U_{m×m}^{f}h_{m×1}^{(t-1)}+b_{m×1}^{f})\\
+输出门output：o_{m×1}^{(t)}=\sigma(W_{m×n}^{o}x_{n×1}^{(t)}+U_{m×m}^{o}h_{m×1}^{(t-1)}+b_{m×1}^{o})\\
+普通门gate：g_{m×1}^{(t)}=tanh(W_{m×n}^{g}x_{n×1}^{(t)}+U_{m×m}^{g}h_{m×1}^{(t-1)}+b_{m×1}^{g})\\
+cell状态c：c_{m×1}^{(t)}=f_{m×1}^{(t)} \cdot c_{m×1}^{(t-1)}+i_{m×1}^{(t)} \cdot g_{m×1}^{(t)}\\
+隐状态h：h_{m×1}^{t}=o_{m×1}^{(t)} \cdot tanh(c_{m×1}^{(t)})\\</script><p><strong>PS：注意上述式子中c、h的乘法均为，按对应位的元素相乘，即$a_{m×1} \cdot b_{m×1} = c_{m×1}$。</strong>其中，$\sigma(x)= \frac{1}{1+e^{-x}}$，是sigmoid函数，此处为按点求$\sigma(x)$。</p>
 <p>单个LSTM cell的参数量：$4(mn+mm+m)$，包括4组$W_{m×n}、U_{m×m}、b_{m×1}$。符号说明和标准RNN一致。</p>
-<h2 id="2-3-GRU（Gated-Recurrent-Unit）"><a href="#2-3-GRU（Gated-Recurrent-Unit）" class="headerlink" title="2.3 GRU（Gated Recurrent Unit）"></a>2.3 GRU（Gated Recurrent Unit）</h2><p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE3.png" alt="图3- GRU"><br>$$<br>重置门reset：r_{m×1}^{(t)}=\sigma(W_{m×n}^{r}x_{n×1}^{(t)}+U_{m×m}^{r}h_{m×1}^{(t-1)}+b_{m×1}^{r})\<br>更新门update：z_{m×1}^{(t)}=\sigma(W_{m×n}^{z}x_{n×1}^{(t)}+U_{m×m}^{z}h_{m×1}^{(t-1)}+b_{m×1}^{z})\<br>隐状态h：h_{m×1}^{(t)}=(1-z_{m×1}^{(t)}) \cdot h_{m×1}^{(t-1)}+z_{m×1}^{(t)} \cdot tanh(U_{m×m}^{h} \cdot (r_{m×1}^{(t)} \cdot h_{m×1}^{(t-1)})+W_{m×n}^{h} \cdot x_{n×1}^{(t)})<br>$$<br>可以看出，GRU其实是LSTM变体，简单版LSTM。符号说明和标准RNN一致。</p>
+<h2 id="2-3-GRU（Gated-Recurrent-Unit）"><a href="#2-3-GRU（Gated-Recurrent-Unit）" class="headerlink" title="2.3 GRU（Gated Recurrent Unit）"></a>2.3 GRU（Gated Recurrent Unit）</h2><p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE3.png" alt="图3- GRU"></p>
+<script type="math/tex; mode=display">
+重置门reset：r_{m×1}^{(t)}=\sigma(W_{m×n}^{r}x_{n×1}^{(t)}+U_{m×m}^{r}h_{m×1}^{(t-1)}+b_{m×1}^{r})\\
+更新门update：z_{m×1}^{(t)}=\sigma(W_{m×n}^{z}x_{n×1}^{(t)}+U_{m×m}^{z}h_{m×1}^{(t-1)}+b_{m×1}^{z})\\
+隐状态h：h_{m×1}^{(t)}=(1-z_{m×1}^{(t)}) \cdot h_{m×1}^{(t-1)}+z_{m×1}^{(t)} \cdot tanh(U_{m×m}^{h} \cdot (r_{m×1}^{(t)} \cdot h_{m×1}^{(t-1)})+W_{m×n}^{h} \cdot x_{n×1}^{(t)})</script><p>可以看出，GRU其实是LSTM变体，简单版LSTM。符号说明和标准RNN一致。</p>
 <h2 id="3-ELMo（Embeddings-from-Language-Models）"><a href="#3-ELMo（Embeddings-from-Language-Models）" class="headerlink" title="3. ELMo（Embeddings from Language Models）"></a>3. ELMo（Embeddings from Language Models）</h2><p>ELMo框架如下（LSTM可换GRU）：</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE4.png" alt="图5- ELMo"></p>
-<p>ELMo包含1个biLM（Bidirectional Language Models，即双向语言模型），分别是前向预测和后向预测。<br>$$<br>前向LM：p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{1}, t_{2}, \ldots, t_{k-1}\right)\<br>后向LM：p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}, t_{k+2}, \ldots, t_{N}\right)\<br>biLM：\sum_{k=1}^{N}\left(\log p\left(t_{k} | t_{1}, \ldots, t_{k-1} ; \Theta_{x}, \vec{\Theta}<em>{L S T M}, \Theta</em>{s}\right)\right.+\log p\left(t_{k} | t_{k+1}, \ldots, t_{N} ; \Theta_{x}, \Theta_{L S T M}, \Theta_{s}\right) )<br>$$<br>即ELMo目标函数为biLM对数似然函数。</p>
+<p>ELMo包含1个biLM（Bidirectional Language Models，即双向语言模型），分别是前向预测和后向预测。</p>
+<script type="math/tex; mode=display">
+前向LM：p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{1}, t_{2}, \ldots, t_{k-1}\right)\\
+后向LM：p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}, t_{k+2}, \ldots, t_{N}\right)\\
+biLM：\sum_{k=1}^{N}\left(\log p\left(t_{k} | t_{1}, \ldots, t_{k-1} ; \Theta_{x}, \vec{\Theta}_{L S T M}, \Theta_{s}\right)\right.+\log p\left(t_{k} | t_{k+1}, \ldots, t_{N} ; \Theta_{x}, \Theta_{L S T M}, \Theta_{s}\right) )</script><p>即ELMo目标函数为biLM对数似然函数。</p>
 <p>观察ELMo网络可知，以上图2层LSTM为例。分析如下：</p>
 <ol>
 <li><p><strong>注意：底层$E_{i}(i=1,2,…)$输入，为句子分词后对应位置单词的静态词向量，常用Word2vec/GloVe等。词向量维度为n</strong></p>
 </li>
 <li><p>记下层为层1，上层为层2。</p>
 </li>
-<li><p><strong>注意：1层LSTM包括前向LM &amp; 后向LM，且二者cell数目一致，等于词语数目。设词语数为A，则1层LSTM cell数目 = 2*A。</strong></p>
-</li>
-<li><p>以上图第二个词语，即$E_{2}$处，的前向LM为例，有上图所示。<strong>观察可以发现，其实在层2的下侧输入中，标准LSTM输入应该为$x_{n×1}$，即n维向量。然而！又由于LSTM隐状态输出为$h_{m×1}$,即m维向量！！因此，不难推断出，biLM中，其实是取m = n了！！</strong></p>
-</li>
-<li><p>如何获得ELMo词向量：</p>
-</li>
+<li><strong>注意：1层LSTM包括前向LM &amp; 后向LM，且二者cell数目一致，等于词语数目。设词语数为A，则1层LSTM cell数目 = 2*A。</strong></li>
+<li>以上图第二个词语，即$E_{2}$处，的前向LM为例，有上图所示。<strong>观察可以发现，其实在层2的下侧输入中，标准LSTM输入应该为$x_{n×1}$，即n维向量。然而！又由于LSTM隐状态输出为$h_{m×1}$,即m维向量！！因此，不难推断出，biLM中，其实是取m = n了！！</strong></li>
+<li>如何获得ELMo词向量：</li>
 </ol>
 <ul>
 <li><p>loss function为biLM对数似然函数，常规用SGD等算法优化更新参数；</p>
@@ -529,13 +543,16 @@
 <p>以该例子（2层LSTM）中单词$E_{2}$为例，其对应ELMo词向量为</p>
 </li>
 </ul>
-<p>$$<br>ELMo_E2_method1 = concat(x_{2},h_{m×1}^{(2,2)}) = concat(x_{2},T_{2})<br>$$</p>
-<p><strong>即将该单词原输入词向量$x_{2}$和对应LSTM cell输出隐状态$T_{2}$，直接拼接。由于m = n，则ELMo词向量维度为2m。</strong>e.g.，取Word2vec维度为300输入，则ELMo输出为600维度词向量。</p>
+<script type="math/tex; mode=display">
+ELMo\_E2\_method1 = concat(x_{2},h_{m×1}^{(2,2)}) = concat(x_{2},T_{2})</script><p><strong>即将该单词原输入词向量$x_{2}$和对应LSTM cell输出隐状态$T_{2}$，直接拼接。由于m = n，则ELMo词向量维度为2m。</strong>e.g.，取Word2vec维度为300输入，则ELMo输出为600维度词向量。</p>
 <ul>
 <li><p>(2) 取所有层的LSTM的输出隐状态h向量（<strong>层数设为L</strong>）</p>
 <p>在这方法中，又有2种思路：<strong>1- 直接concat；2- 带系数求和后concat</strong></p>
 <p>1- 直接concat</p>
-<p>同上，以该例子（2层LSTM）中单词$E_{2}$为例，此思路的对应ELMo词向量为：<br>$$<br>ELMo_E2_method2 = concat(x_{2},h_{m×1}^{(1,2)},h_{m×1}^{(2,2)})\<br>= concat(x_{2},h_{m×1}^{(1,2)},T_{2})<br>$$<br><strong>和方法1相比，方法2也就只是concat多1层h向量。然而，在这例子是多1层，当层数很大时，例如100，则是concat多99层。</strong></p>
+<p>同上，以该例子（2层LSTM）中单词$E_{2}$为例，此思路的对应ELMo词向量为：</p>
+<script type="math/tex; mode=display">
+ELMo\_E2\_method2 = concat(x_{2},h_{m×1}^{(1,2)},h_{m×1}^{(2,2)})\\
+= concat(x_{2},h_{m×1}^{(1,2)},T_{2})</script><p><strong>和方法1相比，方法2也就只是concat多1层h向量。然而，在这例子是多1层，当层数很大时，例如100，则是concat多99层。</strong></p>
 <p><strong>该方法下ELMo词向量维度和LSTM层数有关，为m(L+1)维度</strong></p>
 <p>即下图的右侧图，左侧不用管。来源：《Semi-supervised sequence tagging with bidirectional language models》</p>
 <p><img src="https://raw.githubusercontent.com/Eajack/NLP-Papers/master/Word%20Embedding%E8%AF%8D%E5%90%91%E9%87%8F/ELMo/%E5%9B%BE5.PNG" alt="图5- ELMo1"></p>
@@ -554,9 +571,11 @@ $$
 
 该思路关键如下：给每一层LSTM一个系数向量$s_{2A×1}$，按位置和该层的2A个$h$向量相乘后，所有层求和。最后再乘上系数γ，作为向量$ELMO_{E}$。**注意：$ELMO_{E}$维度为m**。然后，将原输入静态词向量$x$和$ELMO_{E}$concat。
 
-**该方法下ELMo词向量维度，为2m维度**</code></pre><p>  <strong>论文采取方式：方法3，带系数求和后concat。</strong>即</p>
-<p>$$<br>ELMo_{E2}=γ\sum_{j=0}^{L}{s^{(j,2)} \cdot h_{m×1}^{(j,2)}} \<br>ELMo_E2_method3 = concat(x_{2},ELMo_{E2})<br>$$</p>
-<p>其实方法2也可以，直接concat所有层h，但可能维度过高了。</p>
+**该方法下ELMo词向量维度，为2m维度**
+</code></pre><p>  <strong>论文采取方式：方法3，带系数求和后concat。</strong>即</p>
+<script type="math/tex; mode=display">
+ELMo_{E2}=γ\sum_{j=0}^{L}{s^{(j,2)} \cdot h_{m×1}^{(j,2)}} \\
+ELMo\_E2\_method3 = concat(x_{2},ELMo_{E2})</script><p>其实方法2也可以，直接concat所有层h，但可能维度过高了。</p>
 
     
 
@@ -994,6 +1013,21 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
     
 </html>
