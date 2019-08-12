@@ -1,13 +1,16 @@
+---
 title: Eajack LeetCode Notes- Day6
-date: 2019-08-11 20:48:38
+date: 2019-08-12 21:06:38
 tags:
-
   - cpp
   - LeetCode
 categories:
   - LeetCode
 
+---
+
 ### Q45
+
 #### (1) 题目信息
 >* 标题：[用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/description/)
 >
