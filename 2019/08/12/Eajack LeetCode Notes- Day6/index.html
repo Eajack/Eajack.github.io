@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+        Eajack&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Eajack Lau">
+    <meta name="description" itemprop="description" content="Someday I will be a giant...">
+    <meta name="keywords" content>
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" sizes="192x192" href="/img/favicon.jpg">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Eajack&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://eajack.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Eajack&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="Someday I will be a giant...">
+    
+
+    
+        <meta property="article:published_time" content="8月 12, 2019">
+        <meta property="article:modified_time" content="8月 12, 2019">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Eajack&#39;s Blog">
+    <meta name="twitter:description" content="Someday I will be a giant...">
+    <meta name="twitter:image" content="/img/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://eajack.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Eajack&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eajack Lau",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "Someday I will be a giant..."
+    },
+    "headline": "",
+    "url": "https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html",
+    "datePublished": "8月 12, 2019",
+    "dateModified": "8月 12, 2019",
+    "description": "Someday I will be a giant...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://eajack.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    .footer-sns-zhihu {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzYuOCA3OC44Yy04LjYgMi44LTI0IDEyLjQtMzMuNiAyMS04LjYgNy44LTIxLjQgMjcuOC0yNC40IDM3LjgtNC4yIDE0LTQgNzIzLjQgMCA3MzMuNCA4LjYgMjAuNiAzNi44IDQ4LjYgNTYgNTUuNiA5IDMuNCA3NDcuNCAzLjQgNzU2LjQgMCAxOS44LTcuMiA0OS0zNi42IDU2LTU2LjIgMi4yLTYgMi42LTc1LjYgMi44LTM2Ni40IDAtMjMzLjgtLjYtMzYxLjQtMi0zNjYtMS4yLTMuOC02LjYtMTMuOC0xMi4yLTIyLjItOC4yLTEyLjItMTMuNC0xNy40LTI1LjgtMjUuNi04LjQtNS44LTE5LTExLjQtMjMuMi0xMi4yLTQuNi0xLjItMTYzLjItMS44LTM3NC44LTEuOC0yOTMgMC0zNjguNi42LTM3NS4yIDIuNnptMTkwIDE0NS42YzUuNCA3LjYgNCAxNy40LTQuOCAzMS42LTkuOCAxNi0xMC44IDI3LjQtMyAzNSAyLjYgMi44IDYuNCA1IDguNCA1czM3LjguNCA3OS42LjZjNjggLjQgNzYuNi44IDgyLjQgMy44IDkuMiA1IDEyLjYgMTEgMTIuNiAyMiAwIDctMS4yIDEwLjgtNC44IDE1bC00LjggNS40LTM4IC4yYy01My44IDAtNTMuOCAwLTU1LjQgNTEuMi0uNiAxOC0xLjYgNDIuOC0yLjIgNTUtMS4yIDIyLjguNiAzMS42IDcuNiAzNi4yIDEuNC44IDIyLjIgMiA0NiAyLjZsNDMuMiAxIDguOCA2YzE1LjQgMTAuOCAxNy44IDI5LjIgNSAzNy01LjggMy42LTEwLjIgNC01MS44IDQtMzEgMC00NyAuOC01MC42IDIuNC03IDMuMi0xNC4yIDE3LjYtMTcuMiAzNC40LTMuMiAxNi42LTEgMjEuOCA5LjYgMjUuMiAxMy40IDQuMiAyMS44IDExLjIgNDkgNDEuNCAzNSAzOC44IDM2LjYgNDEgNDEuOCA1OC44IDcgMjMuOCAyLjIgNDEuOC0xMS40IDQxLjgtNy42IDAtMTItMy0yMS0xNC42LTEzLjgtMTcuNC01NC40LTY1LjgtNjItNzMuOC0xNS4yLTE2LTI5LjQtNS44LTM4LjggMjcuNC0xLjggNi42LTguOCAyMy4yLTE1LjYgMzctMTAuOCAyMi0xNCAyNi44LTI3LjQgMzkuNi0xOS42IDE5LjItMjYuNCAyMy01My42IDI5LjYtMjcuMiA2LjQtMzcgNS42LTM4LTMuNi0xLTguNCA0LjQtMTYuNCAyMC0yOSAxNi0xMyAzNi44LTM2LjYgNDUuMi01MS40IDMtNS4yIDguMi0xMy44IDExLjYtMTkgMy40LTUgMTEuOC0yMC40IDE4LjYtMzQuMiAxMC0yMCAxMy42LTI5LjQgMTcuMi00NyAyLjYtMTIuMiA2LjItMjUuNCA3LjgtMjkuNCA0LTkuNCA0LTIxLjQuMi0yNy01LjItNy40LTE2LTguOC02Mi42LTguNC01MC40LjQtNTUuMi0uOC01Ny42LTEzLjItMS44LTEwLjQgNS44LTI0LjQgMTYuMi0yOS44IDcuNC0zLjggMTEuOC00LjIgNTYuMi00LjhsNDguNC0uOCA0LjYtNWM0LjgtNSA0LjgtNSA1LTYxLjYgMC0zNS4yLS44LTU5LjItMi02My4yLTMuOC0xMS4yLTExLTE0LjgtMzAuMi0xNC44cy0yMS40IDEuNC0zMS4yIDE4LjJjLTguMiAxNC40LTIwLjYgMjguOC0zMy4yIDM4LjgtMTMuMiAxMC40LTIxLjYgMTMtMjggOS04LjQtNS42LTUuMi0yMy4yIDguMi00My4yIDQtNi40IDkuMi0xOC42IDEyLjItMjkuNiAzLTEwLjIgNy40LTIzLjIgMTAtMjkgMi40LTUuNiA2LTE2LjggOC0yNC42IDUuNi0yMy42IDI0LTUwLjggMzkuNC01OC40IDExLjItNS40IDE4LjYtNS40IDIyLjQuMnptNDUyIDY4LjJjMTEuOCA3LjggMTEuNC0uOCAxMC44IDIxNi0uNiAxODEtLjggMTk4LjgtNCAyMDMtNy42IDEwLjgtOS44IDExLjQtNTMuNiAxMi40bC00MSAxLTE0IDcuOGMtNy42IDQuMi0yMS4yIDEzLTI5LjggMTkuNC0yNS44IDE5LjItMzUgMTkuOC00My40IDMuMi0xMS44LTIzLjItMjMuNi0zMy4yLTM5LjQtMzMuNC04LjggMC0xMy42LTIuOC0xNy4yLTkuOC0yLjYtNC44LTMtMzMuOC0yLjYtMjA4LjguNC0xOTkuOC40LTIwMyA0LjQtMjA3LjQgMi4yLTIuNCA1LjgtNS4yIDgtNi4yIDIuMi0uOCA1MS44LTEuNCAxMTAtMS4yIDk5IC40IDEwNi42LjYgMTExLjggNHoiLz48cGF0aCBkPSJNNjA2LjggMzM3LjRjLTIuNC40LTYuNCAzLTkgNS44bC00LjggNS4yLS42IDE1Ni40LS40IDE1Ni40IDYuNCA5LjRjMy42IDUuMiA5LjggMTUuMiAxMy42IDIxLjggOCAxNC4yIDE2LjggMjAuNiAyNS42IDE4LjYgMy4yLS42IDEzLjgtNyAyMy42LTE0LjIgMjMtMTcgMjcuOC0xOSA1MC4yLTIwLjIgMTYuNC0xIDE5LjItMS44IDIzLjYtNi4yIDIuOC0yLjggNS02LjQgNS4yLTguMlY1MDUuNmMwLTExNi0uNi0xNTQuNC0yLjYtMTU4LjYtNC44LTEwLjQtOC40LTExLTcwLTEwLjgtMzEuMi4yLTU4LjYuOC02MC44IDEuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q45"><span class="post-toc-number">1.</span> <span class="post-toc-text">Q45</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q46"><span class="post-toc-number">2.</span> <span class="post-toc-text">Q46</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q47"><span class="post-toc-number">3.</span> <span class="post-toc-text">Q47</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q48"><span class="post-toc-number">4.</span> <span class="post-toc-text">Q48</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-3"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-3"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q49"><span class="post-toc-number">5.</span> <span class="post-toc-text">Q49</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-4"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-4"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q50"><span class="post-toc-number">6.</span> <span class="post-toc-text">Q50</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-5"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-5"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q51"><span class="post-toc-number">7.</span> <span class="post-toc-text">Q51</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-6"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-6"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q52"><span class="post-toc-number">8.</span> <span class="post-toc-text">Q52</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-7"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-7"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q53"><span class="post-toc-number">9.</span> <span class="post-toc-text">Q53</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-8"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-8"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q54"><span class="post-toc-number">10.</span> <span class="post-toc-text">Q54</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-9"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-9"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q55"><span class="post-toc-number">11.</span> <span class="post-toc-text">Q55</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-10"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-10"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q56"><span class="post-toc-number">12.</span> <span class="post-toc-text">Q56</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-11"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-11"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q57"><span class="post-toc-number">13.</span> <span class="post-toc-text">Q57</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-12"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-12"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q58"><span class="post-toc-number">14.</span> <span class="post-toc-text">Q58</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-13"><span class="post-toc-number">14.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-13"><span class="post-toc-number">14.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q59"><span class="post-toc-number">15.</span> <span class="post-toc-text">Q59</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-14"><span class="post-toc-number">15.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-14"><span class="post-toc-number">15.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q60"><span class="post-toc-number">16.</span> <span class="post-toc-text">Q60</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-15"><span class="post-toc-number">16.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-15"><span class="post-toc-number">16.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q60-1"><span class="post-toc-number">17.</span> <span class="post-toc-text">Q60</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-16"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-16"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q61"><span class="post-toc-number">18.</span> <span class="post-toc-text">Q61</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-17"><span class="post-toc-number">18.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-17"><span class="post-toc-number">18.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q62"><span class="post-toc-number">19.</span> <span class="post-toc-text">Q62</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-18"><span class="post-toc-number">19.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-18"><span class="post-toc-number">19.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Q63"><span class="post-toc-number">20.</span> <span class="post-toc-text">Q63</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-题目信息-19"><span class="post-toc-number">20.1.</span> <span class="post-toc-text">(1) 题目信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-个人Code-19"><span class="post-toc-number">20.2.</span> <span class="post-toc-text">(2) 个人Code</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eajack Lau</strong>
+        <span>8月 12, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html&via=Eajack Lau" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Eajack&#39;s Blog&title=&summary=Someday I will be a giant...&pics=https://eajack.github.io/img/favicon.jpg&url=https://eajack.github.io/2019/08/12/Eajack LeetCode Notes- Day6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>title: Eajack LeetCode Notes- Day6<br>date: 2019-08-11 20:48:38<br>tags:</p>
+<ul>
+<li>cpp</li>
+<li>LeetCode<br>categories:</li>
+<li>LeetCode</li>
+</ul>
+<h3 id="Q45"><a href="#Q45" class="headerlink" title="Q45"></a>Q45</h3><h4 id="1-题目信息"><a href="#1-题目信息" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/implement-stack-using-queues/description/" target="_blank" rel="noopener">用队列实现栈</a></p>
+</li>
+<li><p>编号&amp;难度：[225]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/stack" target="_blank" rel="noopener"><code>stack</code></a> | <a href="https://leetcode.com/tag/design" target="_blank" rel="noopener"><code>design</code></a></p>
+</li>
+<li><p>描述：使用队列实现栈的下列操作：</p>
+<ul>
+<li>push(x) — 元素 x 入栈</li>
+<li>pop() — 移除栈顶元素</li>
+<li>top() — 获取栈顶元素</li>
+<li>empty() — 返回栈是否为空</li>
+</ul>
+<p><strong>注意:</strong></p>
+<ul>
+<li>你只能使用队列的基本操作— 也就是 <code>push to back</code>, <code>peek/pop from front</code>, <code>size</code>, 和 <code>is empty</code> 这些操作是合法的。</li>
+<li>你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。</li>
+<li>你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code"><a href="#2-个人Code" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=225 lang=cpp
+ *
+ * [225] 用队列实现栈
+ */
+class MyStack {
+    queue&lt;int&gt; q1, q2;
+public:
+    /** Initialize your data structure here. */
+    MyStack() {
+
+    }
+
+    /** Push element x onto stack. */
+    void push(int x) {
+        q1.push(x);
+    }
+
+    /** Removes the element on top of the stack and returns that element. */
+    int pop() {
+        //首先pop出到q2，直到只剩下q1栈顶
+        while(q1.size() &gt; 1)
+        {
+            q2.push(q1.front());
+            q1.pop();
+        }
+        //push逆向
+        int topNum = q1.front();
+        q1.pop();
+        while(q2.size() &gt; 0)
+        {
+            q1.push(q2.front());
+            q2.pop();
+        }
+
+        return topNum;
+    }
+
+    /** Get the top element. */
+    int top() {
+        //首先pop出到q2，直到只剩下q1栈顶
+        while(q1.size() &gt; 1)
+        {
+            q2.push(q1.front());
+            q1.pop();
+        }
+        //push逆向
+        int topNum = q1.front();
+        q1.pop();
+        q2.push(topNum);
+        while(q2.size() &gt; 0)
+        {
+            q1.push(q2.front());
+            q2.pop();
+        }
+
+        return topNum;
+    }
+
+    /** Returns whether the stack is empty. */
+    bool empty() {
+        return (q1.empty());
+    }
+};
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj-&gt;push(x);
+ * int param_2 = obj-&gt;pop();
+ * int param_3 = obj-&gt;top();
+ * bool param_4 = obj-&gt;empty();
+ */
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：2个queue实现1个stack，1个queue用来缓存pop过程出来的元素，另一个栈直接储存push进来的元素</li>
+</ul>
+</blockquote>
+<h3 id="Q46"><a href="#Q46" class="headerlink" title="Q46"></a>Q46</h3><h4 id="1-题目信息-1"><a href="#1-题目信息-1" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/implement-stack-using-queues/description/" target="_blank" rel="noopener"><a href="https://leetcode-cn.com/problems/invert-binary-tree/description/" target="_blank" rel="noopener">翻转二叉树</a></a></p>
+</li>
+<li><p>编号&amp;难度：[226]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/tree" target="_blank" rel="noopener"><code>tree</code></a></p>
+</li>
+<li><p>描述：</p>
+<p>输入：</p>
+<pre><code>     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+</code></pre><p>输出：</p>
+<pre><code>     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-1"><a href="#2-个人Code-1" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=226 lang=cpp
+ *
+ * [226] 翻转二叉树
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        if(!root || (!root-&gt;left &amp;&amp; !root-&gt;right)){
+            return root;
+        }
+        else{
+            TreeNode* temp = root-&gt;left;
+            root-&gt;left = root-&gt;right;
+            root-&gt;right = temp;
+            if(root-&gt;left)
+                TreeNode *trash1 = invertTree(root-&gt;left);
+            if(root-&gt;right)
+                TreeNode *trash2 = invertTree(root-&gt;right);
+        }
+        return root;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：首先根部左右子树交换，然后递归地对左右子树调用原函数</li>
+</ul>
+</blockquote>
+<h3 id="Q47"><a href="#Q47" class="headerlink" title="Q47"></a>Q47</h3><h4 id="1-题目信息-2"><a href="#1-题目信息-2" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/power-of-two/description/" target="_blank" rel="noopener">2的幂</a></li>
+<li>编号&amp;难度：[226]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/math" target="_blank" rel="noopener"><code>math</code></a> | <a href="https://leetcode.com/tag/bit-manipulation" target="_blank" rel="noopener"><code>bit-manipulation</code></a></li>
+<li>描述：给定一个整数，编写一个函数来判断它是否是 2 的幂次方。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-2"><a href="#2-个人Code-2" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=231 lang=cpp
+ *
+ * [231] 2的幂
+ */
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        //注意：n&amp;(n-1) == 0是错的, 应该是(n&amp;(n-1)) == 0
+        return ( (n&gt;0) &amp;&amp; !(n&amp;(n-1)));
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：看了solution，检查二进制表示的首位digit是否为1即可</li>
+</ul>
+</blockquote>
+<h3 id="Q48"><a href="#Q48" class="headerlink" title="Q48"></a>Q48</h3><h4 id="1-题目信息-3"><a href="#1-题目信息-3" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/description/" target="_blank" rel="noopener">用栈实现队列</a></li>
+<li>编号&amp;难度：[226]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/stack" target="_blank" rel="noopener"><code>stack</code></a> | <a href="https://leetcode.com/tag/design" target="_blank" rel="noopener"><code>design</code></a></li>
+<li>描述：使用栈实现队列的下列操作：<ul>
+<li>push(x) — 将一个元素放入队列的尾部。</li>
+<li>pop() — 从队列首部移除元素。</li>
+<li>peek() — 返回队列首部的元素。</li>
+<li>empty() — 返回队列是否为空。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-3"><a href="#2-个人Code-3" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=232 lang=cpp
+ *
+ * [232] 用栈实现队列
+ */
+class MyQueue {
+public:
+    vector&lt;int&gt; s1, s2; 
+    /** Initialize your data structure here. */
+    MyQueue() {
+
+    }
+
+    /** Push element x to the back of queue. */
+    void push(int x) {
+        s1.push_back(x);
+    }
+
+    /** Removes the element from in front of queue and returns that element. */
+    int pop() {
+        while(s1.size() != 1){
+            s2.push_back(s1.back());
+            s1.pop_back();           
+        }
+
+        int top_val = s1.front();
+        s1.pop_back();
+        while(!s2.empty()){
+            s1.push_back(s2.back());
+            s2.pop_back();
+        }
+
+        return top_val;
+    }
+
+    /** Get the front element. */
+    int peek() {
+        while(s1.size() != 1){
+            s2.push_back(s1.back());
+            s1.pop_back();           
+        }
+        int top_val = s1.front();
+        while(!s2.empty()){
+            s1.push_back(s2.back());
+            s2.pop_back();
+        }
+
+        return top_val;
+    }
+
+    /** Returns whether the queue is empty. */
+    bool empty() {
+        return s1.empty();
+    }
+};
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj-&gt;push(x);
+ * int param_2 = obj-&gt;pop();
+ * int param_3 = obj-&gt;peek();
+ * bool param_4 = obj-&gt;empty();
+ */
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：和“用队列实现栈”差不多。这里用2个栈实现队列，其中1个栈用push代替队列的enqueue，另一个栈作为缓存区辅助dequeue</li>
+</ul>
+</blockquote>
+<h3 id="Q49"><a href="#Q49" class="headerlink" title="Q49"></a>Q49</h3><h4 id="1-题目信息-4"><a href="#1-题目信息-4" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/palindrome-linked-list/description/" target="_blank" rel="noopener">回文链表</a></li>
+<li>编号&amp;难度：[226]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/linked-list" target="_blank" rel="noopener"><code>linked-list</code></a> | <a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a></li>
+<li>描述：请判断一个链表是否为回文链表。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-4"><a href="#2-个人Code-4" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=234 lang=cpp
+ *
+ * [234] 回文链表
+ */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool returnFlag = false;
+
+    void isHeadEqualTail(ListNode* head, int len) {
+        if(len &lt;= 1) {
+            returnFlag = true;
+        }
+        else {
+            ListNode* tail = head;
+            int cnt = len - 1;
+            while(cnt--) tail = tail-&gt;next;
+            if(head-&gt;val != tail-&gt;val) {
+                returnFlag = false;
+            }
+            else {
+                isHeadEqualTail(head-&gt;next, len-2);
+            }
+        }
+    }
+
+    bool isPalindrome(ListNode* head) {
+        ListNode* temp = head;
+        int len = 0;
+        while (temp) {
+            ++len;
+            temp = temp-&gt;next;
+        }
+
+        if(len &lt;= 1)
+        {
+            return true;
+        }
+        else
+        {
+            isHeadEqualTail(head, len);
+        }
+
+        return returnFlag;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：最简单思路是首位部双指针，这代码思路是：递归判断首位val是否相等，通过链表长和表头变化递归</li>
+</ul>
+</blockquote>
+<h3 id="Q50"><a href="#Q50" class="headerlink" title="Q50"></a>Q50</h3><h4 id="1-题目信息-5"><a href="#1-题目信息-5" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/description/" target="_blank" rel="noopener">删除链表中的节点</a></li>
+<li>编号&amp;难度：[237]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/linked-list" target="_blank" rel="noopener"><code>linked-list</code></a></li>
+<li>描述：请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-5"><a href="#2-个人Code-5" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=237 lang=cpp
+ *
+ * [237] 删除链表中的节点
+ */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        if(node == nullptr) return;
+
+        ListNode* temp = node-&gt;next;
+        node-&gt;val = temp-&gt;val;
+        node-&gt;next = temp-&gt;next;
+
+        delete temp;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：看了solution，只能说这个巧妙。。并没有传表头进来。<strong>因为不是首位部node，所以可以复制下一个到当前位，然后删除下一个node。</strong></li>
+</ul>
+</blockquote>
+<h3 id="Q51"><a href="#Q51" class="headerlink" title="Q51"></a>Q51</h3><h4 id="1-题目信息-6"><a href="#1-题目信息-6" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/valid-anagram/description/" target="_blank" rel="noopener">有效的字母异位词</a></p>
+</li>
+<li><p>编号&amp;难度：[242]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a> | <a href="https://leetcode.com/tag/sort" target="_blank" rel="noopener"><code>sort</code></a></p>
+</li>
+<li><p>描述：给定两个字符串 <em>s</em> 和 <em>t</em> ，编写一个函数来判断 <em>t</em> 是否是 <em>s</em> 的字母异位词。</p>
+</li>
+<li><p>例子：</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: s = &quot;anagram&quot;, t = &quot;nagaram&quot;
+输出: true
+</code></pre><p><strong>示例 2:</strong></p>
+<pre><code>输入: s = &quot;rat&quot;, t = &quot;car&quot;
+输出: false
+</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-6"><a href="#2-个人Code-6" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=242 lang=cpp
+ *
+ * [242] 有效的字母异位词
+ */
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if((s.length() || t.length()) &amp;&amp; (s.length() != t.length())){
+            return false;
+        }
+        else if(s.length() == 0 &amp;&amp; t.length() == 0){
+            return true;
+        }
+
+        unordered_map&lt;char, int&gt; s_num, t_num;
+        for(char ch:s){
+            if(s_num.find(ch) == s_num.end()){
+                s_num[ch] = 1;
+            }
+            else{
+                s_num[ch]++;
+            }
+        }
+        for(char ch:t){
+            if(t_num.find(ch) == t_num.end()){
+                t_num[ch] = 1;
+            }
+            else{
+                t_num[ch]++;
+            }
+        }
+
+        for(auto iter=s_num.begin(); iter != s_num.end(); iter++){
+           if(t_num[iter-&gt;first] != iter-&gt;second){
+               return false;
+           }
+        }
+
+        return true;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：看了solution。solution给出2种方案：<strong>（1）统计char出现个数，二者对应相等即可（2）sort后的2个string相等</strong></li>
+</ul>
+</blockquote>
+<h3 id="Q52"><a href="#Q52" class="headerlink" title="Q52"></a>Q52</h3><h4 id="1-题目信息-7"><a href="#1-题目信息-7" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/binary-tree-paths/description/" target="_blank" rel="noopener">二叉树的所有路径</a></p>
+</li>
+<li><p>编号&amp;难度：[252]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/tree" target="_blank" rel="noopener"><code>tree</code></a> | <a href="https://leetcode.com/tag/depth-first-search" target="_blank" rel="noopener"><code>depth-first-search</code></a></p>
+</li>
+<li><p>描述：给定一个二叉树，返回所有从根节点到叶子节点的路径。</p>
+<p><strong>说明:</strong> 叶子节点是指没有子节点的节点。</p>
+</li>
+<li><p>例子：</p>
+<pre><code>输入:
+
+   1
+ /   \
+2     3
+ \
+  5
+
+输出: [&quot;1-&gt;2-&gt;5&quot;, &quot;1-&gt;3&quot;]
+
+解释: 所有根节点到叶子节点的路径为: 1-&gt;2-&gt;5, 1-&gt;3
+</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-7"><a href="#2-个人Code-7" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=257 lang=cpp
+ *
+ * [257] 二叉树的所有路径
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void getPath(TreeNode* node, vector&lt;string&gt;&amp; paths, string path){
+        if(!node-&gt;left &amp;&amp; !node-&gt;right){
+            paths.push_back(path);
+            return;
+        }
+
+        if(node-&gt;left){
+            getPath(node-&gt;left, paths, path+&quot;-&gt;&quot;+to_string(node-&gt;left-&gt;val));
+        }
+
+        if(node-&gt;right){
+            getPath(node-&gt;right, paths, path+&quot;-&gt;&quot;+to_string(node-&gt;right-&gt;val));
+        }
+    }
+
+    vector&lt;string&gt; binaryTreePaths(TreeNode* root) {
+        vector&lt;string&gt; paths;
+        if(root){
+            getPath(root, paths, to_string(root-&gt;val));
+        }
+
+        return paths;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：看了solution，记住，深度遍历</li>
+</ul>
+</blockquote>
+<h3 id="Q53"><a href="#Q53" class="headerlink" title="Q53"></a>Q53</h3><h4 id="1-题目信息-8"><a href="#1-题目信息-8" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/add-digits/description/" target="_blank" rel="noopener">各位相加</a></p>
+</li>
+<li><p>编号&amp;难度：[258]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/math" target="_blank" rel="noopener"><code>math</code></a></p>
+</li>
+<li><p>描述：给定一个非负整数 <code>num</code>，反复将各个位上的数字相加，直到结果为一位数。</p>
+</li>
+<li><p>例子：</p>
+<pre><code>输入: 38
+输出: 2 
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-8"><a href="#2-个人Code-8" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=258 lang=cpp
+ *
+ * [258] 各位相加
+ */
+class Solution {
+public:
+    int addDigits(int num) {
+        int sum;
+
+        do{
+            sum = 0;
+            vector&lt;int&gt; digits;
+            while(num/10){
+                digits.push_back(num%10);
+                num /= 10;
+            }
+            digits.push_back(num);
+            for(int digit:digits){
+                sum += digit;
+            }
+            num = sum;
+        }
+        while(num &gt;= 10);
+
+        return num;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：提取各位数字求和相加</li>
+</ul>
+</blockquote>
+<h3 id="Q54"><a href="#Q54" class="headerlink" title="Q54"></a>Q54</h3><h4 id="1-题目信息-9"><a href="#1-题目信息-9" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li><p>标题：<a href="https://leetcode-cn.com/problems/move-zeroes/description/" target="_blank" rel="noopener">移动零</a></p>
+</li>
+<li><p>编号&amp;难度：[283]，easy</p>
+</li>
+<li><p>Tags：<a href="https://leetcode.com/tag/array" target="_blank" rel="noopener"><code>array</code></a> | <a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a></p>
+</li>
+<li><p>描述：给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+</li>
+<li><p>例子：</p>
+<pre><code>输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+</code></pre></li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-9"><a href="#2-个人Code-9" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=283 lang=cpp
+ *
+ * [283] 移动零
+ */
+class Solution {
+public:
+    void moveZeroes(vector&lt;int&gt;&amp; nums) {
+        int temp, j;
+        for(int i=0; i&lt;nums.size(); i++){
+            if(nums[i] == 0){
+                j = i+1;
+                while(1){
+                    if(nums[i] == 0 &amp;&amp; j &lt; nums.size()){
+                        temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                        j++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                if(j &gt;= nums.size()){
+                    break;
+                }
+            }
+        }
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：遍历逐位右移，solution思路更好：优先把非0值前移，最后后面至0</li>
+</ul>
+</blockquote>
+<h3 id="Q55"><a href="#Q55" class="headerlink" title="Q55"></a>Q55</h3><h4 id="1-题目信息-10"><a href="#1-题目信息-10" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/word-pattern/description/" target="_blank" rel="noopener">单词规律</a></li>
+<li>编号&amp;难度：[290]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a></li>
+<li>描述：给定一种规律 <code>pattern</code> 和一个字符串 <code>str</code> ，判断 <code>str</code> 是否遵循相同的规律。这里的 <strong>遵循</strong> 指完全匹配，例如， <code>pattern</code> 里的每个字母和字符串 <code>str</code> 中的每个非空单词之间存在着双向连接的对应规律。</li>
+<li>例子：</li>
+</ul>
+<p><strong>示例1:</strong></p>
+<pre><code>输入: pattern = &quot;abba&quot;, str = &quot;dog cat cat dog&quot;
+输出: true
+</code></pre><p><strong>示例 2:</strong></p>
+<pre><code>输入:pattern = &quot;abba&quot;, str = &quot;dog cat cat fish&quot;
+输出: false
+</code></pre><p><strong>示例 3:</strong></p>
+<pre><code>输入: pattern = &quot;aaaa&quot;, str = &quot;dog cat cat dog&quot;
+输出: false
+</code></pre><p><strong>示例 4:</strong></p>
+<pre><code>输入: pattern = &quot;abba&quot;, str = &quot;dog dog dog dog&quot;
+输出: false
+</code></pre></blockquote>
+<h4 id="2-个人Code-10"><a href="#2-个人Code-10" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=290 lang=cpp
+ *
+ * [290] 单词规律
+ */
+class Solution {
+public:
+    vector&lt;string&gt; split(string str){
+        vector&lt;string&gt; str_split;
+        string split_one;
+        for(int i=0; i&lt;=str.size(); i++){
+            if(str[i] == &#39; &#39; || i == str.size()){
+                str_split.push_back(split_one);
+                split_one = &quot;&quot;;
+            }
+            else{
+                split_one += str[i];
+            }
+        }
+
+        return str_split;
+    }
+
+    bool wordPattern(string pattern, string str) {
+        vector&lt;string&gt; str_split = split(str);
+
+        if(str_split.size() != pattern.length()){
+            return false;
+        }
+
+        unordered_map&lt;char, string&gt; table1;
+        for(int i=0; i&lt;pattern.size(); i++){
+            if(table1.find(pattern[i]) == table1.end()){
+                for(auto iter = table1.begin(); iter != table1.end();iter++){
+                    if(iter-&gt;second == str_split[i]){
+                        return false;
+                    }
+                }
+
+                table1[pattern[i]] = str_split[i];
+            }
+            else{
+                if(table1[pattern[i]] != str_split[i]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：字符串split + 双向map检查</li>
+</ul>
+</blockquote>
+<h3 id="Q56"><a href="#Q56" class="headerlink" title="Q56"></a>Q56</h3><h4 id="1-题目信息-11"><a href="#1-题目信息-11" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/power-of-three/description/" target="_blank" rel="noopener">3的幂</a></li>
+<li>编号&amp;难度：[326]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/math" target="_blank" rel="noopener"><code>math</code></a></li>
+<li>描述：给定一个整数，写一个函数来判断它是否是 3 /n的幂次方。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-11"><a href="#2-个人Code-11" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=326 lang=cpp
+ *
+ * [326] 3的幂
+ */
+class Solution {
+public:
+    string dec2Ndigit(int num, int n){
+        string num_digit = &quot;&quot;;
+        while(num/n){
+            num_digit = to_string(num%n) + num_digit;
+            num /= n;
+        }
+        num_digit = to_string(num) + num_digit;
+
+        return num_digit;
+    }
+
+    bool isPowerOfThree(int n) {
+        string n_digit = dec2Ndigit(n, 3);
+
+        int sum = 0;
+        for(char ch:n_digit){
+            sum += (ch-&#39;0&#39;);
+        }
+
+        if(sum == 1 &amp;&amp; n_digit[0] == &#39;1&#39;){
+            return true;
+        }
+
+        return false;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：和2的幂思路一样，区别在于3进制。其实n的幂思路一致，只是转成n进制表示即可</li>
+</ul>
+</blockquote>
+<h3 id="Q57"><a href="#Q57" class="headerlink" title="Q57"></a>Q57</h3><h4 id="1-题目信息-12"><a href="#1-题目信息-12" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/reverse-string/description/" target="_blank" rel="noopener">反转字符串</a></li>
+<li>编号&amp;难度：[344]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a> | <a href="https://leetcode.com/tag/string" target="_blank" rel="noopener"><code>string</code></a></li>
+<li>描述：编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 <code>char[]</code> 的形式给出。不要给另外的数组分配额外的空间，你必须<strong>原地修改输入数组</strong>、使用 O(1) 的额外空间解决这一问题。你可以假设数组中的所有字符都是 <a href="https://baike.baidu.com/item/ASCII" target="_blank" rel="noopener">ASCII</a> 码表中的可打印字符。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-12"><a href="#2-个人Code-12" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=344 lang=cpp
+ *
+ * [344] 反转字符串
+ */
+class Solution {
+public:
+    void reverseString(vector&lt;char&gt;&amp; s) {
+        int i = 0, j = s.size()-1;
+        char temp;
+        while(i&lt;=j){
+            temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：双指针简单思路</li>
+</ul>
+</blockquote>
+<h3 id="Q58"><a href="#Q58" class="headerlink" title="Q58"></a>Q58</h3><h4 id="1-题目信息-13"><a href="#1-题目信息-13" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/" target="_blank" rel="noopener">反转字符串中的元音字母</a></li>
+<li>编号&amp;难度：[345]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a> | <a href="https://leetcode.com/tag/string" target="_blank" rel="noopener"><code>string</code></a></li>
+<li>描述：编写一个函数，以字符串作为输入，反转该字符串中的元音字母。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-13"><a href="#2-个人Code-13" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=345 lang=cpp
+ *
+ * [345] 反转字符串中的元音字母
+ */
+class Solution {
+public:
+    string reverseVowels(string s) {        
+        int i = 0, j = s.size()-1;
+        char temp;
+        while(i&lt;j){
+            i = s.find_first_of(&quot;aeiouAEIOU&quot;, i);
+            j = s.find_last_of(&quot;aeiouAEIOU&quot;, j);
+
+            if (i &lt; j){
+                swap(s[i++],s[j--]);
+            }
+        }
+
+        return s;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：看了solution。。因为题意一看理解错了。关键在于find_first_of、find_last_of</li>
+</ul>
+</blockquote>
+<h3 id="Q59"><a href="#Q59" class="headerlink" title="Q59"></a>Q59</h3><h4 id="1-题目信息-14"><a href="#1-题目信息-14" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/intersection-of-two-arrays/description/" target="_blank" rel="noopener">两个数组的交集</a></li>
+<li>编号&amp;难度：[349]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a> | <a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a> | <a href="https://leetcode.com/tag/binary-search" target="_blank" rel="noopener"><code>binary-search</code></a> | <a href="https://leetcode.com/tag/sort" target="_blank" rel="noopener"><code>sort</code></a></li>
+<li>描述：给定两个数组，编写一个函数来计算它们的交集。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-14"><a href="#2-个人Code-14" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=349 lang=cpp
+ *
+ * [349] 两个数组的交集
+ */
+class Solution {
+public:
+    vector&lt;int&gt; intersection(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
+        unordered_map&lt;int,int&gt; map1, map2;
+        for(int i=0; i&lt;nums1.size(); i++){
+            if( map1.find(nums1[i]) == map1.end() ){
+                map1[nums1[i]] = 0;
+            }
+        }
+        for(int i=0; i&lt;nums2.size(); i++){
+            if( map2.find(nums2[i]) == map2.end() ){
+                map2[nums2[i]] = 0;
+            }
+        }
+
+        //begin
+        vector&lt;int&gt; nums_inter;
+        for(auto iter1 = map1.begin(); iter1 != map1.end(); iter1++){
+            if(map2.find(iter1-&gt;first) != map2.end()){
+                nums_inter.push_back(iter1-&gt;first);
+            }
+        }
+
+        return nums_inter;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：储存2个数组的次数，遍历数组</li>
+</ul>
+</blockquote>
+<h3 id="Q60"><a href="#Q60" class="headerlink" title="Q60"></a>Q60</h3><h4 id="1-题目信息-15"><a href="#1-题目信息-15" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/description/" target="_blank" rel="noopener">两个数组的交集 II</a></li>
+<li>编号&amp;难度：[350]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a> | <a href="https://leetcode.com/tag/two-pointers" target="_blank" rel="noopener"><code>two-pointers</code></a> | <a href="https://leetcode.com/tag/binary-search" target="_blank" rel="noopener"><code>binary-search</code></a> | <a href="https://leetcode.com/tag/sort" target="_blank" rel="noopener"><code>sort</code></a></li>
+<li>描述：给定两个数组，编写一个函数来计算它们的交集。<strong>说明：</strong>输出结果中每个元素出现的次数，应与元素在两个数组中出现的次数一致。我们可以不考虑输出结果的顺序。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-15"><a href="#2-个人Code-15" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=350 lang=cpp
+ *
+ * [350] 两个数组的交集 II
+ */
+class Solution {
+public:
+    void getArrayInter(vector&lt;int&gt; nums1, vector&lt;int&gt; nums2, \
+        vector&lt;int&gt;&amp; array_inter){
+        for(int i=0; i&lt;nums1.size(); i++){
+            auto iter_find = find(nums2.begin(), nums2.end(), nums1[i]);
+            if( iter_find != nums2.end() ){
+                array_inter.push_back(nums1[i]);
+                nums2.erase(iter_find);
+            }
+        }
+    }
+
+    vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
+        vector&lt;int&gt; array_inter;
+        if(nums1.size() &lt; nums2.size()){
+            getArrayInter(nums1,nums2,array_inter);
+        }
+        else{
+            getArrayInter(nums2,nums1,array_inter);
+        }
+
+        return array_inter;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：遍历nums1，在nums2中查找nums1数字，然后每当查找到就erase nums2中对应数字</li>
+</ul>
+</blockquote>
+<h3 id="Q60-1"><a href="#Q60-1" class="headerlink" title="Q60"></a>Q60</h3><h4 id="1-题目信息-16"><a href="#1-题目信息-16" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/valid-perfect-square/description/" target="_blank" rel="noopener">有效的完全平方数</a></li>
+<li>编号&amp;难度：[367]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/math" target="_blank" rel="noopener"><code>math</code></a> | <a href="https://leetcode.com/tag/binary-search" target="_blank" rel="noopener"><code>binary-search</code></a></li>
+<li>描述：给定一个正整数 <em>num</em>，编写一个函数，如果 <em>num</em> 是一个完全平方数，则返回 True，否则返回 False。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-16"><a href="#2-个人Code-16" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=367 lang=cpp
+ *
+ * [367] 有效的完全平方数
+ */
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        long left = 0, right = num, mid = num/2;
+        while(left &lt; right){
+            if(left+1 == right){
+                if(left*left == num || right*right == num){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+
+            mid = (left+right)/2;
+            if(mid*mid &lt; num){
+                left = mid;
+            }
+            else if(mid*mid &gt; num){
+                right = mid;
+            }
+            else{
+                return true;
+            }
+        }
+
+        return false;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：变相二分法，注意<code>if(left+1 == right)</code></li>
+</ul>
+</blockquote>
+<h3 id="Q61"><a href="#Q61" class="headerlink" title="Q61"></a>Q61</h3><h4 id="1-题目信息-17"><a href="#1-题目信息-17" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/first-unique-character-in-a-string/description/" target="_blank" rel="noopener">字符串中的第一个唯一字符</a></li>
+<li>编号&amp;难度：[387]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a> | <a href="https://leetcode.com/tag/string" target="_blank" rel="noopener"><code>string</code></a></li>
+<li>描述：给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-17"><a href="#2-个人Code-17" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=387 lang=cpp
+ *
+ * [387] 字符串中的第一个唯一字符
+ */
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        unordered_map&lt;char,int&gt; map_s;
+        vector&lt;int&gt; vector_s;
+
+        for(int i=0; i&lt;s.length(); i++){
+            if(map_s.find(s[i]) == map_s.end()){
+                map_s[s[i]] = i;
+                vector_s.push_back(i);
+            }
+            else{
+                auto iter_find = find(vector_s.begin(), vector_s.end(),map_s[s[i]]);
+                if( iter_find != vector_s.end() ){
+                    vector_s.erase(iter_find);
+                }
+            }
+        }
+
+
+        return (vector_s.size())?\
+            ( *(min_element(vector_s.begin(),vector_s.end())) ):(-1);
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：遍历字符串，map_s储存不重复字符index，vector_s储存字符index，当出现重复字符时erase掉vector_s中对应的index。最后，返回vector_s最小值</li>
+</ul>
+</blockquote>
+<h3 id="Q62"><a href="#Q62" class="headerlink" title="Q62"></a>Q62</h3><h4 id="1-题目信息-18"><a href="#1-题目信息-18" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/find-the-difference/description/" target="_blank" rel="noopener">找不同</a></li>
+<li>编号&amp;难度：[389]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/hash-table" target="_blank" rel="noopener"><code>hash-table</code></a> | <a href="https://leetcode.com/tag/bit-manipulation" target="_blank" rel="noopener"><code>bit-manipulation</code></a></li>
+<li>描述：给定两个字符串 <strong><em>s</em></strong> 和 <strong><em>t</em></strong>，它们只包含小写字母。字符串 <strong>t</strong> 由字符串 <strong>s</strong> 随机重排，然后在随机位置添加一个字母。请找出在 <strong><em>t</em></strong> 中被添加的字母。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-18"><a href="#2-个人Code-18" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=389 lang=cpp
+ *
+ * [389] 找不同
+ */
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        unordered_map&lt;char,int&gt; map;
+        for(char ch_s:s){
+            if(map.find(ch_s) != map.end()){
+                map[ch_s]++;
+            }
+            else{
+                map[ch_s] = 1;
+            }
+        }
+
+        for(char t_ch:t){
+            if(map.find(t_ch) == map.end() || map[t_ch] == 0){
+                return t_ch;
+            }
+            else{
+                map[t_ch]--;
+            }
+        }
+
+        return &#39;0&#39;;//trash code
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：遍历s记录字符频数map，然后遍历t，在map中查找t字符判断<code>if(map.find(t_ch) == map.end() || map[t_ch] == 0)</code>，否则频数减一</li>
+</ul>
+</blockquote>
+<h3 id="Q63"><a href="#Q63" class="headerlink" title="Q63"></a>Q63</h3><h4 id="1-题目信息-19"><a href="#1-题目信息-19" class="headerlink" title="(1) 题目信息"></a>(1) 题目信息</h4><blockquote>
+<ul>
+<li>标题：<a href="https://leetcode-cn.com/problems/sum-of-left-leaves/description/" target="_blank" rel="noopener">左叶子之和</a></li>
+<li>编号&amp;难度：[404]，easy</li>
+<li>Tags：<a href="https://leetcode.com/tag/tree" target="_blank" rel="noopener"><code>tree</code></a></li>
+<li>描述：计算给定二叉树的所有左叶子之和。</li>
+</ul>
+</blockquote>
+<h4 id="2-个人Code-19"><a href="#2-个人Code-19" class="headerlink" title="(2) 个人Code"></a>(2) 个人Code</h4><pre><code class="lang-cpp">/*
+ * @lc app=leetcode.cn id=404 lang=cpp
+ *
+ * [404] 左叶子之和
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void getLeftVals(TreeNode* root, vector&lt;int&gt;&amp; leftNodesVals, int leftOrRight){
+        if(!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; leftOrRight == 1){
+            leftNodesVals.push_back(root-&gt;val);
+            return;
+        }
+
+        if(root-&gt;left){
+            getLeftVals(root-&gt;left, leftNodesVals, 1);
+        }
+
+        if(root-&gt;right){
+            getLeftVals(root-&gt;right, leftNodesVals, 2);
+        }
+    }
+
+    int sumOfLeftLeaves(TreeNode* root) {
+        if(!root || (!root-&gt;left &amp;&amp; !root-&gt;right)){
+            return 0;
+        }
+
+        vector&lt;int&gt; leftNodesVals;
+        getLeftVals(root, leftNodesVals, 1);
+
+        int sum = 0;
+        for(int i=0; i&lt;leftNodesVals.size(); i++){
+            sum += leftNodesVals[i];
+        }
+
+        return sum;
+    }
+};
+</code></pre>
+<blockquote>
+<ul>
+<li>思路：深度优先遍历 + leftOrRight Flag</li>
+</ul>
+</blockquote>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/08/08/杂记长文-记一周年的某个烂flag及某些沙雕思绪/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Eajack Lau's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        EajackLR@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:EajackLR@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/GitHub/">GitHub<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode/">LeetCode<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Markdown/">Markdown<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/OpenCV/">OpenCV<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Songs/">Songs<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/blog/">blog<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/心情/">心情<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学建模/">数学建模<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构-算法/">数据结构&算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂乱/">杂乱<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/树莓派/">树莓派<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/爬虫/">爬虫<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/鸡汤/">鸡汤<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签云
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/aboutMe" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person_pin</i>
+                
+                About Me
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">38</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Eajack" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/Eajack_Lau-CGH-LEO/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Eajack's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+</body>
+    
+</html>
