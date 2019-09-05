@@ -108,7 +108,7 @@ categories:
 
 ## Organization experience
 - Sep. 2016-Sep. 2018(**Mathematical Modeling Innovation Practice Base of Jinan University**)
-> Work as assistant & minister in academic department
+> * Work as assistant & minister in academic department
 
 ## Professional Skills
 >* Familiar with MATLAB & Python, as well as C/C++
