@@ -21,9 +21,8 @@ categories:
 >* Major courses included: C Programming Language, Signals and Systems,Digital Image Processing, Digital Signal Processing
 
 - Sep. 2019-Present
-
-> - College (postgraduate recommendation): Huazhong University of Science and Technology (HUST), China
-> - Major: Computer Science & Technology, School of Computer Science & Technology
+>* College (postgraduate recommendation): Huazhong University of Science and Technology (HUST), China
+>* Major: Computer Science & Technology, School of Computer Science & Technology
 
 ## Honors
 * Jan. 2018-Dec. 2018
