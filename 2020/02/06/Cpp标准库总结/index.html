@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+        Eajack&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Eajack Lau">
+    <meta name="description" itemprop="description" content="Someday I will be a giant...">
+    <meta name="keywords" content>
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" sizes="192x192" href="/img/favicon.jpg">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Eajack&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://eajack.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Eajack&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="Someday I will be a giant...">
+    
+
+    
+        <meta property="article:published_time" content="2月 06, 2020">
+        <meta property="article:modified_time" content="2月 13, 2020">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Eajack&#39;s Blog">
+    <meta name="twitter:description" content="Someday I will be a giant...">
+    <meta name="twitter:image" content="/img/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://eajack.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Eajack&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eajack Lau",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "Someday I will be a giant..."
+    },
+    "headline": "",
+    "url": "https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html",
+    "datePublished": "2月 06, 2020",
+    "dateModified": "2月 13, 2020",
+    "description": "Someday I will be a giant...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://eajack.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    .footer-sns-zhihu {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzYuOCA3OC44Yy04LjYgMi44LTI0IDEyLjQtMzMuNiAyMS04LjYgNy44LTIxLjQgMjcuOC0yNC40IDM3LjgtNC4yIDE0LTQgNzIzLjQgMCA3MzMuNCA4LjYgMjAuNiAzNi44IDQ4LjYgNTYgNTUuNiA5IDMuNCA3NDcuNCAzLjQgNzU2LjQgMCAxOS44LTcuMiA0OS0zNi42IDU2LTU2LjIgMi4yLTYgMi42LTc1LjYgMi44LTM2Ni40IDAtMjMzLjgtLjYtMzYxLjQtMi0zNjYtMS4yLTMuOC02LjYtMTMuOC0xMi4yLTIyLjItOC4yLTEyLjItMTMuNC0xNy40LTI1LjgtMjUuNi04LjQtNS44LTE5LTExLjQtMjMuMi0xMi4yLTQuNi0xLjItMTYzLjItMS44LTM3NC44LTEuOC0yOTMgMC0zNjguNi42LTM3NS4yIDIuNnptMTkwIDE0NS42YzUuNCA3LjYgNCAxNy40LTQuOCAzMS42LTkuOCAxNi0xMC44IDI3LjQtMyAzNSAyLjYgMi44IDYuNCA1IDguNCA1czM3LjguNCA3OS42LjZjNjggLjQgNzYuNi44IDgyLjQgMy44IDkuMiA1IDEyLjYgMTEgMTIuNiAyMiAwIDctMS4yIDEwLjgtNC44IDE1bC00LjggNS40LTM4IC4yYy01My44IDAtNTMuOCAwLTU1LjQgNTEuMi0uNiAxOC0xLjYgNDIuOC0yLjIgNTUtMS4yIDIyLjguNiAzMS42IDcuNiAzNi4yIDEuNC44IDIyLjIgMiA0NiAyLjZsNDMuMiAxIDguOCA2YzE1LjQgMTAuOCAxNy44IDI5LjIgNSAzNy01LjggMy42LTEwLjIgNC01MS44IDQtMzEgMC00NyAuOC01MC42IDIuNC03IDMuMi0xNC4yIDE3LjYtMTcuMiAzNC40LTMuMiAxNi42LTEgMjEuOCA5LjYgMjUuMiAxMy40IDQuMiAyMS44IDExLjIgNDkgNDEuNCAzNSAzOC44IDM2LjYgNDEgNDEuOCA1OC44IDcgMjMuOCAyLjIgNDEuOC0xMS40IDQxLjgtNy42IDAtMTItMy0yMS0xNC42LTEzLjgtMTcuNC01NC40LTY1LjgtNjItNzMuOC0xNS4yLTE2LTI5LjQtNS44LTM4LjggMjcuNC0xLjggNi42LTguOCAyMy4yLTE1LjYgMzctMTAuOCAyMi0xNCAyNi44LTI3LjQgMzkuNi0xOS42IDE5LjItMjYuNCAyMy01My42IDI5LjYtMjcuMiA2LjQtMzcgNS42LTM4LTMuNi0xLTguNCA0LjQtMTYuNCAyMC0yOSAxNi0xMyAzNi44LTM2LjYgNDUuMi01MS40IDMtNS4yIDguMi0xMy44IDExLjYtMTkgMy40LTUgMTEuOC0yMC40IDE4LjYtMzQuMiAxMC0yMCAxMy42LTI5LjQgMTcuMi00NyAyLjYtMTIuMiA2LjItMjUuNCA3LjgtMjkuNCA0LTkuNCA0LTIxLjQuMi0yNy01LjItNy40LTE2LTguOC02Mi42LTguNC01MC40LjQtNTUuMi0uOC01Ny42LTEzLjItMS44LTEwLjQgNS44LTI0LjQgMTYuMi0yOS44IDcuNC0zLjggMTEuOC00LjIgNTYuMi00LjhsNDguNC0uOCA0LjYtNWM0LjgtNSA0LjgtNSA1LTYxLjYgMC0zNS4yLS44LTU5LjItMi02My4yLTMuOC0xMS4yLTExLTE0LjgtMzAuMi0xNC44cy0yMS40IDEuNC0zMS4yIDE4LjJjLTguMiAxNC40LTIwLjYgMjguOC0zMy4yIDM4LjgtMTMuMiAxMC40LTIxLjYgMTMtMjggOS04LjQtNS42LTUuMi0yMy4yIDguMi00My4yIDQtNi40IDkuMi0xOC42IDEyLjItMjkuNiAzLTEwLjIgNy40LTIzLjIgMTAtMjkgMi40LTUuNiA2LTE2LjggOC0yNC42IDUuNi0yMy42IDI0LTUwLjggMzkuNC01OC40IDExLjItNS40IDE4LjYtNS40IDIyLjQuMnptNDUyIDY4LjJjMTEuOCA3LjggMTEuNC0uOCAxMC44IDIxNi0uNiAxODEtLjggMTk4LjgtNCAyMDMtNy42IDEwLjgtOS44IDExLjQtNTMuNiAxMi40bC00MSAxLTE0IDcuOGMtNy42IDQuMi0yMS4yIDEzLTI5LjggMTkuNC0yNS44IDE5LjItMzUgMTkuOC00My40IDMuMi0xMS44LTIzLjItMjMuNi0zMy4yLTM5LjQtMzMuNC04LjggMC0xMy42LTIuOC0xNy4yLTkuOC0yLjYtNC44LTMtMzMuOC0yLjYtMjA4LjguNC0xOTkuOC40LTIwMyA0LjQtMjA3LjQgMi4yLTIuNCA1LjgtNS4yIDgtNi4yIDIuMi0uOCA1MS44LTEuNCAxMTAtMS4yIDk5IC40IDEwNi42LjYgMTExLjggNHoiLz48cGF0aCBkPSJNNjA2LjggMzM3LjRjLTIuNC40LTYuNCAzLTkgNS44bC00LjggNS4yLS42IDE1Ni40LS40IDE1Ni40IDYuNCA5LjRjMy42IDUuMiA5LjggMTUuMiAxMy42IDIxLjggOCAxNC4yIDE2LjggMjAuNiAyNS42IDE4LjYgMy4yLS42IDEzLjgtNyAyMy42LTE0LjIgMjMtMTcgMjcuOC0xOSA1MC4yLTIwLjIgMTYuNC0xIDE5LjItMS44IDIzLjYtNi4yIDIuOC0yLjggNS02LjQgNS4yLTguMlY1MDUuNmMwLTExNi0uNi0xNTQuNC0yLjYtMTU4LjYtNC44LTEwLjQtOC40LTExLTcwLTEwLjgtMzEuMi4yLTU4LjYuOC02MC44IDEuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0-简述"><span class="post-toc-number">1.</span> <span class="post-toc-text">0. 简述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-C-library"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. C library</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-lt-cassert-gt-assert-h"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 &lt;cassert&gt; (assert.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-void-assert-int-expression-（debug断言函数）"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">(1) void assert (int expression)（debug断言函数）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-lt-cctype-gt-ctype-h"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 &lt;cctype&gt; (ctype.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-int-isalnum-int-c-（判断字符c是否：数字-小写字母-大写字母）"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">(1) int isalnum ( int c )（判断字符c是否：数字/小写字母/大写字母）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-int-isalpha-int-c-（判断字符c是否：小写字母-大写字母）"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">(2) int isalpha ( int c )（判断字符c是否：小写字母/大写字母）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-int-isdigit-int-c-（判断字符c是否：10进制数字）"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">(3) int isdigit ( int c )（判断字符c是否：10进制数字）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-int-islower-int-c-（判断字符c是否：小写字母）"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">(4) int islower( int c )（判断字符c是否：小写字母）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-int-isupper-int-c-（判断字符c是否：大写字母）"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">(5) int isupper( int c )（判断字符c是否：大写字母）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-int-isxdigit-int-c-（判断字符c是否：16进制数字）"><span class="post-toc-number">2.2.6.</span> <span class="post-toc-text">(6) int isxdigit( int c )（判断字符c是否：16进制数字）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-int-tolower-int-c-（大写字母-gt-小写字母）"><span class="post-toc-number">2.2.7.</span> <span class="post-toc-text">(7) int tolower( int c )（大写字母 =&gt; 小写字母）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-int-toupper-int-c-（小写字母-gt-大写字母）"><span class="post-toc-number">2.2.8.</span> <span class="post-toc-text">(8) int toupper( int c )（小写字母 =&gt; 大写字母）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-lt-cmath-gt-math-h"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">1.3 &lt;cmath&gt; (math.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-double-cos-sin-tan-acos-asin-atan-exp-exp2-log-log10-sqrt-double-x-（数学函数：cos-x-sin-x-tan-x-acos-x-asin-x-atan-x-e-x-e-2-log-e-log-10-sqrt-x-）"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">(1) double cos/sin/tan/acos/asin/atan/exp/exp2/log/log10/sqrt (double x)（数学函数：cos(x)/sin(x)/tan(x)/acos(x)/asin(x)/atan(x)/$e^{x}$/$e^{2}$/$log_{e}$/$log_{10}$/$\sqrt{x}$）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-double-pow-double-base-double-exponent-（数学函数：-base-exponent-b-e-）"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">(2) double pow (double base , double exponent)（数学函数：$base^{exponent}=b^{e}$）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-double-ceil-double-x-（向上取整，e-g-2-3-gt-3；5-6-gt-6）"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">(3) double ceil (double x)（向上取整，e.g. 2.3 =&gt; 3；5.6 =&gt; 6）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-double-floor-double-x-（向下取整，e-g-2-3-gt-2；5-6-gt-5）"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">(4) double floor(double x)（向下取整，e.g. 2.3 =&gt; 2；5.6 =&gt; 5）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-int-abs-int-x-（绝对值函数-int-绝对值！！！）"><span class="post-toc-number">2.3.5.</span> <span class="post-toc-text">(5) int abs(int x)（绝对值函数, int 绝对值！！！）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-double-fabs-double-x-（绝对值函数-double-绝对值！！！）"><span class="post-toc-number">2.3.6.</span> <span class="post-toc-text">(6) double fabs(double x)（绝对值函数, double 绝对值！！！）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-lt-climits-gt-limits-h"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">1.4 &lt;climits&gt; (limits.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-INT-MIN（-32767-2-15-1-or-更小）"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">(1) INT_MIN（$-32767 (-2^{15}+1)$ or 更小）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-INT-MAX（-32767-2-15-1-or-更大）"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">(2) INT_MAX（$32767 (2^{15}-1)$or 更大）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-UINT-MAX（-2-32-1-or-更大）"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">(3) UINT_MAX（$2^{32}-1$ or 更大）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-5-lt-cstddef-gt-stddef-h"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">1.5 &lt;cstddef&gt; (stddef.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-size-t（sizeof运算返回类型，属于unsigned-int）"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">(1) size_t（sizeof运算返回类型，属于unsigned int）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-nullptr-t（即C-的nullptr，专指空指针，为解决：C-11之前版本的语法中，NULL代表指针-amp-0的二义性）"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">(2) nullptr_t（即C++的nullptr，专指空指针，为解决：C++11之前版本的语法中，NULL代表指针&amp;0的二义性）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-NULL（即沿用C的NULL，专指数字0）"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">(3) NULL（即沿用C的NULL，专指数字0）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-6-lt-cstdlib-gt-stdlib-h"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">1.6 &lt;cstdlib&gt; (stdlib.h)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-double-atof-const-char-str-（浮点数str-gt-浮点数double）"><span class="post-toc-number">2.6.1.</span> <span class="post-toc-text">(1) double atof (const char* str)（浮点数str =&gt; 浮点数double）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-int-atoi-const-char-str-（整数str-gt-整数int）"><span class="post-toc-number">2.6.2.</span> <span class="post-toc-text">(2) int atoi (const char * str)（整数str =&gt; 整数int）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-void-srand-unsigned-int-seed-（配合rand使用，初始化随机数种子）"><span class="post-toc-number">2.6.3.</span> <span class="post-toc-text">(3) void srand (unsigned int seed)（配合rand使用，初始化随机数种子）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-int-rand-void-（返回-0-RAND-MAX-伪随机数，RAND-MAX-gt-32767）"><span class="post-toc-number">2.6.4.</span> <span class="post-toc-text">(4) int rand (void)（返回[0, RAND_MAX]伪随机数，RAND_MAX &gt;= 32767）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-void-malloc-size-t-size"><span class="post-toc-number">2.6.5.</span> <span class="post-toc-text">(5) void* malloc (size_t size)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-void-calloc-size-t-num-size-t-size"><span class="post-toc-number">2.6.6.</span> <span class="post-toc-text">(6) void* calloc (size_t num, size_t size)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-void-free-void-ptr"><span class="post-toc-number">2.6.7.</span> <span class="post-toc-text">(7) void free (void* ptr)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Containers"><span class="post-toc-number">3.</span> <span class="post-toc-text">2. Containers</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-lt-array-gt"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">2.1 &lt;array&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-lt-deque-gt"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.2 &lt;deque&gt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-特点-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-常用成员函数-1"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-lt-forward-list-gt"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">2.3 &lt;forward_list&gt;</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eajack Lau</strong>
+        <span>2月 06, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html&via=Eajack Lau" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Eajack&#39;s Blog&title=&summary=Someday I will be a giant...&pics=https://eajack.github.io/img/favicon.jpg&url=https://eajack.github.io/2020/02/06/Cpp标准库总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>title: Cpp标准库总结<br>date: 2020-2-6 18:22:44<br>tags:</p>
+<ul>
+<li>C++</li>
+<li>LeetCode<br>categories:</li>
+<li>C++</li>
+<li>LeetCode</li>
+</ul>
+<h1 id="0-简述"><a href="#0-简述" class="headerlink" title="0. 简述"></a>0. 简述</h1><p>个人整理Cpp标准库，整理常用的标准库函数。参考<a href="http://www.cplusplus.com/reference/" target="_blank" rel="noopener">cplusplus.com</a>，<strong>主要用于LeetCode刷题等</strong>。</p>
+<h1 id="1-C-library"><a href="#1-C-library" class="headerlink" title="1. C library"></a>1. C library</h1><p>C++兼容C的库</p>
+<h2 id="1-1-lt-cassert-gt-assert-h"><a href="#1-1-lt-cassert-gt-assert-h" class="headerlink" title="1.1 &lt;cassert&gt; (assert.h)"></a>1.1 &lt;cassert&gt; (assert.h)</h2><h3 id="1-void-assert-int-expression-（debug断言函数）"><a href="#1-void-assert-int-expression-（debug断言函数）" class="headerlink" title="(1) void assert (int expression)（debug断言函数）"></a>(1) void assert (int expression)（debug断言函数）</h3><p>参数是表达式，如果表达式expression为true的话，则不终止程序；否则终止。</p>
+<pre><code class="lang-cpp">/* assert example */
+#include &lt;stdio.h&gt;      /* printf */
+#include &lt;assert.h&gt;     /* assert */
+
+void print_number(int* myInt) {
+    assert (myInt!=NULL);
+    printf (&quot;%d\n&quot;,*myInt);
+}
+
+int main () {
+    int a=10;
+    int * b = NULL;
+    int * c = NULL;
+
+    b=&amp;a;
+
+    print_number (b);
+    print_number (c);
+
+    return 0;
+}
+</code></pre>
+<h2 id="1-2-lt-cctype-gt-ctype-h"><a href="#1-2-lt-cctype-gt-ctype-h" class="headerlink" title="1.2 &lt;cctype&gt; (ctype.h)"></a>1.2 &lt;cctype&gt; (ctype.h)</h2><h3 id="1-int-isalnum-int-c-（判断字符c是否：数字-小写字母-大写字母）"><a href="#1-int-isalnum-int-c-（判断字符c是否：数字-小写字母-大写字母）" class="headerlink" title="(1) int isalnum ( int c )（判断字符c是否：数字/小写字母/大写字母）"></a>(1) int isalnum ( int c )（判断字符c是否：数字/小写字母/大写字母）</h3><h3 id="2-int-isalpha-int-c-（判断字符c是否：小写字母-大写字母）"><a href="#2-int-isalpha-int-c-（判断字符c是否：小写字母-大写字母）" class="headerlink" title="(2) int isalpha ( int c )（判断字符c是否：小写字母/大写字母）"></a>(2) int isalpha ( int c )（判断字符c是否：小写字母/大写字母）</h3><h3 id="3-int-isdigit-int-c-（判断字符c是否：10进制数字）"><a href="#3-int-isdigit-int-c-（判断字符c是否：10进制数字）" class="headerlink" title="(3) int isdigit ( int c )（判断字符c是否：10进制数字）"></a>(3) int isdigit ( int c )（判断字符c是否：10进制数字）</h3><h3 id="4-int-islower-int-c-（判断字符c是否：小写字母）"><a href="#4-int-islower-int-c-（判断字符c是否：小写字母）" class="headerlink" title="(4) int islower( int c )（判断字符c是否：小写字母）"></a>(4) int islower( int c )（判断字符c是否：小写字母）</h3><h3 id="5-int-isupper-int-c-（判断字符c是否：大写字母）"><a href="#5-int-isupper-int-c-（判断字符c是否：大写字母）" class="headerlink" title="(5) int isupper( int c )（判断字符c是否：大写字母）"></a>(5) int isupper( int c )（判断字符c是否：大写字母）</h3><h3 id="6-int-isxdigit-int-c-（判断字符c是否：16进制数字）"><a href="#6-int-isxdigit-int-c-（判断字符c是否：16进制数字）" class="headerlink" title="(6) int isxdigit( int c )（判断字符c是否：16进制数字）"></a>(6) int isxdigit( int c )（判断字符c是否：16进制数字）</h3><h3 id="7-int-tolower-int-c-（大写字母-gt-小写字母）"><a href="#7-int-tolower-int-c-（大写字母-gt-小写字母）" class="headerlink" title="(7) int tolower( int c )（大写字母 =&gt; 小写字母）"></a>(7) int tolower( int c )（大写字母 =&gt; 小写字母）</h3><h3 id="8-int-toupper-int-c-（小写字母-gt-大写字母）"><a href="#8-int-toupper-int-c-（小写字母-gt-大写字母）" class="headerlink" title="(8) int toupper( int c )（小写字母 =&gt; 大写字母）"></a>(8) int toupper( int c )（小写字母 =&gt; 大写字母）</h3><ul>
+<li><p>参数：整形（包括char）</p>
+</li>
+<li><p>Return：0 =&gt; false；非0值 =&gt; true</p>
+</li>
+</ul>
+<pre><code class="lang-cpp">/* examples */
+#include &lt;ctype.h&gt;
+int main ()
+{
+    /* 1- isalnum */
+    //&quot;ABCDEFGHIJKLMNOPQRSTUWXYZ&quot;
+    //&quot;abcdefghijklmnopqrstuvwxyz&quot;
+    //&quot;0123456789&quot;
+    return isalnum(&#39;A&#39;) &amp;&amp; isalnum(&#39;a&#39;) &amp;&amp; isalnum(&#39;6&#39;);
+    //true
+
+    /* 2- isalpha */
+    //&quot;ABCDEFGHIJKLMNOPQRSTUWXYZ&quot;
+    //&quot;abcdefghijklmnopqrstuvwxyz&quot;
+    return isalpha(&#39;A&#39;) &amp;&amp; isalpha (&#39;a&#39;);
+    //true
+
+    /* 3- isdigit  */
+    //&quot;0123456789&quot;
+    return isdigit(&#39;1&#39;) &amp;&amp; isdigit(&#39;2&#39;);
+    //true
+
+    /* 4- islower  */
+    //&quot;abcdefghijklmnopqrstuvwxyz&quot;
+    return islower(&#39;a&#39;) &amp;&amp; islower(&#39;b&#39;);
+    //true
+
+    /* 5- isupper  */
+    //&quot;ABCDEFGHIJKLMNOPQRSTUWXYZ&quot;
+    return isupper(&#39;A&#39;) &amp;&amp; isupper(&#39;B&#39;);
+    //true
+
+    /* 6- isxdigit  */
+    //&quot;0123456789abcdefABCDEF&quot;
+    return isxdigit(&#39;0&#39;) &amp;&amp; isxdigit(&#39;a&#39;) &amp;&amp; isxdigit(&#39;A&#39;);
+    //true
+
+    /* 7- tolower  */
+    //只转换大写字母，其他不变
+    char a = tolower(&#39;a&#39;)//a;
+    char b = tolower(&#39;B&#39;)//b;
+
+    /* 8- toupper  */
+    //只转换小写字母，其他不变
+    char A = toupper(&#39;a&#39;)//A;
+    char B = toupper(&#39;B&#39;)//B;
+}
+</code></pre>
+<h2 id="1-3-lt-cmath-gt-math-h"><a href="#1-3-lt-cmath-gt-math-h" class="headerlink" title="1.3 &lt;cmath&gt; (math.h)"></a>1.3 &lt;cmath&gt; (math.h)</h2><p>数学函数，列表如下：</p>
+<h3 id="1-double-cos-sin-tan-acos-asin-atan-exp-exp2-log-log10-sqrt-double-x-（数学函数：cos-x-sin-x-tan-x-acos-x-asin-x-atan-x-e-x-e-2-log-e-log-10-sqrt-x-）"><a href="#1-double-cos-sin-tan-acos-asin-atan-exp-exp2-log-log10-sqrt-double-x-（数学函数：cos-x-sin-x-tan-x-acos-x-asin-x-atan-x-e-x-e-2-log-e-log-10-sqrt-x-）" class="headerlink" title="(1) double cos/sin/tan/acos/asin/atan/exp/exp2/log/log10/sqrt (double x)（数学函数：cos(x)/sin(x)/tan(x)/acos(x)/asin(x)/atan(x)/$e^{x}$/$e^{2}$/$log_{e}$/$log_{10}$/$\sqrt{x}$）"></a>(1) double cos/sin/tan/acos/asin/atan/exp/exp2/log/log10/sqrt (double x)（数学函数：cos(x)/sin(x)/tan(x)/acos(x)/asin(x)/atan(x)/$e^{x}$/$e^{2}$/$log_{e}$/$log_{10}$/$\sqrt{x}$）</h3><h3 id="2-double-pow-double-base-double-exponent-（数学函数：-base-exponent-b-e-）"><a href="#2-double-pow-double-base-double-exponent-（数学函数：-base-exponent-b-e-）" class="headerlink" title="(2) double pow (double base , double exponent)（数学函数：$base^{exponent}=b^{e}$）"></a>(2) double pow (double base , double exponent)（数学函数：$base^{exponent}=b^{e}$）</h3><h3 id="3-double-ceil-double-x-（向上取整，e-g-2-3-gt-3；5-6-gt-6）"><a href="#3-double-ceil-double-x-（向上取整，e-g-2-3-gt-3；5-6-gt-6）" class="headerlink" title="(3) double ceil (double x)（向上取整，e.g. 2.3 =&gt; 3；5.6 =&gt; 6）"></a>(3) double ceil (double x)（向上取整，e.g. 2.3 =&gt; 3；5.6 =&gt; 6）</h3><h3 id="4-double-floor-double-x-（向下取整，e-g-2-3-gt-2；5-6-gt-5）"><a href="#4-double-floor-double-x-（向下取整，e-g-2-3-gt-2；5-6-gt-5）" class="headerlink" title="(4) double floor(double x)（向下取整，e.g. 2.3 =&gt; 2；5.6 =&gt; 5）"></a>(4) double floor(double x)（向下取整，e.g. 2.3 =&gt; 2；5.6 =&gt; 5）</h3><h3 id="5-int-abs-int-x-（绝对值函数-int-绝对值！！！）"><a href="#5-int-abs-int-x-（绝对值函数-int-绝对值！！！）" class="headerlink" title="(5) int abs(int x)（绝对值函数, int 绝对值！！！）"></a>(5) int abs(int x)（绝对值函数, <strong>int 绝对值！！！</strong>）</h3><h3 id="6-double-fabs-double-x-（绝对值函数-double-绝对值！！！）"><a href="#6-double-fabs-double-x-（绝对值函数-double-绝对值！！！）" class="headerlink" title="(6) double fabs(double x)（绝对值函数, double 绝对值！！！）"></a>(6) double fabs(double x)（绝对值函数, <strong>double 绝对值！！！</strong>）</h3><h2 id="1-4-lt-climits-gt-limits-h"><a href="#1-4-lt-climits-gt-limits-h" class="headerlink" title="1.4 &lt;climits&gt; (limits.h)"></a>1.4 &lt;climits&gt; (limits.h)</h2><p>INF宏定义</p>
+<h3 id="1-INT-MIN（-32767-2-15-1-or-更小）"><a href="#1-INT-MIN（-32767-2-15-1-or-更小）" class="headerlink" title="(1) INT_MIN（$-32767 (-2^{15}+1)$ or 更小）"></a>(1) INT_MIN（$-32767 (-2^{15}+1)$ or 更小）</h3><h3 id="2-INT-MAX（-32767-2-15-1-or-更大）"><a href="#2-INT-MAX（-32767-2-15-1-or-更大）" class="headerlink" title="(2) INT_MAX（$32767 (2^{15}-1)$or 更大）"></a>(2) INT_MAX（$32767 (2^{15}-1)$or 更大）</h3><h3 id="3-UINT-MAX（-2-32-1-or-更大）"><a href="#3-UINT-MAX（-2-32-1-or-更大）" class="headerlink" title="(3) UINT_MAX（$2^{32}-1$ or 更大）"></a>(3) UINT_MAX（$2^{32}-1$ or 更大）</h3><h2 id="1-5-lt-cstddef-gt-stddef-h"><a href="#1-5-lt-cstddef-gt-stddef-h" class="headerlink" title="1.5 &lt;cstddef&gt; (stddef.h)"></a>1.5 &lt;cstddef&gt; (stddef.h)</h2><p>C标准定义</p>
+<h3 id="1-size-t（sizeof运算返回类型，属于unsigned-int）"><a href="#1-size-t（sizeof运算返回类型，属于unsigned-int）" class="headerlink" title="(1) size_t（sizeof运算返回类型，属于unsigned int）"></a>(1) size_t（sizeof运算返回类型，属于unsigned int）</h3><h3 id="2-nullptr-t（即C-的nullptr，专指空指针，为解决：C-11之前版本的语法中，NULL代表指针-amp-0的二义性）"><a href="#2-nullptr-t（即C-的nullptr，专指空指针，为解决：C-11之前版本的语法中，NULL代表指针-amp-0的二义性）" class="headerlink" title="(2) nullptr_t（即C++的nullptr，专指空指针，为解决：C++11之前版本的语法中，NULL代表指针&amp;0的二义性）"></a>(2) nullptr_t（即C++的nullptr，专指空指针，为解决：C++11之前版本的语法中，NULL代表指针&amp;0的二义性）</h3><h3 id="3-NULL（即沿用C的NULL，专指数字0）"><a href="#3-NULL（即沿用C的NULL，专指数字0）" class="headerlink" title="(3) NULL（即沿用C的NULL，专指数字0）"></a>(3) NULL（即沿用C的NULL，专指数字0）</h3><pre><code class="lang-cpp">/*
+————————————————
+版权声明：本文为CSDN博主「csu_zhengzy~」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_18108083/article/details/84346655
+*/
+
+
+#include &lt;iostream&gt;
+using namespace std;
+
+void func(void* i)
+{
+    cout &lt;&lt; &quot;func1&quot; &lt;&lt; endl;
+}
+
+void func(int i)
+{
+    cout &lt;&lt; &quot;func2&quot; &lt;&lt; endl;
+}
+
+//这里func重载，有2种参数，void*/int，若用C语言定义，NULL可表示2种类型：void*/int（空指针/0）
+//所以，引入nullptr专指空指针，NULL专指数字0 
+void main(int argc,char* argv[])
+{
+    func(NULL);//运行：void func(int i)
+    func(nullptr);//运行：void func(void* i)
+    getchar();
+}
+</code></pre>
+<h2 id="1-6-lt-cstdlib-gt-stdlib-h"><a href="#1-6-lt-cstdlib-gt-stdlib-h" class="headerlink" title="1.6 &lt;cstdlib&gt; (stdlib.h)"></a>1.6 &lt;cstdlib&gt; (stdlib.h)</h2><h3 id="1-double-atof-const-char-str-（浮点数str-gt-浮点数double）"><a href="#1-double-atof-const-char-str-（浮点数str-gt-浮点数double）" class="headerlink" title="(1) double atof (const char* str)（浮点数str =&gt; 浮点数double）"></a>(1) double atof (const char* str)（浮点数str =&gt; 浮点数double）</h3><h3 id="2-int-atoi-const-char-str-（整数str-gt-整数int）"><a href="#2-int-atoi-const-char-str-（整数str-gt-整数int）" class="headerlink" title="(2) int atoi (const char * str)（整数str =&gt; 整数int）"></a>(2) int atoi (const char * str)（整数str =&gt; 整数int）</h3><pre><code class="lang-cpp">/*
+atof example
+atoi example
+*/
+#include &lt;cstddef&gt;
+using namespace std;
+
+int main(){
+    double a = atof(&quot;3.14524&quot;);
+    int b = atoi(&quot;1&quot;);
+
+    return 0;
+}
+</code></pre>
+<h3 id="3-void-srand-unsigned-int-seed-（配合rand使用，初始化随机数种子）"><a href="#3-void-srand-unsigned-int-seed-（配合rand使用，初始化随机数种子）" class="headerlink" title="(3) void srand (unsigned int seed)（配合rand使用，初始化随机数种子）"></a>(3) void srand (unsigned int seed)（配合rand使用，初始化随机数种子）</h3><h3 id="4-int-rand-void-（返回-0-RAND-MAX-伪随机数，RAND-MAX-gt-32767）"><a href="#4-int-rand-void-（返回-0-RAND-MAX-伪随机数，RAND-MAX-gt-32767）" class="headerlink" title="(4) int rand (void)（返回[0, RAND_MAX]伪随机数，RAND_MAX &gt;= 32767）"></a>(4) int rand (void)（返回[0, RAND_MAX]伪随机数，RAND_MAX &gt;= 32767）</h3><pre><code class="lang-cpp">/* srand &amp; rand example */
+#include &lt;stdio.h&gt;      /* printf, NULL */
+#include &lt;stdlib.h&gt;     /* srand, rand */
+#include &lt;time.h&gt;       /* time */
+
+int main ()
+{
+  printf (&quot;First number: %d\n&quot;, rand()%100);
+  srand (time(NULL));
+  printf (&quot;Random number: %d\n&quot;, rand()%100);
+  srand (1);
+  printf (&quot;Again the first number: %d\n&quot;, rand()%100);
+
+  return 0;
+}
+</code></pre>
+<h3 id="5-void-malloc-size-t-size"><a href="#5-void-malloc-size-t-size" class="headerlink" title="(5) void* malloc (size_t size)"></a>(5) void* malloc (size_t size)</h3><h3 id="6-void-calloc-size-t-num-size-t-size"><a href="#6-void-calloc-size-t-num-size-t-size" class="headerlink" title="(6) void* calloc (size_t num, size_t size)"></a>(6) void* calloc (size_t num, size_t size)</h3><h3 id="7-void-free-void-ptr"><a href="#7-void-free-void-ptr" class="headerlink" title="(7) void free (void* ptr)"></a>(7) void free (void* ptr)</h3><p>free &amp; malloc 、calloc配合使用</p>
+<ul>
+<li><p>malloc：分配连续的内存空间（block），大小为size字节。Return：指向空间初始地址的指针。分配空间没有初始化，全部为不确定值。size == 0 =&gt; 未定义行为（标准未涉及的行为，结果未知，和具体编译器有关）。</p>
+</li>
+<li><p>calloc：分配（num<em>size）字节的连续内存空间（block）。<em>*和malloc唯一区别在于，会初始化为0。</em></em>size == 0 =&gt; 未定义行为（标准未涉及的行为，结果未知，和具体编译器有关）。</p>
+</li>
+</ul>
+<h1 id="2-Containers"><a href="#2-Containers" class="headerlink" title="2. Containers"></a>2. Containers</h1><p>C++容器：</p>
+<ul>
+<li><p>说明：动态数组(vector)、队列(queue)、堆栈(stack)、堆(priority_queue)、链表(list)、树(set）、关联数组(map)</p>
+</li>
+<li><p>分类</p>
+<p><strong>顺序容器</strong></p>
+<ul>
+<li><p>array</p>
+</li>
+<li><p><strong>vector</strong></p>
+</li>
+<li><p><strong>deque</strong></p>
+</li>
+<li><p>forward_list</p>
+</li>
+<li><p>list</p>
+</li>
+</ul>
+<p><strong>容器适配器</strong></p>
+<ul>
+<li><p><strong>stack</strong>：LIFO</p>
+</li>
+<li><p>queue：FIFO</p>
+</li>
+<li><p><strong>priority_queue</strong></p>
+</li>
+</ul>
+<p><strong>关系型容器</strong></p>
+<ul>
+<li><p><strong>set</strong></p>
+</li>
+<li><p>multiset</p>
+</li>
+<li><p><strong>map</strong></p>
+</li>
+<li><p>multimap</p>
+</li>
+</ul>
+<p><strong>无序关系型容器</strong></p>
+<ul>
+<li><p>unordered_set</p>
+</li>
+<li><p>unordered_multiset</p>
+</li>
+<li><p>unordered_map</p>
+</li>
+<li><p>unordered_multimap</p>
+</li>
+</ul>
+</li>
+<li><p><strong>通用成员函数</strong>（大部分常用容器C）</p>
+<ul>
+<li>C.begin()（首位iter，<strong>用于遍历</strong>）、C.end()（末位iter，用于遍历）。<strong>[begin, end)</strong></li>
+<li>C.rbegin()（末位iter，<strong>用于逆序遍历</strong>）、C.rend()（首位iter，用于逆序遍历）</li>
+<li>C.size()（size_t，容器大小）</li>
+<li>C.empty()（bool，是否为空）</li>
+<li>C.front()（首位元素值）、C.back()（末位元素值）</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-lt-array-gt"><a href="#2-1-lt-array-gt" class="headerlink" title="2.1 &lt;array&gt;"></a>2.1 &lt;array&gt;</h2><h3 id="1-特点"><a href="#1-特点" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>顺序储存</li>
+<li>连续内存块</li>
+<li>固定尺寸（因此声明时，必须连带size声明）</li>
+</ul>
+<p>注意：size = 0的array有效，但是这个array不能解引用（dereferenced），也就是不能取值，否则导致未定义行为。</p>
+<h3 id="2-常用成员函数"><a href="#2-常用成员函数" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>运算符[]：类似内置数组</li>
+<li>void fill (const value_type&amp; val)：使得数组C所有值置为val</li>
+<li>void swap (array&amp; x)：2个<strong>size相同</strong>的数组值对换</li>
+</ul>
+<pre><code class="lang-cpp">/* array examples*/
+#include &lt;array&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main ()
+{
+    array&lt;int,5&gt; a = {1,2,3,4,5};
+    //1- 通用成员函数
+    for(auto it=a.begin(); it!=a.end(); it++){
+        cout &lt;&lt; *it &lt;&lt; endl;
+        //1 2 3 4 5
+    }
+    for(auto it=a.rbegin(); it!=a.rend(); it++){
+        cout &lt;&lt; *it &lt;&lt; endl;
+        //5 4 3 2 1
+    }
+    cout &lt;&lt; a.size() &lt;&lt; endl;//5
+    cout &lt;&lt; a.front() &lt;&lt; &quot; &quot; &lt;&lt; a.back() &lt;&lt; endl;//1 5
+    if(a.empty()){
+        cout &lt;&lt; &quot;11&quot; &lt;&lt; endl;
+    }
+    else{
+        cout &lt;&lt; &quot;22&quot; &lt;&lt; endl;
+        //22
+    }
+    //2- 运算符[]
+    for(int i=0; i&lt;a.size(); i++){
+        cout &lt;&lt; a[i] &lt;&lt; endl;
+        //1 2 3 4 5
+    }
+    //3- fill
+    a.fill(5);
+    for(int i=0; i&lt;a.size(); i++){
+        cout &lt;&lt; a[i] &lt;&lt; endl;
+        //5 5 5 5 5
+    }
+    //4- swap
+    array&lt;int, 5&gt; b = {1,1,1,1,1};
+    a.swap(b);
+    //a =&gt; 1,1,1,1,1
+    //b =&gt; 5,5,5,5,5
+
+    return 0;
+}
+</code></pre>
+<h2 id="2-2-lt-deque-gt"><a href="#2-2-lt-deque-gt" class="headerlink" title="2.2 &lt;deque&gt;"></a>2.2 &lt;deque&gt;</h2><p>deque，发音/dek/，双端队列（<strong>d</strong>ouble-<strong>e</strong>nded <strong>que</strong>ue）</p>
+<p><strong>deque和vector的不同点</strong>：deque内存不连续；vector内存连续。</p>
+<h2 id="1-特点-1"><a href="#1-特点-1" class="headerlink" title="(1) 特点"></a>(1) 特点</h2><ul>
+<li>顺序储存</li>
+<li>动态数组：<strong>可访问任意元素。增删元素：首尾快，其他慢</strong></li>
+<li>固定尺寸（因此声明时，必须连带size声明）</li>
+</ul>
+<h2 id="2-常用成员函数-1"><a href="#2-常用成员函数-1" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h2><ul>
+<li><p>deque声明</p>
+<pre><code class="lang-cpp">deque&lt;int&gt; first;                                // 1- 空deque声明
+deque&lt;int&gt; second (4,100);                       // 2- 4个ints，值都为100
+deque&lt;int&gt; third (second.begin(),second.end());  // 3- 迭代器copy
+deque&lt;int&gt; fourth (third);                       // 4- 直接copy
+</code></pre>
+</li>
+<li><p>运算符=</p>
+<p><strong>深拷贝！！！</strong></p>
+<pre><code class="lang-cpp">std::deque&lt;int&gt; first (3);    // 长度为3的0值deque
+std::deque&lt;int&gt; second (5);   // 长度为5的0值deque
+
+second = first;                // 赋值=，深拷贝。注意：second变成：长度为3的0值deque
+first = std::deque&lt;int&gt;();    // 改变first，变成空deque
+
+//空deque，first.size = 0
+std::cout &lt;&lt; &quot;Size of first: &quot; &lt;&lt; int (first.size()) &lt;&lt; &#39;\n&#39;;    
+//深拷贝，first没了，second还在，second.size = 3
+std::cout &lt;&lt; &quot;Size of second: &quot; &lt;&lt; int (second.size()) &lt;&lt; &#39;\n&#39;;
+</code></pre>
+</li>
+<li><p>运算符[]</p>
+<p><strong>和array一样使用</strong></p>
+</li>
+<li><p>resize函数</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void resize (size_type n);
+void resize (size_type n, const value_type&amp; val);
+</code></pre>
+<p><strong>设size为deque当前大小。如果n &lt; size，则截取前n个保留；如果n &gt; size，则尾部补充(n-size)个val值（val给定则用val值，否则置为初始值，e.g. int的初始值为0）</strong></p>
+</li>
+</ul>
+</li>
+<li><p>push_front()/pop_front()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void push_front (const value_type&amp; val);
+void push_front (value_type&amp;&amp; val);
+
+void pop_front();
+</code></pre>
+<p>首部push &amp; pop操作，返回值为void。会修改deque本身。</p>
+</li>
+</ul>
+</li>
+<li><p>push_back()/pop_back()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void push_back (const value_type&amp; val);
+void push_back (value_type&amp;&amp; val);
+
+void pop_back();
+</code></pre>
+<p>尾部push &amp; pop操作，返回值为void。会修改deque本身。</p>
+</li>
+</ul>
+</li>
+<li><p>insert()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">iterator insert (const_iterator position, const value_type&amp; val);
+</code></pre>
+<p><strong>在迭代器position前插入val值，若position为begin/end。效率不如list</strong></p>
+</li>
+</ul>
+</li>
+<li><p>erase()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">iterator erase (const_iterator position );
+iterator erase (const_iterator first, const_iterator last );
+</code></pre>
+<p><strong>position是待删除的迭代器位置。返回值是position的下一个位置的迭代器</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-lt-forward-list-gt"><a href="#2-3-lt-forward-list-gt" class="headerlink" title="2.3 &lt;forward_list&gt;"></a>2.3 &lt;forward_list&gt;</h2>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/02/16/pleaseAC/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/01/05/谢谢你，2019/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Eajack Lau's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        eajacklau@163.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:eajacklau@163.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/GitHub/">GitHub<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/LeetCode/">LeetCode<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Markdown/">Markdown<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/OpenCV/">OpenCV<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Songs/">Songs<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/blog/">blog<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/心情/">心情<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数学建模/">数学建模<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构-算法/">数据结构&算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/机器学习/">机器学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂乱/">杂乱<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/树莓派/">树莓派<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/爬虫/">爬虫<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/聊天机器人/">聊天机器人<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/鸡汤/">鸡汤<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/shadiaoDaily" title="沙雕日常">
+                
+                    <i class="material-icons sidebar-material-icons">audiotrack</i>
+                
+                沙雕日常
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/aboutMe" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person_pin</i>
+                
+                About Me
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/aboutMe_zh" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person_pin</i>
+                
+                关于我
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">42</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Eajack" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/Eajack_Lau-CGH-LEO/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Eajack's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
