@@ -12,6 +12,8 @@
     
     <title>
         
+            Cpp标准库速查手册 | 
+        
         Eajack&#39;s Blog
     </title>
 
@@ -36,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Eajack Lau">
     <meta name="description" itemprop="description" content="Someday I will be a giant...">
-    <meta name="keywords" content>
+    <meta name="keywords" content=",C++,LeetCode">
 
     <!-- Site Verification -->
     
@@ -65,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://eajack.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Eajack&#39;s Blog">
+    <meta property="og:title" content="Cpp标准库速查手册 | Eajack&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="Someday I will be a giant...">
-    
+    <meta property="og:article:tag" content="C++"> <meta property="og:article:tag" content="LeetCode"> 
 
+    
+        <meta property="article:published_time" content="2月 16, 2020">
+        <meta property="article:modified_time" content="2月 16, 2020">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Eajack&#39;s Blog">
+    <meta name="twitter:title" content="Cpp标准库速查手册 | Eajack&#39;s Blog">
     <meta name="twitter:description" content="Someday I will be a giant...">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -81,35 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://eajack.github.io">
+        <link rel="canonical" href="https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
+
+
 <script type="application/ld+json">
 {
-    "@context": "http://schema.org",
-    "@type": "Website",
+    "@context": "https://schema.org",
+    "@type": "Article",
     "publisher": {
         "@type": "Organization",
         "name": "Eajack&#39;s Blog",
         "logo": "/img/favicon.jpg"
     },
-    "url": "https://eajack.github.io/index.html",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.jpg"
+    "author": {
+        "@type": "Person",
+        "name": "Eajack Lau",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "Someday I will be a giant..."
     },
+    "headline": "Cpp标准库速查手册",
+    "url": "https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html",
+    "datePublished": "2月 16, 2020",
+    "dateModified": "2月 16, 2020",
+    "description": "Someday I will be a giant...",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://eajack.github.io"
-    },
-    "description": "Someday I will be a giant..."
+    }
 }
 </script>
-
-
 
 
     
@@ -288,800 +301,736 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.jpg)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                Someday I will be a giant...
-            
-        
-        </a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.jpg" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Eajack Lau</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-
-
-
-
-    <!-- Local -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
-            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-        </form>
-    </div>
-    <div id="local-search-result"></div>
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/favicon.jpg" alt="logo" />
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
         </a>
     </div>
+    -->
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Eajack&#39;s Blog</strong>
-        </div>
-        <div class="section-spacer"></div>
-
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/tags" title="标签云">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        标签云
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/shadiaoDaily" title="沙雕日常">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        沙雕日常
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/timeline" title="Timeline">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Timeline
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/aboutMe" title="About Me">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        About Me
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/aboutMe_zh" title="关于我">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        关于我
-                    </li>
-                </a>
-            
-        </ul>
-
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-                <!-- All Site UV -->
-                <a class="index_share-link" href="#">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        <span id="busuanzi_container_site_uv">
-                            <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
-                        </span>
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Eajack&#39;s Blog&url=https://eajack.github.io/&pic=&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Eajack&#39;s Blog&url=https://eajack.github.io/&via=Eajack Lau" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Twitter
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=https://eajack.github.io/" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Google+
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Eajack&#39;s Blog&title=Eajack&#39;s Blog&summary=Someday I will be a giant...&pics=https://eajack.github.io/img/favicon.jpg&url=https://eajack.github.io/" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 QQ
-                    </li>
-                </a>
-            
-
-            
-        </ul>
-    </div>
-</div>
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0-简述"><span class="post-toc-number">1.</span> <span class="post-toc-text">0. 简述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-C-library"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. C library</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-lt-cctype-gt-ctype-h"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.1 &lt;cctype&gt; (ctype.h)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-lt-cmath-gt-math-h"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">1.2 &lt;cmath&gt; (math.h)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-lt-climits-gt-limits-h"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">1.3 &lt;climits&gt; (limits.h)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-lt-cstddef-gt-stddef-h"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">1.4 &lt;cstddef&gt; (stddef.h)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-5-lt-cstdlib-gt-stdlib-h"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">1.5 &lt;cstdlib&gt; (stdlib.h)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Containers"><span class="post-toc-number">3.</span> <span class="post-toc-text">2. Containers</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-lt-array-gt"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">2.1 &lt;array&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-lt-deque-gt"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.2 &lt;deque&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-1"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-1"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-lt-forward-list-gt-amp-lt-list-gt"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">2.3 &lt;forward_list&gt; &amp; &lt;list&gt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-4-lt-map-gt"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">2.4 &lt;map&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-2"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-2"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#class：map"><span class="post-toc-number">3.4.2.1.</span> <span class="post-toc-text">class：map</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#class：multimap"><span class="post-toc-number">3.4.2.2.</span> <span class="post-toc-text">class：multimap</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-5-lt-set-gt"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">2.5 &lt;set&gt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-6-lt-queue-gt"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">2.6 &lt;queue&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-3"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-3"><span class="post-toc-number">3.6.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-7-lt-priority-queue-gt"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">2.7 &lt;priority_queue&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-4"><span class="post-toc-number">3.7.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-4"><span class="post-toc-number">3.7.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-8-lt-stack-gt"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">2.8 &lt;stack&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-5"><span class="post-toc-number">3.8.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-5"><span class="post-toc-number">3.8.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-9-lt-vector-gt"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">2.9 &lt;vector&gt;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-特点-6"><span class="post-toc-number">3.9.1.</span> <span class="post-toc-text">(1) 特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-常用成员函数-6"><span class="post-toc-number">3.9.2.</span> <span class="post-toc-text">(2) 常用成员函数</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/02/16/Cpp标准库速查手册/">Cpp标准库速查手册</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            0. 简述...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/02/16/Cpp标准库速查手册/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>2月 16, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/C/">C++</a>, <a class="post_category-link" href="/categories/C/LeetCode/">LeetCode</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/02/16/pleaseAC/">pleaseAC</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文章更新，详见本人GitHub库：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/02/16/pleaseAC/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>2月 16, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/C/">C++</a>, <a class="post_category-link" href="/categories/C/LeetCode/">LeetCode</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/01/05/谢谢你，2019/">谢谢你，2019</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            19年又过了，一眨眼的功夫，很快就要开始。如今看了看18年的总结，感觉18年做的东西比19年多了很多。也可能是18年在准备保研，在简历方面，竞赛、论...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/01/05/谢谢你，2019/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>1月 05, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/鸡汤/">鸡汤</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/10/06/爬虫-聊天机器人 语料收集/">爬虫-聊天机器人 语料收集</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近被分配弄聊天机器人（但也是很人工、暴力的做法。。），只做其中很小的一部分，入门阶段。其间，被分了写个爬虫爬小爱、小冰的聊天回复（给定提问语料），...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/10/06/爬虫-聊天机器人 语料收集/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>10月 06, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/聊天机器人/">聊天机器人</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/08/12/Eajack LeetCode Notes- Day6/">Eajack LeetCode Notes- Day6</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Q45
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/08/12/Eajack LeetCode Notes- Day6/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>8月 12, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/LeetCode/">LeetCode</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/08/08/杂记长文-记一周年的某个烂flag及某些沙雕思绪/">杂记长文-记一周年的某个烂flag及某些沙雕思绪</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            随便起的题目，但这篇日志感觉会写得很正经、严肃，算是写给以后的自己看的，乱乱续续。所以，生人勿近咯。只是记录下最近地一些想法，怕忘了。希望以后自己无...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/08/08/杂记长文-记一周年的某个烂flag及某些沙雕思绪/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>8月 08, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/鸡汤/">鸡汤</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/14/Eajack LeetCode Notes- Day5/">Eajack LeetCode Notes- Day5</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            PS：偷懒原因，很多题目不再看best solution了…… :)
-收获：以后刷题...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/14/Eajack LeetCode Notes- Day5/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>7月 14, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/LeetCode/">LeetCode</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/03/Eajack LeetCode Notes- Day4/">Eajack LeetCode Notes- Day4</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            PS：由于最近leetcode官网访问问题，暂改成leetcode-zh刷题。
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/03/Eajack LeetCode Notes- Day4/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>7月 03, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/LeetCode/">LeetCode</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/02/Road 2 NLP- Text Classfication文本分类模型（TextCNN）/">Road 2 NLP- Text Classfication文本分类模型（TextCNN）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1. 参...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/02/Road 2 NLP- Text Classfication文本分类模型（TextCNN）/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>7月 02, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/NLP/">NLP</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/02/Road 2 NLP- Word Embedding词向量（ELMo）/">Road 2 NLP- Word Embedding词向量（ELMo）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1. 参...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/02/Road 2 NLP- Word Embedding词向量（ELMo）/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Eajack Lau's avatar">
-            </div>
-            <div>
-                <strong>Eajack Lau</strong>
-                <span>7月 02, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/NLP/">NLP</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Cpp标准库速查手册
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Eajack Lau</strong>
+        <span>2月 16, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/LeetCode/">LeetCode</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Cpp标准库速查手册&url=https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Cpp标准库速查手册&url=https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html&via=Eajack Lau" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Eajack&#39;s Blog&title=Cpp标准库速查手册&summary=Someday I will be a giant...&pics=https://eajack.github.io/img/favicon.jpg&url=https://eajack.github.io/2020/02/16/Cpp标准库速查手册/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="0-简述"><a href="#0-简述" class="headerlink" title="0. 简述"></a>0. 简述</h1><p>个人整理Cpp标准库，整理常用的标准库函数。参考<a href="http://www.cplusplus.com/reference/" target="_blank" rel="noopener">cplusplus.com</a>，<strong>主要用于LeetCode刷题等</strong>。</p>
+<h1 id="1-C-library"><a href="#1-C-library" class="headerlink" title="1. C library"></a>1. C library</h1><p>C++兼容C的库</p>
+<h2 id="1-1-lt-cctype-gt-ctype-h"><a href="#1-1-lt-cctype-gt-ctype-h" class="headerlink" title="1.1 &lt;cctype&gt; (ctype.h)"></a>1.1 &lt;cctype&gt; (ctype.h)</h2><ul>
+<li><p>int isalnum ( int c )（判断字符c是否：数字/小写字母/大写字母）</p>
+</li>
+<li><p>int isalpha ( int c )（判断字符c是否：小写字母/大写字母）</p>
+</li>
+<li><p>int isdigit ( int c )（判断字符c是否：10进制数字）</p>
+</li>
+<li><p>int islower( int c )（判断字符c是否：小写字母）</p>
+</li>
+<li><p>int isupper( int c )（判断字符c是否：大写字母）</p>
+</li>
+<li><p>int isxdigit( int c )（判断字符c是否：16进制数字）</p>
+</li>
+<li><p>int tolower( int c )（大写字母 =&gt; 小写字母）</p>
+</li>
+<li><p>int toupper( int c )（小写字母 =&gt; 大写字母）</p>
+</li>
+</ul>
+<p><strong>参数：整形（包括char）；Return：0 =&gt; false；非0值 =&gt; true</strong></p>
+<h2 id="1-2-lt-cmath-gt-math-h"><a href="#1-2-lt-cmath-gt-math-h" class="headerlink" title="1.2 &lt;cmath&gt; (math.h)"></a>1.2 &lt;cmath&gt; (math.h)</h2><p>数学函数，列表如下：</p>
+<ul>
+<li><p>double cos/sin/tan/acos/asin/atan/exp/exp2/log/log10/sqrt (double x)（数学函数：cos(x)/sin(x)/tan(x)/acos(x)/asin(x)/atan(x)/$e^{x}$/$e^{2}$/$log_{e}$/$log_{10}$/$\sqrt{x}$）</p>
+</li>
+<li><p>double pow (double base , double exponent)（数学函数：$base^{exponent}=b^{e}$）</p>
+</li>
+<li><p>double ceil (double x)（向上取整，e.g. 2.3 =&gt; 3；5.6 =&gt; 6）</p>
+</li>
+<li><p>uble floor(double x)（向下取整，e.g. 2.3 =&gt; 2；5.6 =&gt; 5）</p>
+</li>
+<li><p>int abs(int x)（绝对值函数, <strong>int 绝对值！！！</strong>）</p>
+</li>
+<li><p>double fabs(double x)（绝对值函数, <strong>double 绝对值！！！</strong>）</p>
+</li>
+</ul>
+<h2 id="1-3-lt-climits-gt-limits-h"><a href="#1-3-lt-climits-gt-limits-h" class="headerlink" title="1.3 &lt;climits&gt; (limits.h)"></a>1.3 &lt;climits&gt; (limits.h)</h2><p>INF宏定义</p>
+<ul>
+<li><p>INT_MIN（$-32767 (-2^{15}+1)$ or 更小）</p>
+</li>
+<li><p>INT_MAX（$32767 (2^{15}-1)$or 更大）</p>
+</li>
+<li><p>UINT_MAX（$2^{32}-1$ or 更大）</p>
+</li>
+</ul>
+<h2 id="1-4-lt-cstddef-gt-stddef-h"><a href="#1-4-lt-cstddef-gt-stddef-h" class="headerlink" title="1.4 &lt;cstddef&gt; (stddef.h)"></a>1.4 &lt;cstddef&gt; (stddef.h)</h2><p>C标准定义</p>
+<ul>
+<li><p>size_t（sizeof运算返回类型，属于unsigned int）</p>
+</li>
+<li><p>nullptr_t（即C++的nullptr，专指空指针，为解决：C++11之前版本的语法中，NULL代表指针&amp;0的二义性）</p>
+</li>
+<li><p>NULL（即沿用C的NULL，专指数字0）</p>
+</li>
+</ul>
+<pre><code class="lang-cpp">/*
+————————————————
+版权声明：本文为CSDN博主「csu_zhengzy~」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_18108083/article/details/84346655
+*/
+
+
+#include &lt;iostream&gt;
+using namespace std;
+
+void func(void* i)
+{
+    cout &lt;&lt; &quot;func1&quot; &lt;&lt; endl;
+}
+
+void func(int i)
+{
+    cout &lt;&lt; &quot;func2&quot; &lt;&lt; endl;
+}
+
+//这里func重载，有2种参数，void*/int，若用C语言定义，NULL可表示2种类型：void*/int（空指针/0）
+//所以，引入nullptr专指空指针，NULL专指数字0 
+void main(int argc,char* argv[])
+{
+    func(NULL);//运行：void func(int i)
+    func(nullptr);//运行：void func(void* i)
+    getchar();
+}
+</code></pre>
+<h2 id="1-5-lt-cstdlib-gt-stdlib-h"><a href="#1-5-lt-cstdlib-gt-stdlib-h" class="headerlink" title="1.5 &lt;cstdlib&gt; (stdlib.h)"></a>1.5 &lt;cstdlib&gt; (stdlib.h)</h2><ul>
+<li><p>double atof (const char* str)（浮点数str =&gt; 浮点数double）</p>
+</li>
+<li><p>int atoi (const char * str)（整数str =&gt; 整数int）</p>
+</li>
+<li><p>void srand (unsigned int seed)（配合rand使用，初始化随机数种子）</p>
+</li>
+<li><p>int rand (void)（返回[0, RAND_MAX]伪随机数，RAND_MAX &gt;= 32767）</p>
+</li>
+</ul>
+<pre><code class="lang-cpp">/* srand &amp; rand example */
+#include &lt;stdio.h&gt;      /* printf, NULL */
+#include &lt;stdlib.h&gt;     /* srand, rand */
+#include &lt;time.h&gt;       /* time */
+
+int main ()
+{
+  printf (&quot;First number: %d\n&quot;, rand()%100);
+  srand (time(NULL));
+  printf (&quot;Random number: %d\n&quot;, rand()%100);
+  srand (1);
+  printf (&quot;Again the first number: %d\n&quot;, rand()%100);
+
+  return 0;
+}
+</code></pre>
+<ul>
+<li><p>void* malloc (size_t size)</p>
+</li>
+<li><p>void* calloc (size_t num, size_t size)</p>
+</li>
+<li><p>void free (void* ptr)</p>
+</li>
+</ul>
+<p>free &amp; malloc 、calloc配合使用</p>
+<ul>
+<li><p>malloc：分配连续的内存空间（block），大小为size字节。Return：指向空间初始地址的指针。分配空间没有初始化，全部为不确定值。size == 0 =&gt; 未定义行为（标准未涉及的行为，结果未知，和具体编译器有关）。</p>
+</li>
+<li><p>calloc：分配（num<em>size）字节的连续内存空间（block）。<em>*和malloc唯一区别在于，会初始化为0。</em></em>size == 0 =&gt; 未定义行为（标准未涉及的行为，结果未知，和具体编译器有关）。</p>
+</li>
+</ul>
+<h1 id="2-Containers"><a href="#2-Containers" class="headerlink" title="2. Containers"></a>2. Containers</h1><p>C++容器：</p>
+<ul>
+<li><p>说明：动态数组(vector)、队列(queue)、堆栈(stack)、堆(priority_queue)、链表(list)、树(set）、关联数组(map)</p>
+</li>
+<li><p>分类</p>
+<p><strong>顺序容器</strong></p>
+<ul>
+<li><p>array</p>
+</li>
+<li><p><strong>vector</strong></p>
+</li>
+<li><p><strong>deque</strong></p>
+</li>
+<li><p>forward_list</p>
+</li>
+<li><p>list</p>
+</li>
+</ul>
+<p><strong>容器适配器</strong>（基于其他容器实现）</p>
+<ul>
+<li><p><strong>stack</strong>：LIFO</p>
+</li>
+<li><p><strong>queue</strong>：FIFO</p>
+</li>
+<li><p><strong>priority_queue</strong></p>
+</li>
+</ul>
+<p><strong>关系型容器</strong></p>
+<ul>
+<li><p><strong>set</strong></p>
+</li>
+<li><p>multiset</p>
+</li>
+<li><p><strong>map</strong></p>
+</li>
+<li><p><strong>multimap</strong></p>
+</li>
+</ul>
+<p><strong>无序关系型容器</strong></p>
+<ul>
+<li><p>unordered_set</p>
+</li>
+<li><p>unordered_multiset</p>
+</li>
+<li><p>unordered_map</p>
+</li>
+<li><p>unordered_multimap</p>
+</li>
+</ul>
+</li>
+<li><p><strong>通用成员函数</strong>（大部分常用容器C）</p>
+<ul>
+<li>C.begin()（首位iter，<strong>用于遍历</strong>）、C.end()（末位iter，用于遍历）。<strong>[begin, end)</strong></li>
+<li>C.rbegin()（末位iter，<strong>用于逆序遍历</strong>）、C.rend()（首位iter，用于逆序遍历）</li>
+<li>C.size()（size_t，容器大小）</li>
+<li>C.empty()（bool，是否为空）</li>
+<li>C.clear()（void，清空自身）</li>
+<li>C.swap(D)（C和D内容互换）</li>
+<li>C.erase(iter)（例如：C.erase(C.begin()））</li>
+<li>C.front()（首位元素值）、C.back()（末位元素值）</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-lt-array-gt"><a href="#2-1-lt-array-gt" class="headerlink" title="2.1 &lt;array&gt;"></a>2.1 &lt;array&gt;</h2><h3 id="1-特点"><a href="#1-特点" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>顺序储存</li>
+<li>连续内存块</li>
+<li>固定尺寸（因此声明时，必须连带size声明）</li>
+</ul>
+<p>注意：size = 0的array有效，但是这个array不能解引用（dereferenced），也就是不能取值，否则导致未定义行为。</p>
+<h3 id="2-常用成员函数"><a href="#2-常用成员函数" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>运算符[]：类似内置数组</li>
+<li>void fill (const value_type&amp; val)：使得数组C所有值置为val</li>
+<li>void swap (array&amp; x)：2个<strong>size相同</strong>的数组值对换</li>
+</ul>
+<pre><code class="lang-cpp">/* array examples*/
+#include &lt;array&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main ()
+{
+    array&lt;int,5&gt; a = {1,2,3,4,5};
+    //1- 通用成员函数
+    for(auto it=a.begin(); it!=a.end(); it++){
+        cout &lt;&lt; *it &lt;&lt; endl;
+        //1 2 3 4 5
+    }
+    for(auto it=a.rbegin(); it!=a.rend(); it++){
+        cout &lt;&lt; *it &lt;&lt; endl;
+        //5 4 3 2 1
+    }
+    cout &lt;&lt; a.size() &lt;&lt; endl;//5
+    cout &lt;&lt; a.front() &lt;&lt; &quot; &quot; &lt;&lt; a.back() &lt;&lt; endl;//1 5
+    if(a.empty()){
+        cout &lt;&lt; &quot;11&quot; &lt;&lt; endl;
+    }
+    else{
+        cout &lt;&lt; &quot;22&quot; &lt;&lt; endl;
+        //22
+    }
+    //2- 运算符[]
+    for(int i=0; i&lt;a.size(); i++){
+        cout &lt;&lt; a[i] &lt;&lt; endl;
+        //1 2 3 4 5
+    }
+    //3- fill
+    a.fill(5);
+    for(int i=0; i&lt;a.size(); i++){
+        cout &lt;&lt; a[i] &lt;&lt; endl;
+        //5 5 5 5 5
+    }
+    //4- swap
+    array&lt;int, 5&gt; b = {1,1,1,1,1};
+    a.swap(b);
+    //a =&gt; 1,1,1,1,1
+    //b =&gt; 5,5,5,5,5
+
+    return 0;
+}
+</code></pre>
+<h2 id="2-2-lt-deque-gt"><a href="#2-2-lt-deque-gt" class="headerlink" title="2.2 &lt;deque&gt;"></a>2.2 &lt;deque&gt;</h2><p>deque，发音/dek/，双端队列（<strong>d</strong>ouble-<strong>e</strong>nded <strong>que</strong>ue）</p>
+<p><strong>deque和vector的不同点</strong>：deque内存不连续；vector内存连续。</p>
+<h3 id="1-特点-1"><a href="#1-特点-1" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>顺序储存</li>
+<li>动态数组：<strong>可访问任意元素。增删元素：首尾快，其他慢</strong></li>
+<li>固定尺寸（因此声明时，必须连带size声明）</li>
+</ul>
+<h3 id="2-常用成员函数-1"><a href="#2-常用成员函数-1" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li><p>deque声明</p>
+<pre><code class="lang-cpp">deque&lt;int&gt; first;                                // 1- 空deque声明
+deque&lt;int&gt; second (4,100);                       // 2- 4个ints，值都为100
+deque&lt;int&gt; third (second.begin(),second.end());  // 3- 迭代器copy
+deque&lt;int&gt; fourth (third);                       // 4- 直接copy
+</code></pre>
+</li>
+<li><p>运算符=</p>
+<p><strong>深拷贝！！！</strong></p>
+<pre><code class="lang-cpp">std::deque&lt;int&gt; first (3);    // 长度为3的0值deque
+std::deque&lt;int&gt; second (5);   // 长度为5的0值deque
+
+second = first;                // 赋值=，深拷贝。注意：second变成：长度为3的0值deque
+first = std::deque&lt;int&gt;();    // 改变first，变成空deque
+
+//空deque，first.size = 0
+std::cout &lt;&lt; &quot;Size of first: &quot; &lt;&lt; int (first.size()) &lt;&lt; &#39;\n&#39;;    
+//深拷贝，first没了，second还在，second.size = 3
+std::cout &lt;&lt; &quot;Size of second: &quot; &lt;&lt; int (second.size()) &lt;&lt; &#39;\n&#39;;
+</code></pre>
+</li>
+<li><p>运算符[]</p>
+<p><strong>和array一样使用</strong></p>
+</li>
+<li><p>resize函数</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void resize (size_type n);
+void resize (size_type n, const value_type&amp; val);
+</code></pre>
+<p><strong>设size为deque当前大小。如果n &lt; size，则截取前n个保留；如果n &gt; size，则尾部补充(n-size)个val值（val给定则用val值，否则置为初始值，e.g. int的初始值为0）</strong></p>
+</li>
+</ul>
+</li>
+<li><p>push_front()/pop_front()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void push_front (const value_type&amp; val);
+void push_front (value_type&amp;&amp; val);
+
+void pop_front();
+</code></pre>
+<p>首部push &amp; pop操作，返回值为void。会修改deque本身。</p>
+</li>
+</ul>
+</li>
+<li><p>push_back()/pop_back()</p>
+<ul>
+<li><p>函数声明&amp;说明</p>
+<pre><code class="lang-cpp">void push_back (const value_type&amp; val);
+void push_back (value_type&amp;&amp; val);
+
+void pop_back();
+</code></pre>
+<p>尾部push &amp; pop操作，返回值为void。会修改deque本身。</p>
+</li>
+</ul>
+</li>
+<li><p>insert()</p>
+<p><strong>在迭代器position前插入val值，若position为begin/end。效率不如list</strong></p>
+</li>
+</ul>
+<h2 id="2-3-lt-forward-list-gt-amp-lt-list-gt"><a href="#2-3-lt-forward-list-gt-amp-lt-list-gt" class="headerlink" title="2.3 &lt;forward_list&gt; &amp; &lt;list&gt;"></a>2.3 &lt;forward_list&gt; &amp; &lt;list&gt;</h2><p>即单向链表/双向链表。（比较少用）</p>
+<p><code>forward_list</code>和<code>list</code>的区别在于：前者的实现只保留前向指针，后者则是双向的。</p>
+<ul>
+<li>forward_list特点<ul>
+<li>顺序储存</li>
+<li>单向链表</li>
+<li>不可以O(1)根据索引获得元素</li>
+</ul>
+</li>
+<li>list特点<ul>
+<li>顺序储存</li>
+<li>双向链表</li>
+<li>不可以O(1)根据索引获得元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-lt-map-gt"><a href="#2-4-lt-map-gt" class="headerlink" title="2.4 &lt;map&gt;"></a>2.4 &lt;map&gt;</h2><h3 id="1-特点-2"><a href="#1-特点-2" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>key具有唯一性</li>
+<li>有序的</li>
+</ul>
+<p><strong>注意：map &amp; unordered_map 区别。前者有序，内部红黑树实现；后者无序，内部哈希表实现。</strong></p>
+<h3 id="2-常用成员函数-2"><a href="#2-常用成员函数-2" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><h4 id="class：map"><a href="#class：map" class="headerlink" title="class：map"></a>class：map</h4><ul>
+<li>map声明、初始化</li>
+</ul>
+<p>map声明、初始化例子如下</p>
+<pre><code class="lang-cpp">// constructing maps
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+bool fncomp (char lhs, char rhs) {return lhs&lt;rhs;}
+
+struct classcomp {
+  bool operator() (const char&amp; lhs, const char&amp; rhs) const
+  {return lhs&lt;rhs;}
+};
+
+int main ()
+{
+    //1- 初始化方法1
+    std::map&lt;char,int&gt; zero = {
+        {&#39;a&#39;,0},
+        {&#39;b&#39;,1}
+    }
+
+    //2- 初始化方法1
+    std::map&lt;char,int&gt; first;//空map
+    first[&#39;a&#39;]=10;
+    first[&#39;b&#39;]=30;
+    first[&#39;c&#39;]=50;
+    first[&#39;d&#39;]=70;
+
+    //3- 
+    std::map&lt;char,int&gt; second (first.begin(),first.end());
+
+    //4- 
+    std::map&lt;char,int&gt; third (second);
+
+    //5-第三参数1，根据这个参数，重新定义排序
+    std::map&lt;char,int,classcomp&gt; fourth;                 // class as Compare
+
+    //6-第三参数2
+    bool(*fn_pt)(char,char) = fncomp;
+    std::map&lt;char,int,bool(*)(char,char)&gt; fifth (fn_pt); // function pointer as Compare
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>运算符=：<strong>深拷贝！！！</strong></li>
+<li>运算符[]：取值，[]中是key值，返回value</li>
+<li>C.find(it)：map查找函数，返回值为迭代器it，当it == C.end()时表示没找到</li>
+</ul>
+<h4 id="class：multimap"><a href="#class：multimap" class="headerlink" title="class：multimap"></a>class：multimap</h4><ul>
+<li>和map不同之处：<strong>key值可重复</strong>。有用！！！</li>
+</ul>
+<h2 id="2-5-lt-set-gt"><a href="#2-5-lt-set-gt" class="headerlink" title="2.5 &lt;set&gt;"></a>2.5 &lt;set&gt;</h2><p>包括set &amp; multiset，对应map &amp; multimap。</p>
+<p><strong>注意：set &amp; multiset 区别。前者是后者的特例，前者的所有key对应的value值都是同1个值。</strong></p>
+<h2 id="2-6-lt-queue-gt"><a href="#2-6-lt-queue-gt" class="headerlink" title="2.6 &lt;queue&gt;"></a>2.6 &lt;queue&gt;</h2><h3 id="1-特点-3"><a href="#1-特点-3" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>FIFO（先进先出）</li>
+<li>尾部push，头部pop</li>
+</ul>
+<h3 id="2-常用成员函数-3"><a href="#2-常用成员函数-3" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>C.push (const value_type&amp; val)：返回值void，push进去元素</li>
+<li>C.pop()：返回值void，pop出头部元素</li>
+</ul>
+<h2 id="2-7-lt-priority-queue-gt"><a href="#2-7-lt-priority-queue-gt" class="headerlink" title="2.7 &lt;priority_queue&gt;"></a>2.7 &lt;priority_queue&gt;</h2><h3 id="1-特点-4"><a href="#1-特点-4" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>优先队列，也就是<strong>堆</strong>，默认为<strong>最大堆</strong></li>
+<li>默认地，用vector实现priority_queue</li>
+</ul>
+<h3 id="2-常用成员函数-4"><a href="#2-常用成员函数-4" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>priority_queue声明、初始化</li>
+</ul>
+<pre><code class="lang-cpp">// constructing priority queues
+#include &lt;iostream&gt;       // std::cout
+#include &lt;queue&gt;          // std::priority_queue
+#include &lt;vector&gt;         // std::vector
+#include &lt;functional&gt;     // std::greater
+
+int main ()
+{
+    int myints[]= {10,60,50,20};
+
+    //1- 初始化1，空堆
+    std::priority_queue&lt;int&gt; first;
+    //2- 最大堆
+    std::priority_queue&lt;int&gt; second (myints,myints+4);
+    //3- 最小堆
+    std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt;
+        third (myints,myints+4);
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>C.top()：返回堆顶元素，最大堆就是最大值，最小堆就是最小值</li>
+<li>C.push(val)：void返回，将val，推入到priority_queue中，<strong>并内部重新排序，保持 最大堆/最小堆</strong></li>
+<li>C.pop()：void返回，pop出堆顶值</li>
+</ul>
+<h2 id="2-8-lt-stack-gt"><a href="#2-8-lt-stack-gt" class="headerlink" title="2.8 &lt;stack&gt;"></a>2.8 &lt;stack&gt;</h2><h3 id="1-特点-5"><a href="#1-特点-5" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>栈，LIFO，后进先出</li>
+</ul>
+<h3 id="2-常用成员函数-5"><a href="#2-常用成员函数-5" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>stack声明、初始化</li>
+</ul>
+<pre><code class="lang-cpp">// constructing stacks
+#include &lt;iostream&gt;       // std::cout
+#include &lt;stack&gt;          // std::stack
+#include &lt;vector&gt;         // std::vector
+#include &lt;deque&gt;          // std::deque
+
+int main ()
+{
+    std::deque&lt;int&gt; mydeque (3,100);          // deque with 3 elements
+    std::vector&lt;int&gt; myvector (2,200);        // vector with 2 elements
+
+    //1- 初始化1，空stack
+    std::stack&lt;int&gt; first;                    // empty stack
+
+    //2- 
+    std::stack&lt;int&gt; second (mydeque);         // stack initialized to copy of deque
+
+    //3- vector初始化stack
+    std::stack&lt;int,std::vector&lt;int&gt; &gt; third;  // empty stack using vector
+    std::stack&lt;int,std::vector&lt;int&gt; &gt; fourth (myvector);
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>C.top()：返回栈顶元素</li>
+<li>C.push(val)：void返回，将val，推入到stack中</li>
+<li>C.pop()：void返回，pop出栈顶值</li>
+</ul>
+<h2 id="2-9-lt-vector-gt"><a href="#2-9-lt-vector-gt" class="headerlink" title="2.9 &lt;vector&gt;"></a>2.9 &lt;vector&gt;</h2><h3 id="1-特点-6"><a href="#1-特点-6" class="headerlink" title="(1) 特点"></a>(1) 特点</h3><ul>
+<li>顺序储存</li>
+<li><strong>动态数组。维护的实际capacity &gt; size（2倍扩增）</strong></li>
+</ul>
+<h3 id="2-常用成员函数-6"><a href="#2-常用成员函数-6" class="headerlink" title="(2) 常用成员函数"></a>(2) 常用成员函数</h3><ul>
+<li>vector声明、初始化</li>
+</ul>
+<pre><code class="lang-cpp">// constructing vectors
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main ()
+{
+    // constructors used in the same order as described above:
+    //0-
+    std::vector&lt;int&gt; zero = {1,1,1,1};
+
+    //1- 初始化1
+    std::vector&lt;int&gt; first;                                // empty vector of ints
+
+    //2- (size, value)
+    std::vector&lt;int&gt; second (4,100);                       // four ints with value 100
+
+    //3- 
+    std::vector&lt;int&gt; third (second.begin(),second.end());  // iterating through second
+
+    //4- 
+    std::vector&lt;int&gt; fourth (third);                       // a copy of third
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>运算符[]：按索引获取值</li>
+<li>运算符=：赋值，<strong>深拷贝</strong></li>
+<li>C.size()：size_t返回值，返回C的大小</li>
+<li>C.push_back(val)：push入val值</li>
+<li>C.pop_back()：尾部pop，返回值void</li>
+</ul>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/02/16/pleaseAC/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
                     
@@ -1428,112 +1377,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
-        <script type="text/ls-javascript" id="search-local-js-script">
-    var searchFunc = function(path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: 'xml',
-            success: function( xmlResponse ) {
-                // get the contents from search data
-                var datas = $( 'entry', xmlResponse ).map(function() {
-                    return {
-                        title: $( 'title', this ).text(),
-                        content: $('content',this).text(),
-                        url: $( 'url' , this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function() {
-                    var str='<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = '';
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function(data) {
-                        var isMatch = true;
-                        var content_index = [];
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if(data_title !== '' && data_content !== '') {
-                            keywords.forEach(function(keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if( index_title < 0 && index_content < 0 ) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
-                            var content = data.content.trim().replace(/<[^>]+>/g, '');
-                            if (first_occur >= 0) {
-                                // cut out characters
-                                var start = first_occur - 6;
-                                var end = first_occur + 6;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 10;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function(keyword) {
-                                    var regS = new RegExp(keyword, 'gi');
-                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
-                                })
-                                str += '<p class="search-result">' + match_content + '...</p>' +'</a>';
-                            }
-                        }
-                    });
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-</script>
-
-
-        <script type="text/ls-javascript" id="search-input-script">
-            var inputArea = document.querySelector('#search');
-            var getSearchFile = function() {
-                var path = 'search.xml';
-                searchFunc(path, 'search', 'local-search-result');
-            }
-
-            if(inputArea) {
-                inputArea.onfocus = function() {
-                    getSearchFile();
-                }
-            }
-        </script>
-    
 
 
 <!-- UC Browser Compatible -->
